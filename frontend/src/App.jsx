@@ -1,19 +1,24 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Generative_AI from "./pages/services/AI-ML/Generative_AI";
+import DataSci from "./pages/services/AI-ML/DataSci";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-600">
-        Hello, It is Ten Consulting
-      </h1>
-      <p className="text-lg text-gray-700 mt-2">
-        Welcome to our platform. We provide innovative solutions to grow your
-        business.
-      </p>
-      <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-        Learn More
-      </button>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ai-ml/generative-ai" element={<Generative_AI />} />
+        <Route path="/ai-ml/data-science" element={<DataSci />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
