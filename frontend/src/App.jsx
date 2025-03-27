@@ -5,6 +5,7 @@ import DataSci from "./pages/services/AI-ML/DataSci";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import AiMl from "./pages/services/AI-ML/AiMl";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/ai-ml/generative-ai" element={<Generative_AI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
       </Routes>
