@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 
+import Careers from "./pages/Careers";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
 
       <Footer />
