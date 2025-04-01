@@ -256,7 +256,7 @@ const GenerativeAI = () => {
 
       {/* Just few section */}
       <div
-        className="outer-container max-w-[100vw] w-full mx-auto mt-12 px-4 bg-cover bg-center bg-no-repeat pt-[255px] pb-[116px] sm:pt-[100px] sm:pb-[80px] xs:pt-[100px] xs:pb-[60px]"
+        className="outer-container max-w-[100vw] w-full mx-auto mt-12 px-10 bg-cover bg-center bg-no-repeat pt-[255px] pb-[255px] sm:pt-[100px] sm:pb-[80px] xs:pt-[100px] xs:pb-[60px]"
         style={{ backgroundImage: justSectionDetails.backgroundImage }}
       >
         <div className="reason-wrap bg-opacity-90 p-4 max-w-[100vw] w-full">
@@ -294,7 +294,7 @@ const GenerativeAI = () => {
               animate={isJustInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.7, duration: 0.5 }}
               whileHover={{ scale: 1.1 }}
-              className="border border-white text-lg mt-12 sm:mt-8 md:mt-12 text-white text-lg w-[50%] sm:w-auto md:w-[20%] lg:w-[15%] rounded-lg px-2 transition duration-300 hover:bg-white hover:text-black"
+              className="border border-white text-lg mt-12 sm:mt-8 md:mt-12 text-white text-lg w-[50%] sm:w-auto md:w-[20%] lg:w-[15%] rounded-lg px-2 py-2 transition duration-300 hover:bg-white hover:text-black"
               onClick={() =>
                 (window.location.href = justSectionDetails.buttonLink)
               }
@@ -303,7 +303,7 @@ const GenerativeAI = () => {
             </motion.button>
           </motion.div>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 sm:px-8 lg:px-12 text-white mb-12">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 sm:px-8 lg:px-12 text-white mb-12">
             {justOfferings.map((item, index) => (
               <motion.div
                 key={index}
@@ -317,7 +317,7 @@ const GenerativeAI = () => {
                   <h5 className="text-xl sm:text-2xl font-semibold">
                     {item.title}
                   </h5>
-                  <p className="text-white mt-2 text-lg">{item.content}</p>
+                  <p className="text-white mt-2 text-lg mb-6">{item.content}</p>
                 </div>
               </motion.div>
             ))}
