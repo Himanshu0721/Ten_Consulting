@@ -6,4 +6,4 @@ const DataSci = () => {
   )
 }
 
-export default DataSci;
+export default DataSci
