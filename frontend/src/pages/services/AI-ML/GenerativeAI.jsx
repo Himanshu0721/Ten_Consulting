@@ -7,7 +7,7 @@ import {
     funFactDetails,
     transformationData,
     insightsData,
-} from "../../../assets/dataSci";
+} from "../../../assets/generativeData";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
 import OfferingsSection from "../../../components/OfferingsSection";
@@ -16,7 +16,7 @@ import FunFactSection from "../../../components/FunFactSection";
 import TransformationSection from "../../../components/LeadingSection";
 import InsightSection from "../../../components/InsightSection";
 
-const DataSci = () => {
+const GenerativeAi = () => {
     return (
     <div>
         <HeroSection heroData={heroData} />
@@ -36,4 +36,4 @@ const DataSci = () => {
     );
 };
 
-export default DataSci;
+export default GenerativeAi;
