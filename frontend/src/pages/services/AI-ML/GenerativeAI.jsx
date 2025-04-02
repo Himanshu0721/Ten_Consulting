@@ -314,7 +314,7 @@ const GenerativeAI = () => {
               animate={isJustInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.7, duration: 0.5 }}
               whileHover={{ scale: 1.1 }}
-              className="border border-white text-lg mt-4 sm:mt-8 md:mt-12 text-white text-lg w-[50%] sm:w-auto md:w-[20%] lg:w-[15%] rounded-lg px-2 transition duration-300 hover:bg-white hover:text-black"
+              className="border border-white text-lg mt-4 sm:mt-8 md:mt-12 text-white w-[50%] sm:w-auto md:w-[20%] lg:w-[15%] rounded-lg px-2 transition duration-300 hover:bg-white hover:text-black"
               onClick={() =>
                 (window.location.href = "/our-global-presence#lets-talk")
               }
