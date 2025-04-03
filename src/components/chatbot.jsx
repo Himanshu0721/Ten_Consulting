@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaTimes, FaPaperPlane, FaRobot, FaMobileAlt, FaClipboard, FaCloud, FaArrowLeft } from "react-icons/fa";
+import { FaTimes, FaPaperPlane, FaMobileAlt, FaClipboard, FaCloud, FaArrowLeft } from "react-icons/fa";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isIconVisible, setIsIconVisible] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -55,24 +54,37 @@ const Chatbot = () => {
 
   return (
     <div>
-      {/* Chatbot Icon (Appears on Hover) */}
-      <div 
-        className="fixed bottom-6 right-6 w-16 h-16"
-        onMouseEnter={() => setIsIconVisible(true)}
-        onMouseLeave={() => setIsIconVisible(false)}
-      >
-        {isIconVisible && !isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="bg-[#D1884F] text-white p-4 rounded-full shadow-xl cursor-pointer hover:bg-[#B16D3A] transition-all flex items-center justify-center"
-            onClick={() => setIsOpen(true)}
+      {/* Show Chatbot Icon Only If Chat is Closed */}
+      {!isOpen && (
+        <div
+          className="fixed bottom-6 right-6 flex items-center group cursor-pointer"
+          onClick={() => setIsOpen(true)}
+        >
+          {/* Tooltip (Appears on Hover) */}
+          <div
+            className="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
+                     transition-all duration-200 bg-white shadow-md rounded-lg 
+                     px-3 py-1 text-xs font-medium text-gray-800 mr-2"
           >
-            <FaRobot size={24} />
-          </motion.div>
-        )}
-      </div>
+            Chat With Us
+          </div>
+
+          {/* Chatbot Icon */}
+          <div
+            className="w-12 h-12 flex items-center justify-center bg-[#D1884F] rounded-full 
+                     shadow-lg relative transition-all duration-200 group-hover:scale-105"
+          >
+            {/* Chat Bubble (Black Square) */}
+            <div className="relative w-5 h-4 bg-black rounded-md flex items-center justify-center">
+              {/* Chat Tail (Small Triangle) */}
+              <div
+                className="absolute -bottom-[3px] left-1/2 transform -translate-x-1/2 
+                         w-2 h-2 bg-black rotate-45"
+              ></div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Chatbot Window */}
       {isOpen && (
@@ -84,14 +96,12 @@ const Chatbot = () => {
         >
           {/* Header */}
           <div className="bg-[#D1884F] text-white p-3 flex justify-between items-center rounded-t-2xl">
-            <span className="font-semibold text-lg flex items-center">
-              <FaRobot className="mr-2" /> Assistant
-            </span>
+            <span className="font-semibold text-sm">Assistant</span>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen(false)} // Close chat on click
               className="p-2 rounded-full hover:bg-gray-200 transition-all"
             >
-              <FaTimes size={20} className="text-gray-600" />
+              <FaTimes size={18} className="text-gray-600" />
             </button>
           </div>
 
@@ -103,15 +113,17 @@ const Chatbot = () => {
                 initial={{ opacity: 0, x: msg.sender === "bot" ? -30 : 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2 }}
-                className={`p-2 text-sm rounded-lg shadow-md max-w-[75%] ${
-                  msg.sender === "bot" ? "bg-gray-300 text-gray-800 self-start" : "bg-[#D1884F] text-white ml-auto"
+                className={`p-2 text-xs rounded-lg shadow-md max-w-[75%] ${
+                  msg.sender === "bot"
+                    ? "bg-gray-300 text-gray-800 self-start"
+                    : "bg-[#D1884F] text-white ml-auto"
                 }`}
               >
                 {msg.text}
               </motion.div>
             ))}
             {isTyping && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gray-500 text-sm italic">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gray-500 text-xs italic">
                 ...
               </motion.div>
             )}
@@ -124,7 +136,9 @@ const Chatbot = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleSend("Tell me about Mobility services", "Mobility")}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-white bg-blue-600 rounded-lg shadow-md transition-all hover:bg-blue-700"
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100"
               >
                 <FaMobileAlt size={14} /> Mobility
               </motion.button>
@@ -134,7 +148,9 @@ const Chatbot = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleSend("Explore Our Services", "Services")}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-white bg-green-600 rounded-lg shadow-md transition-all hover:bg-green-700"
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100"
               >
                 <FaClipboard size={14} /> Services
               </motion.button>
@@ -144,7 +160,9 @@ const Chatbot = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleSend("Support", "Support")}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-white bg-red-600 rounded-lg shadow-md transition-all hover:bg-red-700"
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100"
               >
                 <FaCloud size={14} /> Support
               </motion.button>
@@ -154,7 +172,9 @@ const Chatbot = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={handleResetOptions}
-                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-gray-700 bg-gray-300 rounded-lg shadow-md transition-all hover:bg-gray-400"
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100"
               >
                 <FaArrowLeft size={14} /> Main Menu
               </motion.button>
@@ -165,7 +185,8 @@ const Chatbot = () => {
           <div className="p-2 border-t bg-white flex items-center">
             <input
               type="text"
-              className="flex-grow p-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#D1884F] text-sm shadow-sm"
+              className="flex-grow p-2 text-xs border border-gray-300 rounded-full 
+                         focus:outline-none focus:ring-2 focus:ring-[#D1884F] shadow-sm"
               placeholder="Type a message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
