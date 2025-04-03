@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,8 +9,8 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolling, setScrolling] = useState(false);
 
-   // Toggle dropdown function
-   const handleDropdown = (dropdownName) => {
+  // Toggle dropdown function
+  const handleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
@@ -133,79 +134,162 @@ const Navbar = () => {
           </button>
           <div
             className={`absolute left-0 w-full lg:w-[16vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
-              activeDropdown === "service" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+              activeDropdown === "service"
+                ? "scale-y-100 opacity-100"
+                : "scale-y-0 opacity-0"
             }`}
           >
             <ul className="p-4 space-y-2">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                AI and ML
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Generative AI
+                <Link
+                  to="/ai-ml"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  AI and ML
+                </Link>
+                <Link
+                  to="/ai-ml/generative-ai"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Generative AI{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Science
+                </Link>
+                <Link
+                  to="/ai-ml/data-science"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Data Science{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Machine Learning
-                  <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Data Analytics
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Consulting
+                <Link
+                  to="/data-analytics"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  Data Analytics
+                </Link>
+                <Link
+                  to="/data-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Data Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Engineering
+                </Link>
+                <Link
+                  to="/data-engineering"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Analytics Services{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
+                <Link
+                  to="/integration"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Integration & API{" "}
+                  <span className="hidden group-hover:inline-block">→</span>
+                </Link>
+                <Link
+                  to="/agentic"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Agentic{" "}
+                  <span className="hidden group-hover:inline-block">→</span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Next Generation
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Block Chain
+                <Link
+                  to="/next-gen"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  Next Generation
+                </Link>
+                <Link
+                  to="/next-gen/blockchain"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Blockchain{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Metaverse
+                </Link>
+                <Link
+                  to="/metaverse"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Metaverse{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Digital Experience
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Product Design
+                <Link
+                  to="/digital-experience"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  Digital Experience
+                </Link>
+                <Link
+                  to="/digital-experience/product-design"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Product Design{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Product Consulting
+                </Link>
+                <Link
+                  to="/digital-experience/product-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Product Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Cloud Engineering
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Cloud Consulting
+                <Link
+                  to="/cloud-engineering"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  Cloud Engineering
+                </Link>
+                <Link
+                  to="/cloud-engineering/cloud-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Cloud Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Cloud Migration
+                </Link>
+                <Link
+                  to="/cloud-engineering/cloud-migration"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Cloud Migration{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Product Engineering
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Quality Engineer
+                <Link
+                  to="/product-engineering"
+                  className="cursor-pointer font-semibold hover:text-gray-700"
+                >
+                  Product Engineering
+                </Link>
+                <Link
+                  to="/product-engineering/quality-engineer"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Quality Engineer{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Mobile Engineering
+                </Link>
+                <Link
+                  to="/product-engineering/mobile-engineering"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Mobile Engineering{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -225,9 +309,11 @@ const Navbar = () => {
           >
             Industries
           </button>
-          <div 
+          <div
             className={`absolute left-0 w-full lg:w-[18vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
-              activeDropdown === "industry" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+              activeDropdown === "industry"
+                ? "scale-y-100 opacity-100"
+                : "scale-y-0 opacity-0"
             }`}
           >
             <ul className="p-4 space-y-2">
@@ -282,7 +368,9 @@ const Navbar = () => {
           </button>
           <div
             className={`absolute left-0 w-full lg:w-[10vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
-              activeDropdown === "insight" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+              activeDropdown === "insight"
+                ? "scale-y-100 opacity-100"
+                : "scale-y-0 opacity-0"
             }`}
           >
             <ul className="p-4 space-y-2">
@@ -315,8 +403,10 @@ const Navbar = () => {
             About
           </button>
           <div
-          className={`absolute lg:left-[-60px] lg:w-[11vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
-              activeDropdown === "about" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+            className={`absolute lg:left-[-60px] lg:w-[11vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
+              activeDropdown === "about"
+                ? "scale-y-100 opacity-100"
+                : "scale-y-0 opacity-0"
             }`}
           >
             <ul className="p-4 space-y-2">

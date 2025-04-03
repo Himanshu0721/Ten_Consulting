@@ -24,28 +24,34 @@ export const contentData = {
 };
 
 
-export const offerings = [
-    {
-        title: "Chatbots and Virtual Assistants",
-        content: "Our Chatbots/Virtual Assistants services encompass AI-powered chatbot development, virtual assistant integration, and natural language processing (NLP) capabilities.",
-    },
-    {
-        title: "Skill Assessment Services",
-        content: "Ten Consulting's skill assessment offering incorporates a powerful tool capable of generating dynamic questions and accurately assessing candidate responses. Our rating system ensures a transparent evaluation of the candidate's skill level, providing valuable insights for informed decision-making.",
-    },
-    {
-        title: "Credit Analysis",
-        content: "Our Credit Analysis services encompass advanced data analysis and Generative AI algorithms that can generate synthetic data to augment the limited labeled data for credit risk modeling.",
-    },
-    {
-        title: "Knowledge Databases",
-        content: "Leveraging Generative AI, we enable businesses to automatically generate high-quality and relevant content, create concise summaries of large documents, and structure knowledge for efficient retrieval and analysis.",
-    },
-    {
-        title: "AI Generated Product/Marketing Campaign",
-        content: "Our AI-generated product/marketing campaign services encompass AI-powered content creation, product design, and marketing campaign optimization.",
-    },
-];
+export const offerings = {
+    heading1: "AI Innovation",
+    heading2: "Revolutionizing Content with AI",
+    paragraph: "Capitalize on AI-Innovation to create fresh content, whether it's text, images, or videos. This automation boosts productivity & fuels creativity.",
+    services: [
+        {
+            title: "Chatbots and Virtual Assistants",
+            content: "Our Chatbots/Virtual Assistants services encompass AI-powered chatbot development, virtual assistant integration, and natural language processing (NLP) capabilities.",
+        },
+        {
+            title: "Skill Assessment Services",
+            content: "Ten Consulting's skill assessment offering incorporates a powerful tool capable of generating dynamic questions and accurately assessing candidate responses. Our rating system ensures a transparent evaluation of the candidate's skill level, providing valuable insights for informed decision-making.",
+        },
+        {
+            title: "Credit Analysis",
+            content: "Our Credit Analysis services encompass advanced data analysis and Generative AI algorithms that can generate synthetic data to augment the limited labeled data for credit risk modeling.",
+        },
+        {
+            title: "Knowledge Databases",
+            content: "Leveraging Generative AI, we enable businesses to automatically generate high-quality and relevant content, create concise summaries of large documents, and structure knowledge for efficient retrieval and analysis.",
+        },
+        {
+            title: "AI Generated Product/Marketing Campaign",
+            content: "Our AI-generated product/marketing campaign services encompass AI-powered content creation, product design, and marketing campaign optimization.",
+        },
+    ],
+};
+
 
 
 export const justSectionDetails = {

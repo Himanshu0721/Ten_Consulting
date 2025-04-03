@@ -19,28 +19,34 @@ export const contentData = {
     ],
 };
 
-export const offerings = [
-    {
-        title: "Predictive Analytics for Business Insights",
-        content: "Utilize data science and machine learning models to forecast trends, optimize decision-making, and drive business growth.",
-    },
-    {
-        title: "Automated Data Cleaning & Preprocessing",
-        content: "Enhance data quality with automated techniques for cleaning, transforming, and preparing data for analysis and machine learning models.",
-    },
-    {
-        title: "Custom Machine Learning Models",
-        content: "Develop tailored machine learning models to solve complex business problems with high accuracy, from classification to regression tasks.",
-    },
-    {
-        title: "Advanced Data Visualization & Reporting",
-        content: "Transform raw data into insightful visualizations and interactive dashboards for clearer business insights and strategic planning.",
-    },
-    {
-        title: "AI-Powered Predictive Maintenance",
-        content: "Apply machine learning algorithms to predict equipment failure, reduce downtime, and optimize maintenance schedules.",
-    },
-];
+
+export const offerings = {
+    heading1: "Data Science & ML",
+    heading2: "AI-powered Data Insights",
+    paragraph: "Leverage AI to analyze and transform diverse data types, identify patterns, and make predictions for insight-led decisions.",
+    services: [
+        {
+            title: "Predictive Analytics for Business Insights",
+            content: "Utilize data science and machine learning models to forecast trends, optimize decision-making, and drive business growth.",
+        },
+        {
+            title: "Automated Data Cleaning & Preprocessing",
+            content: "Enhance data quality with automated techniques for cleaning, transforming, and preparing data for analysis and machine learning models.",
+        },
+        {
+            title: "Custom Machine Learning Models",
+            content: "Develop tailored machine learning models to solve complex business problems with high accuracy, from classification to regression tasks.",
+        },
+        {
+            title: "Advanced Data Visualization & Reporting",
+            content: "Transform raw data into insightful visualizations and interactive dashboards for clearer business insights and strategic planning.",
+        },
+        {
+            title: "AI-Powered Predictive Maintenance",
+            content: "Apply machine learning algorithms to predict equipment failure, reduce downtime, and optimize maintenance schedules.",
+        },
+    ],
+};
 
 
 export const justSectionDetails = {
@@ -110,5 +116,5 @@ export const insightsData = [
         img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/AI%20for%20Data%20Analysis.webp?itok=thNRESzz",
         title: "The Role of AI in Personalizing Customer Experiences",
         date: "July 30, 2024",
-    },
+  },
 ];

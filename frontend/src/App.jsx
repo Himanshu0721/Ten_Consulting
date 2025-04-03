@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
-
+import NextGen from "./pages/services/NextGen/NextGen";
+import BlockChain from "./pages/services/NextGen/BlockChain";
 import Careers from "./pages/Careers";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/next-gen" element={<NextGen />} />
+        <Route path="/next-gen/blockchain" element={<BlockChain />} />
       </Routes>
 
       <Footer />
