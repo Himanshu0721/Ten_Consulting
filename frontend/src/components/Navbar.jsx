@@ -128,22 +128,24 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("service");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300"
           >
             Services
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[16vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
+            className={`transition-all duration-300 ease-in-out ${
               activeDropdown === "service"
-                ? "scale-y-100 opacity-100"
-                : "scale-y-0 opacity-0"
-            }`}
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
-            <ul className="p-4 space-y-2">
+            <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/ai-ml"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   AI and ML
                 </Link>
@@ -166,34 +168,34 @@ const Navbar = () => {
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/data-analytics"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   Data Analytics
                 </Link>
                 <Link
                   to="/data-consulting"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Data Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/data-engineering"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Analytics Services{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/integration"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Integration & API{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/agentic"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Agentic{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -203,20 +205,20 @@ const Navbar = () => {
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/next-gen"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   Next Generation
                 </Link>
                 <Link
                   to="/next-gen/blockchain"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Blockchain{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/metaverse"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Metaverse{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -226,20 +228,20 @@ const Navbar = () => {
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/digital-experience"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   Digital Experience
                 </Link>
                 <Link
                   to="/digital-experience/product-design"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Product Design{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/digital-experience/product-consulting"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Product Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -249,20 +251,20 @@ const Navbar = () => {
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/cloud-engineering"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   Cloud Engineering
                 </Link>
                 <Link
                   to="/cloud-engineering/cloud-consulting"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Cloud Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/cloud-engineering/cloud-migration"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Cloud Migration{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -272,20 +274,20 @@ const Navbar = () => {
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
                 <Link
                   to="/product-engineering"
-                  className="cursor-pointer font-semibold hover:text-gray-700"
+                  className="font-semibold"
                 >
                   Product Engineering
                 </Link>
                 <Link
                   to="/product-engineering/quality-engineer"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Quality Engineer{" "}
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
                   to="/product-engineering/mobile-engineering"
-                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
                 >
                   Mobile Engineering{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -295,7 +297,7 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer">
+          <button className="focus:outline-none cursor-pointer hover:text-gray-300">
             Platform & Product
           </button>
         </li>
@@ -305,51 +307,53 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("industry");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300"
           >
             Industries
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[18vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
               activeDropdown === "industry"
-                ? "scale-y-100 opacity-100"
-                : "scale-y-0 opacity-0"
-            }`}
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
-            <ul className="p-4 space-y-2">
+            <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
                 TEN Education
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Human Resource
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Media
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Art
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Space Search
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Health
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN AI
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Internal Tools
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 TEN Incubation and VC
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
@@ -362,27 +366,29 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("insight");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300"
           >
             Insights
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[10vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
               activeDropdown === "insight"
-                ? "scale-y-100 opacity-100"
-                : "scale-y-0 opacity-0"
-            }`}
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[10vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
             <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Blog
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 News
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 White Paper
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
@@ -390,7 +396,7 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer">Careers</button>
+          <button className="focus:outline-none cursor-pointer hover:text-gray-300">Careers</button>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
@@ -398,31 +404,33 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("about");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300"
           >
             About
           </button>
           <div
-            className={`absolute lg:left-[-60px] lg:w-[11vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
               activeDropdown === "about"
-                ? "scale-y-100 opacity-100"
-                : "scale-y-0 opacity-0"
-            }`}
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[10vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black text-black lg:ml-[-45px]`}
           >
             <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 About Us
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Testimonials
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Privacy Policy
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Contact Us
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
