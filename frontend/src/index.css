@@ -2,3 +2,12 @@
 body{
     overflow-x: hidden;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge ke liye */
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE aur Edge ke liye */
+    scrollbar-width: none; /* Firefox ke liye */
+  }
