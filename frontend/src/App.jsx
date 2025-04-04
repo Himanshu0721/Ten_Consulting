@@ -9,6 +9,7 @@ import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
 import Careers from "./pages/Careers";
+import Metaverse from "./pages/services/NextGen/Metaverse";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
+        <Route path="/next-gen/metaverse" element={<Metaverse />} />
       </Routes>
 
       <Footer />

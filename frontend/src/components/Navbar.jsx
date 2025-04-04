@@ -215,7 +215,7 @@ const Navbar = () => {
                   <span className="hidden group-hover:inline-block">→</span>
                 </Link>
                 <Link
-                  to="/metaverse"
+                  to="/next-gen/metaverse"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
                 >
                   Metaverse{" "}
