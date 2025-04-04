@@ -1,6 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaTimes, FaPaperPlane, FaMobileAlt, FaClipboard, FaCloud, FaArrowLeft } from "react-icons/fa";
+import {
+  FaTimes,
+  FaPaperPlane,
+  FaMobileAlt,
+  FaClipboard,
+  FaCloud,
+  FaArrowLeft,
+  FaBriefcase,
+  FaBullhorn,
+  FaChartLine,
+  FaQuestionCircle,
+} from "react-icons/fa";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +23,12 @@ const Chatbot = () => {
 
   useEffect(() => {
     if (isOpen) {
-      setMessages([{ text: "Hi there! 👋 Welcome! How can I assist you today?", sender: "bot" }]);
+      setMessages([
+        {
+          text: "Hi there! 👋 Welcome to TEN! It's great to have you here. How can I assist you today?",
+          sender: "bot",
+        },
+      ]);
     }
   }, [isOpen]);
 
@@ -40,6 +56,14 @@ const Chatbot = () => {
         botResponse = "We offer Digital Transformation, AI, and ML solutions! 🤖";
       } else if (userMessage.toLowerCase().includes("support")) {
         botResponse = "For support, visit our website or email us at support@company.com. 📩";
+      } else if (userMessage.toLowerCase().includes("careers")) {
+        botResponse = "Explore exciting career opportunities at TEN! 💼 Visit our careers page for more info.";
+      } else if (userMessage.toLowerCase().includes("media partner")) {
+        botResponse = "Become our media partner and amplify your reach! 📢 Contact our PR team for collaborations.";
+      } else if (userMessage.toLowerCase().includes("investor query")) {
+        botResponse = "Get all your investor-related queries resolved here! 📊 Visit our investor relations section.";
+      } else if (userMessage.toLowerCase().includes("general query")) {
+        botResponse = "Got a question? We're here to help! ❓ Reach out to our support team for assistance.";
       }
 
       setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
@@ -131,50 +155,74 @@ const Chatbot = () => {
           </div>
 
           {/* Quick Options */}
-          <div className="p-2 bg-white border-t flex flex-wrap justify-center gap-2">
-            {!hiddenOptions.includes("Mobility") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Tell me about Mobility services", "Mobility")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100"
-              >
-                <FaMobileAlt size={14} /> Mobility
-              </motion.button>
-            )}
-
+          <div className="p-2 bg-white border-t flex flex-col items-center">
             {!hiddenOptions.includes("Services") && (
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleSend("Explore Our Services", "Services")}
                 className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
                            text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100"
+                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
               >
-                <FaClipboard size={14} /> Services
+                <FaMobileAlt size={14} /> Explore Our Services
               </motion.button>
             )}
 
-            {!hiddenOptions.includes("Support") && (
+            {!hiddenOptions.includes("Careers") && (
               <motion.button
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Support", "Support")}
+                onClick={() => handleSend("Explore TEN Careers", "Careers")}
                 className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
                            text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100"
+                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
               >
-                <FaCloud size={14} /> Support
+                <FaBriefcase size={14} /> Explore TEN Careers
               </motion.button>
             )}
 
-            {hiddenOptions.length === 3 && (
+            {!hiddenOptions.includes("MediaPartner") && (
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSend("Become Our Media Partner", "MediaPartner")}
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
+              >
+                <FaBullhorn size={14} /> Become Our Media Partner
+              </motion.button>
+            )}
+
+            {!hiddenOptions.includes("InvestorQuery") && (
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSend("Investor Query", "InvestorQuery")}
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
+              >
+                <FaChartLine size={14} /> Investor Query
+              </motion.button>
+            )}
+
+            {!hiddenOptions.includes("GeneralQuery") && (
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSend("General Query", "GeneralQuery")}
+                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
+                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
+              >
+                <FaQuestionCircle size={14} /> General Query
+              </motion.button>
+            )}
+
+            {hiddenOptions.length === 5 && (
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={handleResetOptions}
                 className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
                            text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100"
+                           transition-all hover:bg-blue-100 w-full justify-center"
               >
                 <FaArrowLeft size={14} /> Main Menu
               </motion.button>
