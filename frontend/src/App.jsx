@@ -12,6 +12,7 @@ import Careers from "./pages/Careers";
 import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/our-services" element={<Services />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
