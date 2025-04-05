@@ -1,10 +1,10 @@
 export const heroData = {
-    backgroundImage: "url('https://media.licdn.com/dms/image/v2/D5612AQFcSoU6-ktZxA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1689941591179?e=2147483647&v=beta&t=jud6mmRAElZXqwQyKfzZTikL9aMRfzJOciZqLFcPfo0')",
+    backgroundImage: "url('https://src.n-ix.com/uploads/2024/06/03/a25fac36-e7b9-4e29-8f29-2d01ab4aa586.webp')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
     ],
-    title: "Our-Services",
+    title: "Our-Offerings",
     description: "Unleashing the future with AI-transforming ideas into reality, driving creativity, and revolutionizing industries.",
 };
 

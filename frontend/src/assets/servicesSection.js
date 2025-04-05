@@ -23,7 +23,7 @@ export const serviceSections = [
       image: "https://plat.ai/wp-content/uploads/dataanalytics.jpg.webp",
     },
     {
-      title: "Next Gen",
+      title: "Next-Gen",
       description:
         "Explore next-gen technologies like IoT and edge computing to enable smarter environments, streamline processes, and enhance automation.",
       links: [
