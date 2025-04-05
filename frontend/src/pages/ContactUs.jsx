@@ -14,6 +14,7 @@ import ContentSection from "../components/ContentSection";
 // import OfferingsSection from "../../../components/OfferingsSection";
 // import JustSection from "../../../components/JustFewSection";
 import FunFactSection from "../components/FunFactSection";
+import ContactForm from "../components/ContactForm";
 // import TransformationSection from "../../../components/LeadingSection";
 // import InsightSection from "../../../components/InsightSection";
 
@@ -24,6 +25,8 @@ const ContactUs = () => {
       <ContentSection contentData={contentData} />
 
       <FunFactSection funFactDetails={funFactDetails} />
+
+      <ContactForm />
       {/* 
 
       <OfferingsSection offerings={offerings} />
