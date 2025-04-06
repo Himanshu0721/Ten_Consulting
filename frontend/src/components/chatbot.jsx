@@ -1,28 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+
 import {
-  FaTimes,
+  FaHome,
   FaPaperPlane,
   FaMobileAlt,
+  FaComments,
   FaArrowLeft,
   FaBriefcase,
   FaBullhorn,
   FaChartLine,
   FaQuestionCircle,
-  FaListUl,
-  FaBolt,
 } from "react-icons/fa";
 
-const predefinedQA = {
-  "What services does TEN offer?": "We offer a wide range of services to help entrepreneurs grow through mentorship, practical classes, and global opportunities.",
-  "How can I join TEN?": "You can join TEN by applying through our official website or attending one of our onboarding webinars.",
-  "What is the mission of TEN?": "TEN aims to empower entrepreneurs with the tools, network, and skills needed to thrive in today’s business world.",
-  "Is there any certificate provided?": "Yes! We provide certificates for all major programs upon successful completion.",
-  "Are your classes practical?": "Absolutely! We focus on hands-on learning, live projects, and real-world case studies.",
-  "Thanks": "You're welcome! 😊 If you have any more questions, feel free to ask.",
-  "Okay": "Got it! Let me know if there's anything else you'd like help with.",
-  "Great": "Awesome! Glad I could help. 🚀 Anything else you're curious about?",
-};
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +20,14 @@ const Chatbot = () => {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [hiddenOptions, setHiddenOptions] = useState([]);
-  const [activeTab, setActiveTab] = useState("faq");
+  const [hasMounted, setHasMounted] = useState(false);
+  const [isLanding, setIsLanding] = useState(true);
+
+  const [isExpanded, setIsExpanded] = useState(true); // Controls chat expansion
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Controls menu dropdown
+  const sentSoundRef = useRef(null);
+  const receivedSoundRef = useRef(null);
+
 
   const messagesEndRef = useRef(null);
 
@@ -38,7 +35,7 @@ const Chatbot = () => {
     if (isOpen) {
       setMessages([
         {
-          text: "👋 Hi there! Welcome to TEN. How can I assist you today?",
+          text: "Hi there! 👋 Welcome to TEN! It's great to have you here. How can I assist you today?",
           sender: "bot",
         },
       ]);
@@ -49,39 +46,50 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null;
+
+
   const handleSend = (message, option) => {
     const userMessage = message || input.trim();
     if (!userMessage) return;
 
     setMessages((prev) => [...prev, { text: userMessage, sender: "user" }]);
+    sentSoundRef.current?.play();
+
     setInput("");
     setIsTyping(true);
 
-    if (option) setHiddenOptions((prev) => [...prev, option]);
+    if (option) {
+      setHiddenOptions((prev) => [...prev, option]);
+    }
 
     setTimeout(() => {
-      let lowerMsg = userMessage.toLowerCase();
-      let botResponse =
-        predefinedQA[userMessage] ||
-        "🤔 I'm not sure how to answer that. Try a different question!";
-
-      if (lowerMsg.includes("mobility")) {
-        botResponse =
-          "📱 Mobility services include app development and cloud-based solutions.";
-      } else if (lowerMsg.includes("careers")) {
-        botResponse = "🚀 Explore exciting career opportunities at TEN!";
-      } else if (lowerMsg.includes("media partner")) {
-        botResponse = "📢 Contact our PR team for media collaborations.";
-      } else if (lowerMsg.includes("investor query")) {
-        botResponse =
-          "📊 Visit our investor section or contact our finance team.";
-      } else if (lowerMsg.includes("general query")) {
-        botResponse =
-          "📩 You can email us at hello@ten.com. We're happy to help!";
+      let botResponse = "I'm not sure how to answer that.";
+      if (userMessage.toLowerCase().includes("mobility")) {
+        botResponse = "Mobility services include app development and cloud-based solutions. 🚀";
+      } else if (userMessage.toLowerCase().includes("services")) {
+        botResponse = "We offer Digital Transformation, AI, and ML solutions! 🤖";
+      } else if (userMessage.toLowerCase().includes("support")) {
+        botResponse = "For support, visit our website or email us at support@company.com. 📩";
+      } else if (userMessage.toLowerCase().includes("careers")) {
+        botResponse = "Explore exciting career opportunities at TEN! 💼 Visit our careers page for more info.";
+      } else if (userMessage.toLowerCase().includes("media partner")) {
+        botResponse = "Become our media partner and amplify your reach! 📢 Contact our PR team for collaborations.";
+      } else if (userMessage.toLowerCase().includes("investor query")) {
+        botResponse = "Get all your investor-related queries resolved here! 📊 Visit our investor relations section.";
+      } else if (userMessage.toLowerCase().includes("general query")) {
+        botResponse = "Got a question? We're here to help! ❓ Reach out to our support team for assistance.";
       }
 
       setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
+      receivedSoundRef.current?.play();
+
       setIsTyping(false);
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 1000);
   };
 
@@ -89,181 +97,334 @@ const Chatbot = () => {
     setHiddenOptions([]);
   };
 
+
+
   return (
-    <div className="font-sans">
+    <div>
+      {/* Show Chatbot Icon Only If Chat is Closed */}
       {!isOpen && (
-        <motion.button
-          whileHover={{ scale: 1.15 }}
-          className="fixed bottom-6 right-6 bg-gradient-to-tr from-orange-400 to-yellow-300 text-white p-3 rounded-full shadow-2xl text-3xl transition-all duration-300 hover:shadow-yellow-500/40"
-          onClick={() => setIsOpen(true)}
+        <div
+          className="fixed bottom-6 right-6 flex items-center group cursor-pointer"
+          onClick={() => {
+            setIsOpen(true);
+            setIsLanding(true); // 👈 Make sure it starts compact
+          }}
         >
-          👩‍💻
-        </motion.button>
+          {/* Tooltip (Appears on Hover) */}
+          <div
+            className="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
+                     transition-all duration-200 bg-white shadow-md rounded-lg 
+                     px-3 py-1 text-xs font-medium text-gray-800 mr-2"
+          >
+            Chat With Us
+          </div>
+
+          {/* Chatbot Icon */}
+          <div
+            className="w-12 h-12 flex items-center justify-center bg-[#D1884F] rounded-full 
+                     shadow-lg relative transition-all duration-200 group-hover:scale-105"
+          >
+            {/* Chat Bubble (Black Square) */}
+            <div className="relative w-5 h-4 bg-black rounded-md flex items-center justify-center">
+              {/* Chat Tail (Small Triangle) */}
+              <div
+                className="absolute -bottom-[3px] left-1/2 transform -translate-x-1/2 
+                         w-2 h-2 bg-black rotate-45"
+              ></div>
+            </div>
+          </div>
+        </div>
       )}
 
+      {/* Chatbot Window */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="fixed bottom-20 right-6 w-80 h-[520px] bg-white/30 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden"
-        >
+          transition={{ duration: 0.3 }}
+          className={`fixed bottom-6 right-6 rounded-2xl overflow-hidden border border-white/10 z-[1000]
+            bg-white/20 backdrop-blur-md shadow-xl flex flex-col transition-all duration-500 ease-in-out
+            ${isLanding ? "w-64 h-[360px]" : "w-[360px] h-[500px]"}
+`}
+                    >
           {/* Header */}
-          <div className="bg-gradient-to-r from-orange-400 to-yellow-300 text-white p-3 flex justify-between items-center rounded-t-3xl">
-            <span className="font-semibold text-sm">TEN Assistant</span>
-            <button onClick={() => setIsOpen(false)}>
-              <FaTimes size={16} />
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-grow overflow-y-auto p-3 space-y-2 custom-scrollbar">
-            {messages.map((msg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: msg.sender === "bot" ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.2 }}
-                className={`p-2 text-xs rounded-lg max-w-[75%] ${
-                  msg.sender === "bot"
-                    ? "bg-white text-gray-800 shadow-sm"
-                    : "bg-orange-400 text-white ml-auto"
-                }`}
+          {/* Dropdown Menu (Shown when clicking three dots) */}
+          {isMenuOpen && (
+            <div className="absolute top-12 right-3 bg-white shadow-lg rounded-md p-1 text-xs z-50 border border-gray-300 w-36">
+              {/* Turn Off Notifications */}
+              <p
+                className="cursor-pointer hover:bg-gray-100 px-2 py-1 text-black font-medium rounded-md flex items-center gap-1"
+                onClick={() => {
+                  alert("Notifications turned off");
+                  setIsMenuOpen(false); // 👈 Hides the menu
+                }}
+                
+                style={{ fontFamily: "'Times New Roman', serif", whiteSpace: "nowrap" }} // Times New Roman + Single Line
               >
-                {msg.text}
-              </motion.div>
-            ))}
-            {isTyping && (
-              <motion.div
-                className="text-xs text-gray-500 italic"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                Typing...
-              </motion.div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* TAB SWITCH */}
-          <div className="flex gap-1 bg-white/50 border-t px-2 py-2">
-            <button
-              onClick={() => setActiveTab("faq")}
-              className={`flex-1 py-1 text-xs rounded-full ${
-                activeTab === "faq"
-                  ? "bg-orange-400 text-white"
-                  : "bg-white text-gray-600"
-              } flex items-center justify-center gap-2`}
-            >
-              <FaListUl /> FAQs
-            </button>
-            <button
-              onClick={() => setActiveTab("quick")}
-              className={`flex-1 py-1 text-xs rounded-full ${
-                activeTab === "quick"
-                  ? "bg-orange-400 text-white"
-                  : "bg-white text-gray-600"
-              } flex items-center justify-center gap-2`}
-            >
-              <FaBolt /> Quick Options
-            </button>
-          </div>
-
-          {/* FAQ or QUICK OPTIONS */}
-          {activeTab === "faq" ? (
-            <div className="p-2 bg-white/50 space-y-1 max-h-32 overflow-y-auto text-gray-800 border-t">
-              {Object.entries(predefinedQA).map(([question], idx) => (
-                <motion.button
-                  key={idx}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => handleSend(question)}
-                  className="w-full text-left text-xs px-3 py-1 rounded-md bg-white hover:bg-gray-100 font-medium shadow-sm"
-                >
-                  {question}
-                </motion.button>
-              ))}
-            </div>
-          ) : (
-            <div className="p-2 bg-white/50 space-y-1 border-t">
-              {!hiddenOptions.includes("Services") && (
-                <ChatOption
-                  label="Explore Our Services"
-                  icon={<FaMobileAlt />}
-                  onClick={() => handleSend("Explore Our Services", "Services")}
-                />
-              )}
-              {!hiddenOptions.includes("Careers") && (
-                <ChatOption
-                  label="Explore TEN Careers"
-                  icon={<FaBriefcase />}
-                  onClick={() => handleSend("Explore TEN Careers", "Careers")}
-                />
-              )}
-              {!hiddenOptions.includes("Media") && (
-                <ChatOption
-                  label="Become Our Media Partner"
-                  icon={<FaBullhorn />}
-                  onClick={() =>
-                    handleSend("Become Our Media Partner", "Media")
-                  }
-                />
-              )}
-              {!hiddenOptions.includes("Investor") && (
-                <ChatOption
-                  label="Investor Query"
-                  icon={<FaChartLine />}
-                  onClick={() => handleSend("Investor Query", "Investor")}
-                />
-              )}
-              {!hiddenOptions.includes("General") && (
-                <ChatOption
-                  label="General Query"
-                  icon={<FaQuestionCircle />}
-                  onClick={() => handleSend("General Query", "General")}
-                />
-              )}
-              {hiddenOptions.length >= 5 && (
-                <ChatOption
-                  label="Main Menu"
-                  icon={<FaArrowLeft />}
-                  onClick={handleResetOptions}
-                />
-              )}
+                <span className="text-sm"></span> Turn off notifications
+              </p>
             </div>
           )}
+          {/* Menu Icon (Vertical Dots) & Dropdown Arrow */}
+          <div className="bg-[#D1884F] text-white p-3 flex justify-between items-center w-full rounded-t-none relative">
+            <span className="font-semibold text-sm">Assistant</span>
 
-          {/* Input */}
-          <div className="p-2 border-t bg-white/60 backdrop-blur-md flex items-center gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Type your message..."
-              className="flex-grow px-3 py-2 text-gray-800 rounded-full text-xs border border-gray-300 focus:outline-none"
-            />
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              className="bg-orange-400 text-white p-2 rounded-full shadow-md hover:bg-orange-500"
-              onClick={() => handleSend()}
-            >
-              <FaPaperPlane size={14} />
-            </motion.button>
+            {/* Menu Icon (Three Dots & Dropdown) */}
+            <div className="absolute top-3 right-3 flex items-center space-x-4 cursor-pointer">
+              {/* Three Vertical Dots (Opens Menu) */}
+              <div
+                className="flex flex-col items-center space-y-[2px]"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <span className="w-1 h-1 bg-black rounded-full"></span>
+                <span className="w-1 h-1 bg-black rounded-full"></span>
+                <span className="w-1 h-1 bg-black rounded-full"></span>
+              </div>
+
+              {/* Dropdown Arrow (Expands/Collapses Chat) */}
+              <span
+                className={`w-2.5 h-2.5 border-black border-b-[1.5px] border-r-[1.5px] transform ${isExpanded ? "rotate-45" : "-rotate-135"
+                  }`}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsMenuOpen(false); // 👈 Hide the menu too
+                  }}
+              ></span>
+            </div>
+
           </div>
+          
+          {isLanding ? (
+            // WELCOME SCREEN CONTENT
+            <div className="flex flex-col h-full justify-between bg-white/20 backdrop-blur-md backdrop-saturate-150">
+              {/* Orange Top Section */}
+              <div className="bg-orange-400/50 backdrop-blur-md p-4 text-white flex flex-col items-start gap-2">
+              <div className="flex items-center gap-3 bg-white/80 px-3 py-2 rounded-full shadow">
+  <div className="w-6 h-6 rounded-full bg-black text-white font-bold text-sm flex items-center justify-center">
+    ∞
+  </div>
+  <span className="text-sm font-semibold text-black">TEN</span>
+</div>
+
+                <p className="text-sm">Welcome to TEN 😊</p>
+              </div>
+
+              {/* Chat With Us Button */}
+              <div className="p-4 flex justify-center">
+                <button
+                  onClick={() => {
+                    setIsLanding(false);
+                    if (messages.length === 0) {
+                      setMessages([
+                        {
+                          text: "Hi there! 👋 Welcome to TEN! It's great to have you here. How can I assist you today?",
+                          sender: "bot",
+                        },
+                      ]);
+                    }
+                  }}
+                   // Switches to chat view
+               className="bg-white border border-white rounded-xl shadow px-4 py-3 text-sm w-full flex justify-between items-center hover:bg-gray-100 text-black"
+                  >
+                  Chat with us
+                  <span className="text-blue-500">
+                    <FaPaperPlane />
+                  </span>
+                </button>
+              </div>
+
+              {/* Footer */}
+              <div className="text-center text-xs text-gray-500 py-2 border-t">
+                Powered by YOU 😊
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Chat Area */}
+              <div className="flex-grow overflow-y-auto p-3 bg-white/10 backdrop-blur-md shadow-inner space-y-2">
+
+
+
+              {messages.map((msg, index) => (
+  <div
+    key={index}
+    className={`flex ${msg.sender === "bot" ? "justify-start" : "justify-end"}`}
+  >
+    <motion.div
+      initial={{ opacity: 0, x: msg.sender === "bot" ? -30 : 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.2 }}
+      className={`p-2 text-[12px] rounded-lg shadow-md max-w-[75%] ${
+        msg.sender === "bot"
+          ? "bg-white text-gray-800"
+          : "bg-[#D1884F] text-white"
+      }`}
+    >
+      {msg.text}
+    </motion.div>
+  </div>
+))}
+
+{isTyping && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="text-gray-500 text-xs italic flex gap-1 items-center"
+  >
+    <span className="animate-bounce">•</span>
+    <span className="animate-bounce delay-100">•</span>
+    <span className="animate-bounce delay-200">•</span>
+  </motion.div>
+)}
+
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Quick Options */}
+              <div className="p-2 bg-white/10 backdrop-blur-md border-t flex flex-col items-center">
+              {!hiddenOptions.includes("Services") && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleSend("Explore Our Services", "Services")}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+
+                  >
+                    <FaMobileAlt size={14} /> Explore Our Services
+                  </motion.button>
+                )}
+
+                {!hiddenOptions.includes("Careers") && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleSend("Explore TEN Careers", "Careers")}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+                  >
+                    <FaBriefcase size={14} /> Explore TEN Careers
+                  </motion.button>
+                )}
+
+                {!hiddenOptions.includes("MediaPartner") && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleSend("Become Our Media Partner", "MediaPartner")}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+
+                  >
+                    <FaBullhorn size={14} /> Become Our Media Partner
+                  </motion.button>
+                )}
+
+                {!hiddenOptions.includes("InvestorQuery") && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleSend("Investor Query", "InvestorQuery")}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+
+                  >
+                    <FaChartLine size={14} /> Investor Query
+                  </motion.button>
+                )}
+
+                {!hiddenOptions.includes("GeneralQuery") && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleSend("General Query", "GeneralQuery")}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+
+                  >
+                    <FaQuestionCircle size={14} /> General Query
+                  </motion.button>
+                )}
+
+                {hiddenOptions.length === 5 && (
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleResetOptions}
+                    className="self-end flex items-center gap-2 px-4 py-1 text-xs font-medium 
+                text-blue-500 border border-blue-500 rounded-full transition-all 
+                hover:bg-blue-100 hover:underline decoration-[0.5px] mb-2 justify-end text-right"
+
+                  >
+                    <FaArrowLeft size={14} /> Main Menu
+                  </motion.button>
+                )}
+              </div>
+              {/* Input Area */}
+              
+              {!isLanding && (
+                <div className="p-2 border-t bg-white/10 backdrop-blur-md flex items-center">
+                <input
+                   type="text"
+                   className="self-end flex-grow p-2 text-xs border border-gray-300 rounded-full 
+              focus:outline-none focus:ring-2 focus:ring-[#D1884F] shadow-sm text-black"
+                   placeholder="Type a message..."
+                   value={input}
+                   onChange={(e) => setInput(e.target.value)}
+                   onKeyPress={(e) => e.key === "Enter" && handleSend()}
+                 />
+ 
+                 <motion.button
+                   whileTap={{ scale: 0.95 }}
+                   className="bg-[#D1884F] text-white px-3 py-2 ml-2 rounded-full hover:bg-[#B16D3A] transition-all shadow-md"
+                   onClick={() => handleSend()}
+                 >
+                   <FaPaperPlane />
+                 </motion.button>
+               </div>
+               )}
+             </>
+           )}
+ 
+
+
+             
+
+          {/* Bottom Icon Bar */}
+          <div  className="flex justify-around py-2 border-t bg-white z-10">
+
+            <div
+              onClick={() => {
+                setIsLanding(true);
+              }}
+              className="flex flex-col items-center text-blue-600 cursor-pointer hover:text-black transition"
+            >
+              <FaHome className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </div>
+            <div
+              onClick={() => {
+                setIsOpen(true);
+                setIsLanding(false);
+              }}
+              className="flex flex-col items-center text-gray-600 cursor-pointer hover:text-black transition"
+            >
+              <FaComments className="w-5 h-5" />
+              <span className="text-xs">Chat</span>
+            </div>
+          </div>
+          <audio ref={sentSoundRef} src="/sent.mp3" preload="auto" />
+<audio ref={receivedSoundRef} src="/received.mp3" preload="auto" />
         </motion.div>
+
       )}
+      
+
     </div>
   );
 };
 
-const ChatOption = ({ label, icon, onClick }) => (
-  <motion.button
-    whileTap={{ scale: 0.95 }}
-    onClick={onClick}
-    className="flex items-center justify-center gap-2 px-3 py-1 text-xs font-medium text-gray-700 bg-white rounded-full shadow hover:bg-gray-100 w-full"
-  >
-    {icon} {label}
-  </motion.button>
-);
+export default Chatbot;  
 
-export default Chatbot;
+ 
+ 
+
