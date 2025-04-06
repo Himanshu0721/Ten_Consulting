@@ -9,12 +9,15 @@ import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
 import Careers from "./pages/Careers";
-import Metaverse from "./pages/services/NextGen/Metaverse";
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
 import AnalyticsService from "./pages/services/Data-Analytics/AnalyticsService";
 import IntegrationApi from "./pages/services/Data-Analytics/IntegrationApi";
+import Metaverse from "./pages/services/NextGen/Metaverse";
+import Services from "./pages/services/Services";
+import ContactUs from "./pages/ContactUs";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
