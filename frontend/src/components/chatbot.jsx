@@ -4,14 +4,25 @@ import {
   FaTimes,
   FaPaperPlane,
   FaMobileAlt,
-  FaClipboard,
-  FaCloud,
   FaArrowLeft,
   FaBriefcase,
   FaBullhorn,
   FaChartLine,
   FaQuestionCircle,
+  FaListUl,
+  FaBolt,
 } from "react-icons/fa";
+
+const predefinedQA = {
+  "What services does TEN offer?": "We offer a wide range of services to help entrepreneurs grow through mentorship, practical classes, and global opportunities.",
+  "How can I join TEN?": "You can join TEN by applying through our official website or attending one of our onboarding webinars.",
+  "What is the mission of TEN?": "TEN aims to empower entrepreneurs with the tools, network, and skills needed to thrive in today’s business world.",
+  "Is there any certificate provided?": "Yes! We provide certificates for all major programs upon successful completion.",
+  "Are your classes practical?": "Absolutely! We focus on hands-on learning, live projects, and real-world case studies.",
+  "Thanks": "You're welcome! 😊 If you have any more questions, feel free to ask.",
+  "Okay": "Got it! Let me know if there's anything else you'd like help with.",
+  "Great": "Awesome! Glad I could help. 🚀 Anything else you're curious about?",
+};
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,13 +30,15 @@ const Chatbot = () => {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [hiddenOptions, setHiddenOptions] = useState([]);
+  const [activeTab, setActiveTab] = useState("faq");
+
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
       setMessages([
         {
-          text: "Hi there! 👋 Welcome to TEN! It's great to have you here. How can I assist you today?",
+          text: "👋 Hi there! Welcome to TEN. How can I assist you today?",
           sender: "bot",
         },
       ]);
@@ -44,31 +57,31 @@ const Chatbot = () => {
     setInput("");
     setIsTyping(true);
 
-    if (option) {
-      setHiddenOptions((prev) => [...prev, option]);
-    }
+    if (option) setHiddenOptions((prev) => [...prev, option]);
 
     setTimeout(() => {
-      let botResponse = "I'm not sure how to answer that.";
-      if (userMessage.toLowerCase().includes("mobility")) {
-        botResponse = "Mobility services include app development and cloud-based solutions. 🚀";
-      } else if (userMessage.toLowerCase().includes("services")) {
-        botResponse = "We offer Digital Transformation, AI, and ML solutions! 🤖";
-      } else if (userMessage.toLowerCase().includes("support")) {
-        botResponse = "For support, visit our website or email us at support@company.com. 📩";
-      } else if (userMessage.toLowerCase().includes("careers")) {
-        botResponse = "Explore exciting career opportunities at TEN! 💼 Visit our careers page for more info.";
-      } else if (userMessage.toLowerCase().includes("media partner")) {
-        botResponse = "Become our media partner and amplify your reach! 📢 Contact our PR team for collaborations.";
-      } else if (userMessage.toLowerCase().includes("investor query")) {
-        botResponse = "Get all your investor-related queries resolved here! 📊 Visit our investor relations section.";
-      } else if (userMessage.toLowerCase().includes("general query")) {
-        botResponse = "Got a question? We're here to help! ❓ Reach out to our support team for assistance.";
+      let lowerMsg = userMessage.toLowerCase();
+      let botResponse =
+        predefinedQA[userMessage] ||
+        "🤔 I'm not sure how to answer that. Try a different question!";
+
+      if (lowerMsg.includes("mobility")) {
+        botResponse =
+          "📱 Mobility services include app development and cloud-based solutions.";
+      } else if (lowerMsg.includes("careers")) {
+        botResponse = "🚀 Explore exciting career opportunities at TEN!";
+      } else if (lowerMsg.includes("media partner")) {
+        botResponse = "📢 Contact our PR team for media collaborations.";
+      } else if (lowerMsg.includes("investor query")) {
+        botResponse =
+          "📊 Visit our investor section or contact our finance team.";
+      } else if (lowerMsg.includes("general query")) {
+        botResponse =
+          "📩 You can email us at hello@ten.com. We're happy to help!";
       }
 
       setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
       setIsTyping(false);
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 1000);
   };
 
@@ -77,175 +90,164 @@ const Chatbot = () => {
   };
 
   return (
-    <div>
-      {/* Show Chatbot Icon Only If Chat is Closed */}
+    <div className="font-sans">
       {!isOpen && (
-        <div
-          className="fixed bottom-6 right-6 flex items-center group cursor-pointer"
+        <motion.button
+          whileHover={{ scale: 1.15 }}
+          className="fixed bottom-6 right-6 bg-gradient-to-tr from-orange-400 to-yellow-300 text-white p-3 rounded-full shadow-2xl text-3xl transition-all duration-300 hover:shadow-yellow-500/40"
           onClick={() => setIsOpen(true)}
         >
-          {/* Tooltip (Appears on Hover) */}
-          <div
-            className="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-                     transition-all duration-200 bg-white shadow-md rounded-lg 
-                     px-3 py-1 text-xs font-medium text-gray-800 mr-2"
-          >
-            Chat With Us
-          </div>
-
-          {/* Chatbot Icon */}
-          <div
-            className="w-12 h-12 flex items-center justify-center bg-[#D1884F] rounded-full 
-                     shadow-lg relative transition-all duration-200 group-hover:scale-105"
-          >
-            {/* Chat Bubble (Black Square) */}
-            <div className="relative w-5 h-4 bg-black rounded-md flex items-center justify-center">
-              {/* Chat Tail (Small Triangle) */}
-              <div
-                className="absolute -bottom-[3px] left-1/2 transform -translate-x-1/2 
-                         w-2 h-2 bg-black rotate-45"
-              ></div>
-            </div>
-          </div>
-        </div>
+          👩‍💻
+        </motion.button>
       )}
 
-      {/* Chatbot Window */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-16 right-6 w-80 h-[500px] bg-white shadow-xl border border-gray-200 rounded-2xl flex flex-col"
+          transition={{ duration: 0.4 }}
+          className="fixed bottom-20 right-6 w-80 h-[520px] bg-white/30 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden"
         >
           {/* Header */}
-          <div className="bg-[#D1884F] text-white p-3 flex justify-between items-center rounded-t-2xl">
-            <span className="font-semibold text-sm">Assistant</span>
-            <button
-              onClick={() => setIsOpen(false)} // Close chat on click
-              className="p-2 rounded-full hover:bg-gray-200 transition-all"
-            >
-              <FaTimes size={18} className="text-gray-600" />
+          <div className="bg-gradient-to-r from-orange-400 to-yellow-300 text-white p-3 flex justify-between items-center rounded-t-3xl">
+            <span className="font-semibold text-sm">TEN Assistant</span>
+            <button onClick={() => setIsOpen(false)}>
+              <FaTimes size={16} />
             </button>
           </div>
 
-          {/* Chat Area */}
-          <div className="flex-grow overflow-y-auto p-3 bg-gray-100 space-y-2">
-            {messages.map((msg, index) => (
+          {/* Messages */}
+          <div className="flex-grow overflow-y-auto p-3 space-y-2 custom-scrollbar">
+            {messages.map((msg, i) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, x: msg.sender === "bot" ? -30 : 30 }}
+                key={i}
+                initial={{ opacity: 0, x: msg.sender === "bot" ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2 }}
-                className={`p-2 text-xs rounded-lg shadow-md max-w-[75%] ${
+                className={`p-2 text-xs rounded-lg max-w-[75%] ${
                   msg.sender === "bot"
-                    ? "bg-gray-300 text-gray-800 self-start"
-                    : "bg-[#D1884F] text-white ml-auto"
+                    ? "bg-white text-gray-800 shadow-sm"
+                    : "bg-orange-400 text-white ml-auto"
                 }`}
               >
                 {msg.text}
               </motion.div>
             ))}
             {isTyping && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gray-500 text-xs italic">
-                ...
+              <motion.div
+                className="text-xs text-gray-500 italic"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                Typing...
               </motion.div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Options */}
-          <div className="p-2 bg-white border-t flex flex-col items-center">
-            {!hiddenOptions.includes("Services") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Explore Our Services", "Services")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
-              >
-                <FaMobileAlt size={14} /> Explore Our Services
-              </motion.button>
-            )}
-
-            {!hiddenOptions.includes("Careers") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Explore TEN Careers", "Careers")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
-              >
-                <FaBriefcase size={14} /> Explore TEN Careers
-              </motion.button>
-            )}
-
-            {!hiddenOptions.includes("MediaPartner") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Become Our Media Partner", "MediaPartner")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
-              >
-                <FaBullhorn size={14} /> Become Our Media Partner
-              </motion.button>
-            )}
-
-            {!hiddenOptions.includes("InvestorQuery") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("Investor Query", "InvestorQuery")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
-              >
-                <FaChartLine size={14} /> Investor Query
-              </motion.button>
-            )}
-
-            {!hiddenOptions.includes("GeneralQuery") && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleSend("General Query", "GeneralQuery")}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 mb-2 w-full justify-center"
-              >
-                <FaQuestionCircle size={14} /> General Query
-              </motion.button>
-            )}
-
-            {hiddenOptions.length === 5 && (
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                onClick={handleResetOptions}
-                className="flex items-center gap-2 px-4 py-1 text-xs font-medium 
-                           text-blue-500 border-[0.5px] border-blue-400 rounded-full 
-                           transition-all hover:bg-blue-100 w-full justify-center"
-              >
-                <FaArrowLeft size={14} /> Main Menu
-              </motion.button>
-            )}
+          {/* TAB SWITCH */}
+          <div className="flex gap-1 bg-white/50 border-t px-2 py-2">
+            <button
+              onClick={() => setActiveTab("faq")}
+              className={`flex-1 py-1 text-xs rounded-full ${
+                activeTab === "faq"
+                  ? "bg-orange-400 text-white"
+                  : "bg-white text-gray-600"
+              } flex items-center justify-center gap-2`}
+            >
+              <FaListUl /> FAQs
+            </button>
+            <button
+              onClick={() => setActiveTab("quick")}
+              className={`flex-1 py-1 text-xs rounded-full ${
+                activeTab === "quick"
+                  ? "bg-orange-400 text-white"
+                  : "bg-white text-gray-600"
+              } flex items-center justify-center gap-2`}
+            >
+              <FaBolt /> Quick Options
+            </button>
           </div>
 
-          {/* Input Area */}
-          <div className="p-2 border-t bg-white flex items-center">
+          {/* FAQ or QUICK OPTIONS */}
+          {activeTab === "faq" ? (
+            <div className="p-2 bg-white/50 space-y-1 max-h-32 overflow-y-auto text-gray-800 border-t">
+              {Object.entries(predefinedQA).map(([question], idx) => (
+                <motion.button
+                  key={idx}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleSend(question)}
+                  className="w-full text-left text-xs px-3 py-1 rounded-md bg-white hover:bg-gray-100 font-medium shadow-sm"
+                >
+                  {question}
+                </motion.button>
+              ))}
+            </div>
+          ) : (
+            <div className="p-2 bg-white/50 space-y-1 border-t">
+              {!hiddenOptions.includes("Services") && (
+                <ChatOption
+                  label="Explore Our Services"
+                  icon={<FaMobileAlt />}
+                  onClick={() => handleSend("Explore Our Services", "Services")}
+                />
+              )}
+              {!hiddenOptions.includes("Careers") && (
+                <ChatOption
+                  label="Explore TEN Careers"
+                  icon={<FaBriefcase />}
+                  onClick={() => handleSend("Explore TEN Careers", "Careers")}
+                />
+              )}
+              {!hiddenOptions.includes("Media") && (
+                <ChatOption
+                  label="Become Our Media Partner"
+                  icon={<FaBullhorn />}
+                  onClick={() =>
+                    handleSend("Become Our Media Partner", "Media")
+                  }
+                />
+              )}
+              {!hiddenOptions.includes("Investor") && (
+                <ChatOption
+                  label="Investor Query"
+                  icon={<FaChartLine />}
+                  onClick={() => handleSend("Investor Query", "Investor")}
+                />
+              )}
+              {!hiddenOptions.includes("General") && (
+                <ChatOption
+                  label="General Query"
+                  icon={<FaQuestionCircle />}
+                  onClick={() => handleSend("General Query", "General")}
+                />
+              )}
+              {hiddenOptions.length >= 5 && (
+                <ChatOption
+                  label="Main Menu"
+                  icon={<FaArrowLeft />}
+                  onClick={handleResetOptions}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Input */}
+          <div className="p-2 border-t bg-white/60 backdrop-blur-md flex items-center gap-2">
             <input
               type="text"
-              className="flex-grow p-2 text-xs border border-gray-300 rounded-full 
-                         focus:outline-none focus:ring-2 focus:ring-[#D1884F] shadow-sm"
-              placeholder="Type a message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
+              placeholder="Type your message..."
+              className="flex-grow px-3 py-2 text-gray-800 rounded-full text-xs border border-gray-300 focus:outline-none"
             />
             <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#D1884F] text-white px-3 py-2 ml-2 rounded-full hover:bg-[#B16D3A] transition-all shadow-md"
+              whileTap={{ scale: 0.9 }}
+              className="bg-orange-400 text-white p-2 rounded-full shadow-md hover:bg-orange-500"
               onClick={() => handleSend()}
             >
-              <FaPaperPlane />
+              <FaPaperPlane size={14} />
             </motion.button>
           </div>
         </motion.div>
@@ -253,5 +255,15 @@ const Chatbot = () => {
     </div>
   );
 };
+
+const ChatOption = ({ label, icon, onClick }) => (
+  <motion.button
+    whileTap={{ scale: 0.95 }}
+    onClick={onClick}
+    className="flex items-center justify-center gap-2 px-3 py-1 text-xs font-medium text-gray-700 bg-white rounded-full shadow hover:bg-gray-100 w-full"
+  >
+    {icon} {label}
+  </motion.button>
+);
 
 export default Chatbot;

@@ -22,6 +22,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/our-services" element={<Services />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/data-analytics" element={<DataAnalytics/>}/>
         <Route path="/data-analytics/data-consulting" element={<DataConsulting/>} />
