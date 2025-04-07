@@ -368,11 +368,6 @@ const Chatbot = () => {
               )}
             </>
           )}
-
-
-
-
-
           {/* Bottom Icon Bar */}
           <div className="flex justify-around py-2 border-t bg-white z-10">
 
@@ -396,8 +391,8 @@ const Chatbot = () => {
               <span className="text-sm">Chat</span>
             </div>
           </div>
-          <audio ref={sentSoundRef} src="/sent.mp3" preload="auto" />
-          <audio ref={receivedSoundRef} src="/received.mp3" preload="auto" />
+          <audio ref={sentSoundRef} src="/sounds/send.mp3" preload="auto" />
+           <audio ref={receivedSoundRef} src="/sounds/received.mp3" preload="auto" />
         </motion.div>
 
       )}

@@ -36,6 +36,7 @@ body{
 body {
   overflow-x: hidden;
 }
+}
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge ke liye */
@@ -60,3 +61,4 @@ body {
     /* the warning/message 'Unknown at rule @apply' may appear, its not an error and actually it works. */
   }
 }
+
