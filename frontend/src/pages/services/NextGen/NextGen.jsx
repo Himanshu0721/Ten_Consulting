@@ -2,34 +2,30 @@ import React from "react";
 import {
     heroData,
     contentData,
-    // offerings,
     justSectionDetails,
     funFactDetails,
     transformationData,
     insightsData,
-} from "../../../assets/aiMl";
+} from "../../../assets/nexGen";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
-// import OfferingsSection from "../../../components/OfferingsSection";
 import JustSection from "../../../components/JustFewSection";
 import FunFactSection from "../../../components/FunFactSection";
 import TransformationSection from "../../../components/LeadingSection";
 import InsightSection from "../../../components/InsightSection";
 import AiMlContent from "../../../components/AiMlContent";
-import AiMlSolutions from "../../../components/AiMlSolutions";
+import NextSolutions from "../../../components/NextSolutions";
 
-const AiMl = () => {
+const NextGen = () => {
     return (
     <div>
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />
 
-        {/* <OfferingsSection offerings={offerings} /> */}
-
         <AiMlContent />
 
-        <AiMlSolutions />
+        <NextSolutions />
 
         <JustSection justSectionDetails={justSectionDetails} />
 
@@ -42,4 +38,4 @@ const AiMl = () => {
     );
 };
 
-export default AiMl;
+export default NextGen;

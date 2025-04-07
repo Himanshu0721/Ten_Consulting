@@ -7,7 +7,7 @@ import {
     funFactDetails,
     transformationData,
     insightsData,
-} from "../../../assets/aiMl";
+} from "../../../assets/dataAnalytics";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
 // import OfferingsSection from "../../../components/OfferingsSection";
@@ -18,7 +18,7 @@ import InsightSection from "../../../components/InsightSection";
 import AiMlContent from "../../../components/AiMlContent";
 import AiMlSolutions from "../../../components/AiMlSolutions";
 
-const AiMl = () => {
+const DataAnalytics = () => {
     return (
     <div>
         <HeroSection heroData={heroData} />
@@ -29,7 +29,7 @@ const AiMl = () => {
 
         <AiMlContent />
 
-        <AiMlSolutions />
+        {/* <AiMlSolutions /> */}
 
         <JustSection justSectionDetails={justSectionDetails} />
 
@@ -42,4 +42,4 @@ const AiMl = () => {
     );
 };
 
-export default AiMl;
+export default DataAnalytics;

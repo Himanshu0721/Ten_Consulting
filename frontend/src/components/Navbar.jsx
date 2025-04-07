@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -127,92 +128,173 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("service");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
           >
             Services
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[16vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${activeDropdown === "service" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-              }`}
+            className={`transition-all duration-300 ease-in-out ${
+              activeDropdown === "service"
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
-            <ul className="p-4 space-y-2">
+            <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                AI and ML
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Generative AI
+                <Link
+                  to="/ai-ml"
+                  className="font-semibold"
+                >
+                  AI and ML
+                </Link>
+                <Link
+                  to="/ai-ml/generative-ai"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Generative AI{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Science
+                </Link>
+                <Link
+                  to="/ai-ml/data-science"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Data Science{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Machine Learning
-                  <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Data Analytics
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Consulting
+                <Link
+                  to="/data-analytics"
+                  className="font-semibold"
+                >
+                  Data Analytics
+                </Link>
+                <Link
+                  to="/data-analytics/data-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Data Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Data Engineering
+                </Link>
+                <Link
+                  to="/data-analytics/analyticService"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Analytics Services{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
+                <Link
+                  to="/data-analytics/integration-api"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Integration & API{" "}
+                  <span className="hidden group-hover:inline-block">→</span>
+                </Link>
+                <Link
+                  to="/data-analytics/agentic"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Agentic{" "}
+                  <span className="hidden group-hover:inline-block">→</span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Next Generation
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Block Chain
+                <Link
+                  to="/next-gen"
+                  className="font-semibold"
+                >
+                  Next Generation
+                </Link>
+                <Link
+                  to="/next-gen/blockchain"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Blockchain{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Metaverse
+                </Link>
+                <Link
+                  to="/next-gen/metaverse"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                >
+                  Metaverse{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Digital Experience
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Product Design
+                <Link
+                  to="/digital-experience"
+                  className="font-semibold"
+                >
+                  Digital Experience
+                </Link>
+                <Link
+                  to="/digital-experience/product-design"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Product Design{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Product Consulting
+                </Link>
+                <Link
+                  to="/digital-experience/product-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Product Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Cloud Engineering
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Cloud Consulting
+                <Link
+                  to="/cloud-engineering"
+                  className="font-semibold"
+                >
+                  Cloud Engineering
+                </Link>
+                <Link
+                  to="/cloud-engineering/cloud-consulting"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Cloud Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Cloud Migration
+                </Link>
+                <Link
+                  to="/cloud-engineering/cloud-migration"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Cloud Migration{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
+
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                Product Engineering
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Quality Engineer
+                <Link
+                  to="/product-engineering"
+                  className="font-semibold"
+                >
+                  Product Engineering
+                </Link>
+                <Link
+                  to="/product-engineering/quality-engineer"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Quality Engineer{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
-                <span className="ml-5 cursor-pointer text-sm hover:text-gray-700 group">
-                  Mobile Engineering
+                </Link>
+                <Link
+                  to="/product-engineering/mobile-engineering"
+                  className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                >
+                  Mobile Engineering{" "}
                   <span className="hidden group-hover:inline-block">→</span>
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
-        </li>
-        <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer">
-            Platform & Product
-          </button>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
@@ -220,51 +302,56 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("industry");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
           >
             Industries
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[18vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${activeDropdown === "industry" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-              }`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              activeDropdown === "industry"
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
-            <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+            <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group" href="https://education.entrepreneurshipnetwork.net/" target="_blank">
                 TEN Education
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-human-resources.vercel.app/">
                 TEN Human Resource
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-media-rosy.vercel.app/">
                 TEN Media
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://art-industry.vercel.app/">
                 TEN Art
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://space-industry-five.vercel.app/">
                 TEN Space Search
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-healthcare-industry.vercel.app/">
                 TEN Health
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-ai-industry.vercel.app/">
                 TEN AI
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-internal-tools.vercel.app/">
                 TEN Internal Tools
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              </a>
+              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://incubation-vc.vercel.app/">
                 TEN Incubation and VC
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
+              </a>
             </ul>
           </div>
         </li>
@@ -274,24 +361,29 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("insight");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
           >
             Insights
           </button>
           <div
-            className={`absolute left-0 w-full lg:w-[10vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${activeDropdown === "insight" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-              }`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              activeDropdown === "insight"
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[10vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
             <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Blog
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 News
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 White Paper
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
@@ -299,7 +391,7 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer">Careers</button>
+          <button className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline">Careers</button>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
@@ -307,28 +399,33 @@ const Navbar = () => {
               e.stopPropagation();
               handleDropdown("about");
             }}
-            className="focus:outline-none cursor-pointer"
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
           >
             About
           </button>
           <div
-            className={`absolute lg:left-[-60px] lg:w-[11vw] bg-white shadow-md mt-5 text-black transition-all transform origin-top ${activeDropdown === "about" ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-              }`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              activeDropdown === "about"
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            } ${
+              menuOpen ? "relative" : "absolute"
+            } bg-gray-700 lg:bg-white w-full lg:w-[10vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black text-black lg:ml-[-45px]`}
           >
             <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 About Us
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Testimonials
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Privacy Policy
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group">
+              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Contact Us
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
