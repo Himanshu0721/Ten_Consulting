@@ -1,8 +1,42 @@
 @import "tailwindcss";
+body{
+    overflow-x: hidden;
+}
+
+
+/* Some essential CSS for the Case_Studies section in the Home Components */
+
+.perspective {
+  perspective: 1000px;
+}
+
+.card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.group:hover .card-3d {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.card-back {
+  transform: rotateY(180deg);
 body {
   overflow-x: hidden;
 }
-
+}
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge ke liye */
 }

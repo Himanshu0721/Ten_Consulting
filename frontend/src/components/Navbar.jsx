@@ -106,7 +106,9 @@ const Navbar = () => {
           </g>
         </svg>
         <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">
-          Ten Consulting
+          <a href="/">
+            Ten Consulting
+          </a>
         </h1>
       </div>
 
@@ -116,9 +118,8 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-gray-800 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
-          menuOpen ? "block" : "hidden"
-        }`}
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex  bg-slate-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
+          }`}
       >
         <li className="py-2 lg:py-0 relative">
           <button
