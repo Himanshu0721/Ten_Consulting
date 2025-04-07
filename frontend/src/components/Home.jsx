@@ -3,7 +3,7 @@ import homeImage from "../assets/bronze banner.webp";
 function Home() {
   return (
     <div className="w-full h-screen">
-    <img src={homeImage} alt=" home" className="w-full h-full object-cover" />
+    {/* <img src={homeImage} alt=" home" className="w-full h-full object-cover" /> */}
       {/* <h1 className="text-3xl font-bold text-blue-600">
         Hello, It is Ten Consulting
       </h1>
