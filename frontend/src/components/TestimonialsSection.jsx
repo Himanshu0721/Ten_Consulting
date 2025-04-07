@@ -1,28 +1,68 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const testimonials = [
+const allTestimonials = [
   {
-    clientImage: "/testimonial_logo.png",
-    authorImage: "/testimonial_person.png",
-    authorName: "Krishna Tangella",
-    authorTitle: "Founder & CEO, DoveMed",
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name",
+    authorTitle: "Example Title",
     testimonial:
-      '"Despite the numerous challenges that emerged throughout the project, Tivix built an incredibly complex platform. The website is well-structured, stable, and able to accommodate 500,000 users each month. More than 1.2 million physicians are registered on the site, and traffic is increasing by 15% each month."',
+      "Working with TEN was a turning point for our product. They took our abstract ideas and turned them into something tangible and effective. The strategy they proposed aligned perfectly with our goals. We felt like they truly understood our mission.",
   },
   {
-    clientImage: "/testimonial_logo2.png",
-    authorImage: "/testimonial_person2.png",
-    authorName: "William Bowers",
-    authorTitle: "Co-Founder & CEO, Evise.ai",
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name 2",
+    authorTitle: "Example Title 2",
     testimonial:
-      '"We chose Kellton as a partner because they had a good reputation with their customers. Though new to Generative AI, Kellton has all the right talents needed to build the innovative platform. Kellton has been with Evise every step of the way, from sales engagement to testing, and working with Kellton has been enjoyable overall."',
+      "The team’s communication and organization were outstanding. Every update felt timely, relevant, and clear. We never felt left in the dark, even during fast-moving sprints. Collaboration was effortless and surprisingly fun.",
+  },
+  {
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name 3",
+    authorTitle: "Example Title 3",
+    testimonial:
+      "We’ve worked with many developers, but TEN stands out for code quality and architecture. The system they built has been rock-solid with zero issues post-launch. Their attention to scalability and maintainability was impressive. It’s clear they care about long-term success.",
+  },
+  {
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name 4",
+    authorTitle: "Example Title 4",
+    testimonial:
+      "We saw results faster than we expected. Within weeks, our internal tools were streamlined, and productivity noticeably improved. They didn’t just build features—they understood how we work and optimized accordingly. We’d gladly hire them again.",
+  },
+  {
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name 5",
+    authorTitle: "Example Title 5",
+    testimonial:
+      "Their design work is clean, modern, and user-friendly. They grasped our branding instantly and delivered without needing endless revisions. Every component felt purposeful and polished. It was design that actually worked, not just looked pretty.",
+  },
+  {
+    clientImage: "/dummy_company.png",
+    authorImage: "/dummy_user.png",
+    authorName: "Example Name 6",
+    authorTitle: "Example Title 6",
+    testimonial:
+      "TEN proved to be one of the most dependable teams we’ve ever worked with. Deadlines were always met, and the deliverables exceeded expectations. Even in crunch moments, they remained calm and focused. You can count on them when it matters most.",
   },
 ];
+
+const featuredTestimonials = allTestimonials.slice(0, 3);
 
 const TestimonialsSection = () => {
   const contentRef = useRef(null);
   const isContentInView = useInView(contentRef, { once: true });
+
+  const [testimonials, setTestimonials] = useState(featuredTestimonials);
+
+  const toggleTestimonials = () => {
+    setTestimonials(testimonials === featuredTestimonials ? allTestimonials : featuredTestimonials);
+  }
 
   return (
     <motion.div
@@ -58,12 +98,12 @@ const TestimonialsSection = () => {
       >
         {testimonials.map((t, i) => (
           <div key={i} className="space-y-7">
-            <img src={t.clientImage} alt="Client Logo" className="h-full w-auto" />
+            <img src={t.clientImage} alt="Client Logo" className="h-full w-auto max-h-20" />
             <p className="font-medium text-sm tracking-normal leading-6">
-              {t.testimonial}
+        "{t.testimonial}"
             </p>
             <div className="flex items-center justify-end gap-2">
-              <img src={t.authorImage} alt={t.authorName} className="h-full w-auto" />
+              <img src={t.authorImage} alt={t.authorName} className="size-12 rounded-full" />
               <div className="flex flex-col justify-center">
                 <span className="font-medium text-sm tracking-normal">
                   {t.authorName}
@@ -77,7 +117,12 @@ const TestimonialsSection = () => {
           </div>
         ))}
 
-        <div className="grid place-items-center"><button className="bg-white border border-gray-400 cursor-pointer px-4 py-2 text-sm text-gray-900 font-medium focus:outline-0">See More Testimonials</button></div>
+        <div className="grid place-items-center"><button
+  onClick={toggleTestimonials}
+  className="bg-white border border-gray-400 cursor-pointer px-4 py-2 text-sm text-gray-900 font-medium focus:outline-0"
+>
+  {testimonials.length === featuredTestimonials.length ? "See More Testimonials" : "See Less"}
+</button></div>
       </motion.div>
     </motion.div>
   );

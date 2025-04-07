@@ -1,8 +1,7 @@
 @import "tailwindcss";
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-
 
 /* Some essential CSS for the Case_Studies section in the Home Components */
 
@@ -33,6 +32,8 @@ body{
 
 .card-back {
   transform: rotateY(180deg);
+}
+
 body {
   overflow-x: hidden;
 }
@@ -52,11 +53,4 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 4px;
-}
-
-@layer components {
-  .input {
-    @apply w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800;
-    /* the warning/message 'Unknown at rule @apply' may appear, its not an error and actually it works. */
-  }
 }
