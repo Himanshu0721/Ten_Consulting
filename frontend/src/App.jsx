@@ -18,6 +18,7 @@ import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/our-services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />

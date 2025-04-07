@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   // const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [scrolling, setScrolling] = useState(false);
+  const [scrolling, setScrolling] = useState(true);
 
   // Toggle dropdown function
   const handleDropdown = (dropdownName) => {
