@@ -19,6 +19,7 @@ import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/our-services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/data-analytics" element={<DataAnalytics/>}/>
         <Route path="/data-analytics/data-consulting" element={<DataConsulting/>} />
