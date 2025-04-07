@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-  
+import { motion, AnimatePresence } from "framer-motion";
 
-// <---- Image Scroller Array ---->
 const images = [
   {
     url: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/globee-banner-home.webp",
@@ -20,78 +19,91 @@ const images = [
   },
 ];
 
-// <---- Image Scroller Data ---->
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideInterval = 3000; // 3 seconds
+  const slideInterval = 5000;
 
-  // Auto slide
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, slideInterval);
+    const interval = setInterval(nextSlide, slideInterval);
     return () => clearInterval(interval);
   }, [currentSlide]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {images.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url(${slide.url})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="flex items-center justify-center h-full bg-opacity-40">
-            <div className="text-center text-white space-y-4">
-              <h1 className="text-4xl font-bold">{slide.title}</h1>
-              <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                {slide.buttonText}
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className="relative w-full h-[80vh] sm:h-[90vh] lg:h-screen overflow-hidden">
+      <AnimatePresence>
+        {images.map((slide, index) =>
+          index === currentSlide ? (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${slide.url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="w-full h-full  bg-opacity-40 flex items-center justify-center sm:justify-start px-4 sm:px-8 lg:px-16">
+                <motion.div
+                  className="text-center sm:text-left text-white space-y-4 max-w-2xl"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">
+                    {slide.title}
+                  </h1>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mt-4 px-5 py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow"
+                  >
+                    {slide.buttonText}
+                  </motion.button>
+                </motion.div>
+              </div>
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
 
-      {/* Previous & Next Buttons */}
-      <button
+      {/* Navigation Arrows */}
+      <motion.button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg"
+        whileHover={{ scale: 1.1 }}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10"
       >
         ❮
-      </button>
-      <button
+      </motion.button>
+      <motion.button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg"
+        whileHover={{ scale: 1.1 }}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10"
       >
         ❯
-      </button>
+      </motion.button>
 
-      {/* Dots for Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      {/* Dot Indicators */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
         {images.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? "bg-white" : "bg-gray-500"
+            animate={{ scale: index === currentSlide ? 1.3 : 1 }}
+            transition={{ duration: 0.3 }}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide ? "bg-white" : "bg-gray-400"
             }`}
           />
         ))}
@@ -99,6 +111,5 @@ const Carousel = () => {
     </div>
   );
 };
-
 
 export default Carousel;

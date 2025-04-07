@@ -30,43 +30,80 @@ export default function TestimonialSlider() {
   const prevSlide = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <div className="bg-blue-900 text-white py-12 px-6 md:px-20 rounded-lg">
-      <h5 className="text-xl md:text-2xl font-semibold">What our clients say</h5>
-      <div className="flex flex-col md:flex-row items-center justify-between mt-6">
+    <section className="bg-blue-900 text-white py-12 px-6 md:px-20 rounded-2xl shadow-xl overflow-hidden">
+      <motion.h2
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl font-semibold text-center md:text-left"
+      >
+        What our clients say
+      </motion.h2>
+
+      <div className="flex flex-col md:flex-row items-center justify-between mt-10 gap-8">
         <div className="w-full md:w-2/3">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
+              exit={{ opacity: 0, x: 40 }}
               transition={{ duration: 0.5 }}
+              className="space-y-4"
             >
-              <p className="text-lg italic">“{testimonials[index].text}”</p>
-              <p className="mt-4 font-bold">{testimonials[index].name}</p>
-              <p className="text-sm">{testimonials[index].title}</p>
+              <p className="text-lg italic leading-relaxed">
+                “{testimonials[index].text}”
+              </p>
+              <div>
+                <p className="mt-2 font-bold text-xl">{testimonials[index].name}</p>
+                <p className="text-sm text-blue-200">{testimonials[index].title}</p>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="relative w-48 h-48 mt-6 md:mt-0">
+
+        <motion.div
+          key={index}
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.95, opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="relative w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-lg"
+        >
           <img
             src={testimonials[index].image}
-            alt="Client"
-            className="w-full h-full object-cover rounded-lg shadow-lg"
+            alt={testimonials[index].name}
+            className="w-full h-full object-cover"
           />
-        </div>
+        </motion.div>
       </div>
-      <div className="flex justify-between items-center mt-6">
-        <a href="#" className="text-white font-semibold underline">View All →</a>
+
+      <div className="flex flex-col md:flex-row justify-between items-center mt-10 gap-6">
+        <a
+          href="#"
+          className="text-white text-sm md:text-base font-semibold underline hover:text-blue-200 transition"
+        >
+          View All →
+        </a>
         <div className="flex space-x-4">
-          <button onClick={prevSlide} className="p-2 bg-white text-blue-900 rounded-full shadow-md">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={prevSlide}
+            className="p-2 bg-white text-blue-900 rounded-full shadow-lg hover:bg-gray-200 transition"
+          >
             <FaChevronLeft size={20} />
-          </button>
-          <button onClick={nextSlide} className="p-2 bg-white text-blue-900 rounded-full shadow-md">
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={nextSlide}
+            className="p-2 bg-white text-blue-900 rounded-full shadow-lg hover:bg-gray-200 transition"
+          >
             <FaChevronRight size={20} />
-          </button>
+          </motion.button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

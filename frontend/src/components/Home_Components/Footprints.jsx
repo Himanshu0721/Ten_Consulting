@@ -1,42 +1,72 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const recognitions = [
   {
     title: "Kellton Featured as 'Leader' in Zinnov Zones ER&D Digital Engineering Report, 2023-24",
     date: "February, 2024",
     category: "ENDORSED",
-    logo: "http://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/zz2023.png", // Replace with actual image URL
+    logo: "http://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/zz2023.png",
     link: "#",
-    bgColor: "bg-yellow-100"
+    bgColor: "bg-yellow-100",
   },
   {
     title: "Kellton featured as 'Challenger' in Avasant SAP S4/HANA Services RadarView Report, 2024",
     date: "February, 2024",
     category: "FEATURED",
-    logo: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Isolation_Mode%20(2).png", // Replace with actual image URL
+    logo: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Isolation_Mode%20(2).png",
     link: "#",
-    bgColor: "bg-blue-100"
+    bgColor: "bg-blue-100",
   },
   {
     title: "Kellton Featured as 'Product Challenger' in ISG SAP Ecosystem Report 2022-23",
     date: "May, 2023",
     category: "VALIDATED",
-    logo: "https://kellton-uat.s3.amazonaws.com/s3fs-public/isg2.png", // Replace with actual image URL
+    logo: "https://kellton-uat.s3.amazonaws.com/s3fs-public/isg2.png",
     link: "#",
-    bgColor: "bg-purple-100"
-  }
+    bgColor: "bg-purple-100",
+  },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay: custom * 0.2,
+    },
+  }),
+};
+
 export default function SuccessFootprints() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
+
   return (
-    <div className="py-10 px-5 md:px-20 mt-45" >
-      <p className="text-">Analyst Recognitions</p>  
+    <div ref={sectionRef} className="py-10 px-5 md:px-20">
+      <p className="text-gray-700 uppercase tracking-wider text-sm">Analyst Recognitions</p>
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Footprints of our success</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+      >
         {recognitions.map((item, index) => (
           <motion.a
             key={index}
             href={item.link}
+            custom={index}
+            variants={fadeUp}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`p-6 rounded-2xl shadow-lg ${item.bgColor} transition-transform duration-300 block`}
@@ -49,7 +79,7 @@ export default function SuccessFootprints() {
             <p className="mt-2 text-gray-600 text-sm">{item.date}</p>
           </motion.a>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
