@@ -33,7 +33,7 @@ const HeroSection = ({ heroData }) => {
                     transition={{ duration: 1.2 }}
                     aria-label="Breadcrumb Navigation"
                     role="navigation"
-                    className="mb-4 sm:mb-6 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl"
+                    className="mb-4 sm:mb-6 text-xs xs:text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg"
                 >
                     <ol className="flex space-x-2 ml-6">
                         {heroData.breadcrumb.map((item, index) => (
