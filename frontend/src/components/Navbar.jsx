@@ -36,8 +36,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex justify-between items-center text-white transition-all duration-200 p-4 z-50 ${scrolling ? "bg-gray-800 shadow-md" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-full flex justify-between items-center text-white transition-all duration-200 p-4 z-50 ${
+        scrolling ? "bg-gray-800 shadow-md" : "bg-transparent"
+      }`}
     >
       <div className="flex items-center">
         <svg
@@ -107,9 +108,7 @@ const Navbar = () => {
           </g>
         </svg>
         <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">
-          <a href="/">
-            Ten Consulting
-          </a>
+          <Link to="/">Ten Consulting</Link>
         </h1>
       </div>
 
@@ -119,8 +118,9 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-gray-800 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
-          }`}
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-gray-800 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
+          menuOpen ? "block" : "hidden"
+        }`}
       >
         <li className="py-2 lg:py-0 relative">
           <button
@@ -143,10 +143,7 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/ai-ml"
-                  className="font-semibold"
-                >
+                <Link to="/ai-ml" className="font-semibold">
                   AI and ML
                 </Link>
                 <Link
@@ -166,10 +163,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/data-analytics"
-                  className="font-semibold"
-                >
+                <Link to="/data-analytics" className="font-semibold">
                   Data Analytics
                 </Link>
                 <Link
@@ -203,10 +197,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/next-gen"
-                  className="font-semibold"
-                >
+                <Link to="/next-gen" className="font-semibold">
                   Next Generation
                 </Link>
                 <Link
@@ -226,10 +217,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/digital-experience"
-                  className="font-semibold"
-                >
+                <Link to="/digital-experience" className="font-semibold">
                   Digital Experience
                 </Link>
                 <Link
@@ -249,10 +237,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/cloud-engineering"
-                  className="font-semibold"
-                >
+                <Link to="/cloud-engineering" className="font-semibold">
                   Cloud Engineering
                 </Link>
                 <Link
@@ -272,10 +257,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/product-engineering"
-                  className="font-semibold"
-                >
+                <Link to="/product-engineering" className="font-semibold">
                   Product Engineering
                 </Link>
                 <Link
@@ -316,39 +298,67 @@ const Navbar = () => {
             } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
             <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group" href="https://education.entrepreneurshipnetwork.net/" target="_blank">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group"
+                href="https://education.entrepreneurshipnetwork.net/"
+                target="_blank"
+              >
                 TEN Education
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-human-resources.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-human-resources.vercel.app/"
+              >
                 TEN Human Resource
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-media-rosy.vercel.app/">
+              <a
+                className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-media-rosy.vercel.app/"
+              >
                 TEN Media
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://art-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://art-industry.vercel.app/"
+              >
                 TEN Art
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://space-industry-five.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://space-industry-five.vercel.app/"
+              >
                 TEN Space Search
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-healthcare-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-healthcare-industry.vercel.app/"
+              >
                 TEN Health
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-ai-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-ai-industry.vercel.app/"
+              >
                 TEN AI
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-internal-tools.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-internal-tools.vercel.app/"
+              >
                 TEN Internal Tools
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://incubation-vc.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://incubation-vc.vercel.app/"
+              >
                 TEN Incubation and VC
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
@@ -391,7 +401,9 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline">Careers</button>
+          <button className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline">
+            Careers
+          </button>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
