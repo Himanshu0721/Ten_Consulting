@@ -35,28 +35,28 @@ body {
   body {
     overflow-x: hidden;
   }
+}
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge ke liye */
-  }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge ke liye */
+}
 
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE aur Edge ke liye */
-    scrollbar-width: none; /* Firefox ke liye */
-  }
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE aur Edge ke liye */
+  scrollbar-width: none; /* Firefox ke liye */
+}
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-  }
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
 
-  @layer components {
-    .input {
-      @apply w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800;
-      /* the warning/message 'Unknown at rule @apply' may appear, its not an error and actually it works. */
-    }
+@layer components {
+  .input {
+    @apply w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800;
+    /* the warning/message 'Unknown at rule @apply' may appear, its not an error and actually it works. */
   }
 }
