@@ -1,8 +1,10 @@
 import React from "react";
+import Chatbot from "./chatbot";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white tracking-wide py-6 px-4 md:px-8">
+    <footer className="bg-teal-800 text-white tracking-wide py-6 px-4 md:px-8">
       {/* Logo & Company Name */}
       <div className="container flex flex-col md:flex-row md:items-center justify-between text-center md:text-left gap-4">
         <div className="flex items-center justify-center md:justify-start">
@@ -79,16 +81,29 @@ const Footer = () => {
       {/* Navigation Links */}
       <div className="container ml-0 md:ml-18 lg:ml-35 mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
         <ul className="space-y-8 font-semibold">
-          <li className="cursor-pointer">Services</li>
-          <li className="cursor-pointer">Platforms & Products</li>
-          <li className="cursor-pointer">Industries</li>
-          <li className="cursor-pointer">Insights</li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="/our-services">Services</Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="">Industries</Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="">Insights</Link>
+          </li>
+          <li className="cursor-pointer">
+          <Link className="hover:underline hover:text-gray-300" to="">About</Link>
+          </li>
         </ul>
         <ul className="space-y-8 font-semibold">
-          <li className="cursor-pointer">About</li>
-          <li className="cursor-pointer">News</li>
-          <li className="cursor-pointer">Careers</li>
-          <li className="cursor-pointer">Contact</li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="">News</Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="/careers">Careers</Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link className="hover:underline hover:text-gray-300" to="/contact-us">Contact</Link>
+          </li>
         </ul>
         <div className="flex flex-col md:flex-col items-center md:items-start gap-8 mt-5">
           <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-400">
@@ -139,6 +154,8 @@ const Footer = () => {
         >
           tech@entrepreneurshipnetwork.net
         </a>
+        <Chatbot/>
+
       </div>
     </footer>
   );
