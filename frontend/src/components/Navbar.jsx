@@ -34,11 +34,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-3 left-3 right-3 rounded-2xl  flex justify-between items-center text-white transition-all duration-200 p-4 z-50 ${
-        scrolling ? "bg-slate-900 shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 rounded-2xl flex justify-between items-center text-white transition-all duration-400 p-4 z-50 ${
+        scrolling ? "bg-teal-700 shadow-md lg:top-3 lg:left-20 lg:right-20" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center">
+      <div className="flex items-center lg:ml-5">
         <svg
           className="h-9 w-16"
           preserveAspectRatio="xMidYMid meet"
@@ -118,7 +118,7 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex  bg-slate-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-teal-700 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
           }`}
       >
         <li className="py-2 lg:py-0 relative">

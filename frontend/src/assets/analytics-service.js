@@ -1,5 +1,5 @@
 export const heroData = {
-    backgroundImage: "url('https://www.w3schools.com/css/img_lights.jpg')",
+    backgroundImage: "url('https://img.freepik.com/free-photo/3d-abstract-network-communications-background-with-plexus-design_1048-16800.jpg')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
@@ -47,7 +47,7 @@ export const offerings = {
 };
 
 export const justSectionDetails = {
-    backgroundImage: "url('https://media.istockphoto.com/id/1498213091/vector/black-teel-green-blue-abstract-modern-background-for-design-dark-geometric-shape-3d-lines.jpg?s=612x612&w=0&k=20&c=Ugna8pifDbUjhdIvtylHnaAHGpy0aWLDB3I-so4hjj0=')",
+    backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCgM6FkijUcabKiFzaDfrhm2j49ksGQTwTmQ&s')",
     headerTitle: "Why Choose Our Analytics Services?",
     mainTitle: "Turning Raw Data into Business Intelligence",
     buttonText: "Discover Insights",
