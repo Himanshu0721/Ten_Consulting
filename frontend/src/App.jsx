@@ -10,6 +10,10 @@ import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
 import Careers from "./pages/Careers";
 
+import Blogs from "./pages/All_Insights/Blogs";
+import White_papers from "./pages/All_Insights/White_papers";
+import News_Announcements from "./pages/All_Insights/News_Announcements";
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +26,9 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
+        
+        <Route path="/blogs" element={<Blogs />} />
+
       </Routes>
 
       <Footer />
