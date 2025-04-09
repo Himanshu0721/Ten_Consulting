@@ -106,9 +106,7 @@ const Navbar = () => {
           </g>
         </svg>
         <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">
-          <a href="/">
-            Ten Consulting
-          </a>
+          <Link to="/">Ten Consulting</Link>
         </h1>
       </div>
 
