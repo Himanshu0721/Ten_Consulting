@@ -41,7 +41,7 @@ function App() {
         <Route path="/data-analytics/agentic" element={<Agentic/>} />
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers" element={<CareerPage />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
         <Route path="/digital-experience" element={<DigiExp />} />
