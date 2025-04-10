@@ -7,15 +7,15 @@ export const heroData = {
         { label: "Mobile Engineering", link: "/product-engineering/mobile-engineering" },
     ],
     title: "Mobile Engineering",
-    description: "Chasing new frontiers of customer engagement with Mobile App Development",
+    description: "Charting the Future of Customer Engagement via Mobile App Innovation",
 };
 
 
 export const contentData = {
-    heading: "We create custom Mobile Apps to increase business agility and increase customer engagement.",
+    heading: "Custom mobile apps designed to drive agility and elevate customer experiences.",
     paragraphs: [
-       "The rise of mobile technology provides your business with a unique opportunity: you can be more agile than ever before, and respond to customer needs at lightning speed. Whether the solution is a highly-specialized Native Mobile App, an adaptable Hybrid App, or the flexibility of Cross-platform development, our specialist teams can make it happen.",
-       "Our certified consultants and developers use cutting-edge technologies such as super app architecture, rapid prototyping, and micro front end to deliver intuitive, user-centered mobile experiences across both iOS and Android. Expertise in native frameworks, React Native, Flutter, Ionic, and more to build apps that help businesses power up in a competitive, digitized landscape.",
+       "Mobile technology has unlocked a unique opportunity for businesses—greater agility and faster responses to customer needs. Whether you need a feature-rich Native App, a versatile Hybrid solution, or the scalability of Cross-platform development, our expert teams deliver tailored mobile experiences that drive results.",
+       "Our certified consultants and developers leverage cutting-edge technologies like super app architecture, rapid prototyping, and micro frontends to craft intuitive, user-centric mobile experiences for both iOS and Android. With deep expertise in native frameworks, React Native, Flutter, Ionic, and more, we build high-performance apps that help businesses thrive in today’s competitive digital landscape.",
     ],
 };
 
@@ -47,26 +47,26 @@ export const offerings = {
 
 export const justSectionDetails = {
     backgroundImage: "url('https://img.freepik.com/premium-photo/abstract-background-design-images-wallpaper-ai-generated_643360-118693.jpg?w=360')",
-    headerTitle: "Why Ten Consulting for Mobile Engineering?",
-    mainTitle: "Just a few reasons why",
-    buttonText: "Let's Work Together",
+    headerTitle: "Importance of Mobile Engineering?",
+    mainTitle: "Our edge in crafting future-ready mobile solutions",
+    buttonText: "Explore Now",
     buttonLink: "/our-global-presence#lets-talk",
     justOfferings: [
         {
-            title: "💠 Leader in Mobile App Development",
-            content: "Our expertise in end-to-end Mobile App Design and Development allows us to create robust, scalable software to tight timescales.",
+            title: "💠 Expertise Across Platforms",
+            content: "We build seamless, high-performing apps for iOS, Android, and cross-platform environments using cutting-edge frameworks. ",
         },
         {
-            title: "💠 Handpicked experts",
-            content: "Our global team of experienced, and certified consultants and developers is well-versed with cutting edge tools, technologies, and platforms.",
+            title: "💠 User-Centric Design",
+            content: "Our intuitive UI/UX strategies ensure every interaction is meaningful, engaging, and optimized for user satisfaction.",
         },
         {
-            title: "💠 Customer-centric approach",
-            content: "We integrate AI-driven automation into your existing systems, boosting productivity and streamlining operations.",
+            title: "💠 Scalable Architecture",
+            content: "We develop mobile solutions with robust, scalable backends that grow effortlessly with your business.",
         },
         {
-            title: "💠 Flexible engagement models",
-            content: "We take a flexible approach to working relationships, and can scale up or down as your requirements evolve.",
+            title: "💠  Accelerated Time-to-Market",
+            content: "With agile processes and rapid prototyping, we help you launch faster without compromising on quality.",
         },
     ],
 };
@@ -75,8 +75,8 @@ export const funFactDetails = {
     imageSrc: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Purple%20(1).webp",
     iconSrc: "https://d3tj4wnms16o5e.cloudfront.net/s3fs-public/fun-fact-star.png",
     title: "Product FACT",
-    fact: "Seven out of ten apps that are downloaded are deleted immediately.",
-    description: "We make sure yours ends up in the remaining three.",
+    fact: "Nearly 70% of downloaded apps are uninstalled within minutes.",
+    description: "We ensure yours is one of the few that stays.",
 };
 
 
@@ -85,19 +85,19 @@ export const transformationData = [
         img: "https://media.istockphoto.com/id/1141142286/photo/young-couple-and-financial-consultant-going-through-investment-plans-during-a-meeting.jpg?s=612x612&w=0&k=20&c=v9DCWBeDgvGha3mTiLkS6AE5d-sJb7cwl030-RrRlhg=",
         alt: "AI in Hospitality",
         region: "APAC",
-        title: "Connected Partner Ecosystem for a Leading Insurer",
+        title: "Building a Connected Partner Ecosystem for Insurance Innovation",
     },
     {
         img: "https://airindia.scene7.com/is/image/airindia/AirIndia22",
         alt: "AI in Law",
         region: "APAC",
-        title: "Enhancing User Experience and performance for Asia's largest passenger airline",
+        title: "Streamlined app performance and seamless UX helped redefine air travel for millions of passengers.",
     },
     {
         img: "https://medtechintelligence.com/wp-content/uploads/2024/12/connected-medicine2.jpg",
         alt: "AI in Finance",
         region: "APAC",
-        title: "Redefining Healthcare with a revolutionary online platform",
+        title: "A robust, user-friendly platform that centralizes patient data and streamlines care delivery.",
     },
     
 ];
@@ -105,18 +105,18 @@ export const transformationData = [
 
 export const insightsData = [
     {
-        img: "https://t3.ftcdn.net/jpg/01/77/64/28/360_F_177642837_y3v0oUFNMDC2xW2N1incgPQcXZCzGtb5.jpg",
-        title: "Application Modernization Strategy: Revealing zero-disruption best practices",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnHymaGEe4cTDzdu9Y3lfwfu9HZ3dooARLQA&s",
+        title: "Sustainable Development – Focus on energy-efficient and eco-friendly mobile apps.",
         date: "March 25, 2025",
     },
     {
-        img: "https://www.globallogic.com/wp-content/uploads/2024/12/Content-Engineering_Tablet-Horiz.jpg",
-        title: "A detailed guide on adaptive software development",
+        img: "https://yellow.ai/wp-content/uploads/2020/10/key-differentiator-of-conversational-AI-1.webp",
+        title: "Voice & Conversational UI – Voice commands and chatbots enhance user interaction.",
         date: "March 13, 2025",
     },
     {
-        img: "https://csengineermag.com/wp-content/uploads/2019/06/AdobeStock_228572876-600x400-c-default.webp",
-        title: "Top 11 Mobile App Development Frameworks that will dominate in 2025 and beyond",
+        img: "https://media.licdn.com/dms/image/v2/D4D12AQFKNTP3oisqfQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1733214835549?e=2147483647&v=beta&t=859Uh0Bhmh6YV3m2PRXf42G6yk72c1TvZbhhhcXN7d0",
+        title: "AI Personalization – Smarter, more tailored user experiences using AI and ML.",
         date: "December 26, 2024",
     },
 ];

@@ -1,4 +1,5 @@
 import React from "react";
+import Chatbot from "./chatbot";
 
 const Footer = () => {
   return (
@@ -139,6 +140,8 @@ const Footer = () => {
         >
           tech@entrepreneurshipnetwork.net
         </a>
+        <Chatbot/>
+
       </div>
     </footer>
   );

@@ -7,13 +7,13 @@ export const heroData = {
         { label: "Quality Engineering", link: "/product-engineering/quality-engineering-and-automation" },
     ],
     title: "Quality Engineering & Automation",
-    description: "Utilizing best AI practices to optimize product performance ",
+    description: "Optimizing Product Outcomes Through Cutting-Edge AI Techniques ",
 };
 
 export const contentData = {
-    heading: "We use cutting-edge Quality Engineering expertise to maximize your product’s potential.",
+    heading: "Our Quality Engineering approach ensures your product reaches its highest potential.",
     paragraphs: [
-        "For digital success, constant testing and analysis are everything. With competition fierce, it only takes one performance issue for your customers to uninstall your app and find an equivalent elsewhere. The right balance of automated and manual Quality Analysis (QA) workflows optimizes app performance and data processing, whilst allowing you to fix potential issues before they affect your user base.",
+        "In today’s competitive digital landscape, consistent testing and analysis are critical to success. Just one performance issue can drive users to abandon your app for a competitor’s. By striking the right balance between automated and manual Quality Assurance (QA) workflows, you can optimize performance, streamline data processing, and resolve issues before they impact your users.",
         "Our Quality Engineering teams measure the maturity of your existing processes, define the best-suited QA, testing, support, and maintenance solutions, and facilitate agility to adapt to shifting markets. Moreover, we use advanced AI techniques to revolutionize QA processes, with Automation and Machine Learning, improving defect detection accuracy, efficiency, and providing valuable insights for proactive issue resolution. This allows you to maximize the value of your products by ensuring their speed, quality, and productivity.",
     ],
 };
@@ -22,7 +22,7 @@ export const contentData = {
 export const offerings = {
     heading1: "Quality Engineering & Automation",
     heading2: "Testing with AI",
-    paragraph: "From identifying automation test-cases to risk-based test execution optimization, Kellton's QE team is leveraging AI to revolutionize testing processes",
+    paragraph: "AI-powered Quality Engineering: transforming everything from test automation to execution optimization.",
     
     services: [
         {
@@ -55,26 +55,26 @@ export const offerings = {
 
 export const justSectionDetails = {
     backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/017/457/394/non_2x/simple-background-with-gradient-shape-green-vector.jpg')",
-    headerTitle: "Why Ten Consulting for Quality Engineering ?",
-    mainTitle: "Just A few reasons why",
+    headerTitle: "Importance of Quality Engineering ",
+    mainTitle: "Our edge in Quality Engineering",
     buttonText: "Lets Work Together",
     buttonLink: "/our-global-presence#lets-talk",
     justOfferings: [
         {
-            title: "💠 Robust, high capacity labs",
-            content: "We offer powerful architectural capability via state-of-the-art QA frameworks, testbeds, tools, resolution devices and more.",
+            title: "💠 Scalable, High-Performance Testing Labs",
+            content: "Empowering quality engineering with modern QA architectures, featuring advanced tools, test environments, and diagnostic devices.",
         },
         {
-            title: "💠 Resilient, morden R&D",
-            content: "Our innovative, well-equipped Center of Excellence allows us to implement new ways of streamlining product operations.",
+            title: "💠 Future-Ready, Resilient R&D",
+            content: "Our well-equipped Center of Excellence enables continuous innovation in optimizing product workflows.",
         },
         {
-            title: "💠 Extensible Infrastructure",
-            content: "Our infrastructure is scalable and supported by cutting-edge resources including open-source frameworks and a deep repository of test data.",
+            title: "💠 Infrastructure Built for Expansion",
+            content: "Backed by modern open-source frameworks and extensive test data, our scalable infrastructure is built for performance and agility.",
         },
         {
-            title: "💠 Cross industry expertise",
-            content: "We offer over 15 years’ of industry-leading experience in product operations management, helping global businesses keep the digital transformation on track.",
+            title: "💠 Broad Sector Experience",
+            content: "For more than 15 years, we’ve led the way in product operations management—enabling businesses worldwide to thrive in their digital evolution.",
         },
     ],
 };
@@ -84,25 +84,25 @@ export const funFactDetails = {
     imageSrc: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Purple%20(1).webp",
     iconSrc: "https://d3tj4wnms16o5e.cloudfront.net/s3fs-public/fun-fact-star.png",
     title: "Quality FACT",
-    fact: "62% of users uninstall an application if they experience technical issues.",
-    description: "We help your products avoid this fate.",
+    fact: "A single technical issue can cost you—62% of users uninstall apps that don’t perform flawlessly.",
+    description: "We ensure your products stay installed, not discarded.",
 };
 
 
 export const insightsData = [
     {
         img: "https://www.rishabhsoft.com/wp-content/uploads/2023/12/Banner-Image-Modernize-Legacy-app-with-Azure.jpg",
-        title: "Application Modernization Strategy: Revealing zero-disruption best practices",
+        title: "Zero-Disruption Application Modernization: Strategies That Work",
         date: "March 25 , 2025",
     },
     {
         img: "https://devtechnosys.com/images/2023/guide/adaptive-software-development/insurance-app-development-company.webp",
-        title: "A detailed guide on adaptive software development",
+        title: "Mastering Adaptive Software Development: A Comprehensive Guide",
         date: "March 13 , 2025",
     },
     {
         img: "https://www.mindinventory.com/blog/wp-content/uploads/2022/10/app-development-framework.png",
-        title: "Top 11 Mobile App Development Frameworks that will dominate in 2025 and beyond",
+        title: "The 2025 Power List: 11 Mobile Frameworks You Need to Know",
         date: "December 26 , 2024",
     },
 ];

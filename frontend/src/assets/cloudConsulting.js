@@ -23,16 +23,16 @@ export const offerings = {
     
     services: [
         {
-            title: "Review Cloud Strategy and Landscape",
-            content: "We offer comprehensive Cloud landscape reviews, starting by defining objectives, prioritizing new initiatives, and developing a comprehensive and actionable strategy.",
+            title: "Assessing Your Cloud Strategy and IT Landscape",
+            content: "We conduct end-to-end Cloud landscape reviews—starting with clear objective setting, prioritizing key initiatives, and crafting a practical, results-driven Cloud strategy.",
         },
         {
-            title: "Architecture Review",
-            content: "We assess your existing Cloud environment to identify gaps and opportunities, covering infrastructure, applications, data, security, governance, and compliance.",
+            title: "Modernization-Focused Architecture Review",
+            content: "Our assessment identifies strengths, gaps, and growth areas across your Cloud infrastructure, applications, data, security, and compliance landscape.",
         },
         {
-            title: "Cloud Migration Strategy",
-            content: "We help our clients develop a Cloud strategy that aligns with their objectives and addresses the identified gaps and opportunities. This involves defining the target state architecture, selecting the right Cloud platform, developing a migration plan,, and defining the governance and operations model.",
+            title: "Cloud Adoption & Migration Strategy",
+            content: "We align Cloud strategies with business goals—defining architecture, choosing the right platform, planning migration, and setting up governance and operations frameworks.",
         },
     ],
 };

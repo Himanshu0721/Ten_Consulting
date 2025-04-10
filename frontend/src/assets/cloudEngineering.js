@@ -7,14 +7,14 @@ export const heroData = {
         
     ],
     title: "Cloud Engineering",
-    description: "Building transformative Cloud Strategy and Infrastructure",
+    description: "Strategic Cloud Infrastructure for Lasting Impact",
 };
 
 export const contentData = {
-    heading: "We drive Cloud-first transformations for maximum flexibility, innovation, and scalability.",
+    heading: "Empowering your business with Cloud-first strategies for unmatched scalability and innovation.",
     paragraphs: [
-        "The transformational potential of Cloud technology for your business is sky high. Cloud boosts productivity and innovation, reduces both time to market and operational costs, and lays the groundwork for an infrastructure on demand approach – all whilst remaining highly scalable.",
-        "Using our leading Cloud accelerators and frameworks, our experts are on-hand to help you build or re-engineer your application portfolio for a coordinated, efficient shift to Cloud solutions. Our end-to-end services are designed around your unique needs, from building a high-level strategy that works for you to consulting on and implementing the right type of Cloud – Private Cloud, Public Cloud, Hybrid Cloud, or Multi-Cloud – for your circumstances."
+        "Cloud technology holds immense potential to transform your business—driving productivity, accelerating innovation, reducing operational costs, and enabling faster time to market. It supports a scalable, on-demand infrastructure that grows with your needs.",
+        "With our proven Cloud accelerators and frameworks, our experts help you build or modernize your application portfolio for a seamless, efficient transition to the Cloud. We offer end-to-end, tailored services—from strategic planning to hands-on implementation—advising on the most suitable Cloud model for your needs, whether it's Private, Public, Hybrid, or Multi-Cloud."
     ],
 };
 
@@ -27,12 +27,12 @@ export const solutions = {
     services: [
         {
             title: "Cloud Consulting",
-            description: "Our consulting services help you assess your current infrastructure, evaluate Cloud Service Providers, determine which Cloud Services you need, and provide recommendations on Cloud Migration. ",
+            description: "Our consulting services evaluate your current infrastructure, identify the right Cloud Service Providers and solutions, and deliver tailored recommendations to guide your Cloud migration journey.",
             link : "/cloud-engineering/cloud-consulting",
         },
         {
             title: "Cloud Migration",
-            description: "We reconfigure applications to work in a Cloud environment, transferring data to the Cloud, and set up new Cloud-based infrastructure to support operations. We also provide ongoing support to manage and optimize Cloud infrastructure once migration is complete.",
+            description: "We modernize and reconfigure your applications for optimal Cloud performance, seamlessly migrate your data, and establish robust Cloud-based infrastructure to support your operations. Post-migration, we provide ongoing support to manage, monitor, and continuously optimize your Cloud environment.",
             link: "/cloud-engineering/cloud-migration",
         },
     ]
@@ -70,7 +70,7 @@ export const funFactDetails = {
     imageSrc: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Purple%20(1).webp",
     iconSrc: "https://d3tj4wnms16o5e.cloudfront.net/s3fs-public/fun-fact-star.png",
     title: "Cloud FACT",
-    fact: "By the year 2025, there’s projected to be over 100 zettabytes of data in the Cloud. One zettabyte is equal to a trillion gigabytes.",
+    fact: "The Cloud is on track to hold more than 100 zettabytes of data by 2025—that’s 100 trillion gigabytes powering the digital world.",
     description: "Cloud computing enables on-demand access to data, applications, and services from anywhere, anytime."
 };
 
@@ -86,19 +86,19 @@ export const transformationData = [
         img: "https://ideyalabs.com/images/resource/ott-about.webp",
         alt: "Cloud in OTT Platform",
         region: "APAC",
-        title: "Seamless OTT platform integration for a leading Telecommunications company"
+        title: "Streamlined OTT Platform Integration for Enhanced Telecom Service Delivery"
     },
     {
         img: "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2025-01/The%20Role%20of%20AI%20in%20Enhancing%20Customer%20Experience%20in%20Consumer%20Durables.jpg",
         alt: "Cloud in customer retail",
         region: "USA",
-        title: "Unleashing agile, inclusive growth: Empowering 7.6 million retail customers across 6 states"
+        title: "Empowering 7.6 Million Retail Customers with Agile, Inclusive Growth Across 6 States"
     },
     {
         img: "https://portalimages.blob.core.windows.net/features/images/q2pxkxjo_Untitled-1-1.jpg",
         alt: "Cloud in food business",
         region: "USA",
-        title: "A Cloud-ready architecture supercharged our customer's food business"
+        title: "Cloud-Ready Architecture Supercharged Efficiency and Growth in the Food Sector"
     }
 ];
 

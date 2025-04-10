@@ -7,7 +7,7 @@ export const heroData = {
         
     ],
     title: "Product Engineering",
-    description: "Accelerating business transformation and delivering engaging user experiences",
+    description: "Driving Business Transformation and Exceptional User Experiences",
 };
 
 export const contentData = {
