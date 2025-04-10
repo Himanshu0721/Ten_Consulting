@@ -18,7 +18,7 @@ import InsightSection from "../../../components/InsightSection";
 
 const AnalyticsService = () => {
     return (
-    <div>
+    <div className="overflow-hidden">
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />

@@ -20,17 +20,11 @@ import AiMlSolutions from "../../../components/AiMlSolutions";
 
 const DataAnalytics = () => {
     return (
-    <div>
+    <div className="overflow-hidden">
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />
-
-        {/* <OfferingsSection offerings={offerings} /> */}
-
         <AiMlContent />
-
-        {/* <AiMlSolutions /> */}
-
         <JustSection justSectionDetails={justSectionDetails} />
 
         <FunFactSection funFactDetails={funFactDetails} />

@@ -18,6 +18,7 @@ import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
+import InsightSection from "./components/InsightSection";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/insightSection" element={<InsightSection/>} />
         <Route path="/our-services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/ai-ml" element={<AiMl />} />

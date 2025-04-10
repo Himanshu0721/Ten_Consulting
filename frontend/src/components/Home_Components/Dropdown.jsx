@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const dropdownData = [
   {
@@ -131,14 +132,13 @@ const DropdownSection = () => {
                       <ul className="list-disc list-inside ml-4 space-y-1">
                         {item.links.map((link, i) => (
                           <li key={i}>
-                            <a
-                              href={link.url}
+                            <Link
+                              to={link.url}
                               className="hover:underline text-black"
-                              target="_blank"
                               rel="noreferrer"
                             >
                               {link.name}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
