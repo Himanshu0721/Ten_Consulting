@@ -89,7 +89,7 @@ const Footer = () => {
                 <Link className="hover:underline cursor-pointer">Industries</Link>
               </li>
               <li>
-                <Link className="hover:underline cursor-pointer">Insights</Link>
+                <Link to="/insights" className="hover:underline cursor-pointer">Insights</Link>
               </li>
               <li>
                 <Link className="hover:underline cursor-pointer">About</Link>
@@ -124,7 +124,7 @@ const Footer = () => {
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link className="hover:underline cursor-pointer">Blog</Link>
+                <Link to="/insights" className="hover:underline cursor-pointer">Blog</Link>
               </li>
               <li>
                 <Link to="/contact-us" className="hover:underline cursor-pointer">Contact Us</Link>

@@ -8,7 +8,7 @@ import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
-import Careers from "./pages/Careers";
+import CareerPage from "./pages/CareerPage"
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
@@ -18,7 +18,10 @@ import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
-
+import Blogs from "./pages/All_Insights/Blogs"
+import DigiExp from "./pages/services/DigiExp/DigiExp";
+import ProductDesign from "./pages/services/DigiExp/ProductDesign";
+import ProductCons from "./pages/services/DigiExp/ProductCons";
 function App() {
   return (
     <BrowserRouter>
@@ -26,7 +29,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/insightSection" element={<InsightSection/>} />
         <Route path="/our-services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/ai-ml" element={<AiMl />} />
@@ -44,7 +46,6 @@ function App() {
         <Route path="/digital-experience" element={<DigiExp />} />
         <Route path="/digital-experience/product-design" element={<ProductDesign />} />
         <Route path="/digital-experience/product-consulting" element={<ProductCons />} />
-        <Route path="/blogs" element={<Blogs />} />
 
         <Route path="/next-gen/metaverse" element={<Metaverse />} />
       </Routes>
