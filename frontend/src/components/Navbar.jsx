@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolling, setScrolling] = useState(false);
 
@@ -36,11 +34,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex justify-between items-center text-white transition-all duration-200 p-4 z-50 ${
-        scrolling ? "bg-gray-800 shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 rounded-2xl flex justify-between items-center text-white transition-all duration-400 p-4 z-50 ${
+        scrolling ? "bg-teal-700 shadow-md lg:top-3 lg:left-20 lg:right-20" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center">
+      <div className="flex items-center lg:ml-5">
         <svg
           className="h-9 w-16"
           preserveAspectRatio="xMidYMid meet"
@@ -118,9 +116,8 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-gray-800 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
-          menuOpen ? "block" : "hidden"
-        }`}
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-teal-700 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
+          }`}
       >
         <li className="py-2 lg:py-0 relative">
           <button
@@ -401,9 +398,9 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline">
+          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/careers">
             Careers
-          </button>
+          </Link>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
@@ -429,18 +426,18 @@ const Navbar = () => {
                 About Us
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
+              <Link className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" to="/testimonials">
                 Testimonials
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
+              </Link>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
                 Privacy Policy
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
+              <Link className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" to="/contact-us">
                 Contact Us
                 <span className="hidden group-hover:inline-block">→</span>
-              </li>
+              </Link>
             </ul>
           </div>
         </li>

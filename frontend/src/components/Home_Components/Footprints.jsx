@@ -3,24 +3,24 @@ import { useRef } from "react";
 
 const recognitions = [
   {
-    title: "Kellton Featured as 'Leader' in Zinnov Zones ER&D Digital Engineering Report, 2023-24",
-    date: "February, 2024",
-    category: "ENDORSED",
+    title: "TEN Honored as a Leading Platform for Startup Education & Innovation, 2024",
+    date: "March, 2024",
+    category: "RECOGNIZED",
     logo: "http://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/zz2023.png",
     link: "#",
     bgColor: "bg-yellow-100",
   },
   {
-    title: "Kellton featured as 'Challenger' in Avasant SAP S4/HANA Services RadarView Report, 2024",
-    date: "February, 2024",
+    title: "TEN Featured in Top 10 EdTech Startups Revolutionizing Digital Learning",
+    date: "January, 2024",
     category: "FEATURED",
     logo: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/Isolation_Mode%20(2).png",
     link: "#",
     bgColor: "bg-blue-100",
   },
   {
-    title: "Kellton Featured as 'Product Challenger' in ISG SAP Ecosystem Report 2022-23",
-    date: "May, 2023",
+    title: "TEN Validated by Industry Experts for Building a Global Entrepreneurial Ecosystem",
+    date: "November, 2023",
     category: "VALIDATED",
     logo: "https://kellton-uat.s3.amazonaws.com/s3fs-public/isg2.png",
     link: "#",

@@ -19,15 +19,6 @@ import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
 
-import CloudConsulting from "./pages/services/Cloud/CloudConsulting";
-import CloudMigration from "./pages/services/Cloud/CloudMigration";
-import QualityEngineering from "./pages/services/Product/QualityEngineering";
-import MobileEngineering from "./pages/services/Product/MobileEngineering";
-import CloudEngineering from "./pages/services/Cloud/CloudEngineering";
-import ProductEngineering from "./pages/services/Product/ProductEngineering";
-import CareerPage from "./pages/CareerPage";
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -48,13 +39,6 @@ function App() {
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
-        {/* <Route path="/data-analytics/analytics-services" element={<DataAna />} /> */}
-        <Route path="/cloud-engineering/cloud-consulting" element={<CloudConsulting />} />
-        <Route path="/cloud-engineering/cloud-migration" element={<CloudMigration />} />
-        <Route path="/cloud-engineering" element={<CloudEngineering />} />
-        <Route path="/product-engineering/quality-engineer" element={<QualityEngineering />} /> 
-        <Route path="/product-engineering/mobile-engineering" element={<MobileEngineering />} />
-        <Route path="/product-engineering" element={<ProductEngineering />} />
         <Route path="/next-gen/metaverse" element={<Metaverse />} />
       </Routes>
 

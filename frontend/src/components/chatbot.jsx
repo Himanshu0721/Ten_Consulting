@@ -22,6 +22,7 @@ const Chatbot = () => {
   const [hiddenOptions, setHiddenOptions] = useState([]);
   const [hasMounted, setHasMounted] = useState(false);
   const [isLanding, setIsLanding] = useState(true);
+  const [isMuted, setIsMuted] = useState(false); // 🔇 Controls sound
 
   const [isExpanded, setIsExpanded] = useState(true); // Controls chat expansion
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Controls menu dropdown
@@ -58,7 +59,7 @@ const Chatbot = () => {
     if (!userMessage) return;
 
     setMessages((prev) => [...prev, { text: userMessage, sender: "user" }]);
-    sentSoundRef.current?.play();
+    if (!isMuted) sentSoundRef.current?.play();
 
     setInput("");
     setIsTyping(true);
@@ -86,7 +87,7 @@ const Chatbot = () => {
       }
 
       setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
-      receivedSoundRef.current?.play();
+      if (!isMuted) receivedSoundRef.current?.play();
 
       setIsTyping(false);
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -142,7 +143,7 @@ const Chatbot = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className={`fixed bottom-6 right-6 rounded-2xl overflow-hidden border border-gray-200 z-[1000]
+          className={`fixed bottom-6 right-6 rounded-2xl overflow-hidden border-none z-[1000]
             bg-white shadow-xl flex flex-col transition-all duration-500 ease-in-out
             ${isLanding ? "w-64 h-[360px]" : "w-[360px] h-[500px]"}
           `}
@@ -158,14 +159,32 @@ const Chatbot = () => {
             {/* Menu Icon (Three Dots & Dropdown) */}
             <div className="absolute top-3 right-3 flex items-center space-x-4 cursor-pointer">
               {/* Three Vertical Dots (Opens Menu) */}
-              {/* <div
-                className="flex flex-col items-center space-y-[2px]"
+              <div
+                className="flex flex-col justify-center items-center space-y-[3px] cursor-pointer p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <span className="w-1 h-1 bg-black rounded-full"></span>
-                <span className="w-1 h-1 bg-black rounded-full"></span>
-                <span className="w-1 h-1 bg-black rounded-full"></span>
-              </div> */}
+                <span className="w-[4px] h-[4px] bg-black rounded-full"></span>
+                <span className="w-[4px] h-[4px] bg-black rounded-full"></span>
+                <span className="w-[4px] h-[4px] bg-black rounded-full"></span>
+              </div>
+
+              {isMenuOpen && (
+                <div className="absolute top-10 right-0 bg-white shadow-lg rounded-md z-50 border">
+                  <button
+                    className="px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-100 transition whitespace-nowrap"
+                    onClick={() => {
+                      setIsMuted((prev) => !prev); 
+                      setIsMenuOpen(false);        
+                    }}
+                  >
+                    {isMuted ? "Turn on notification" : "Turn off notification"}
+                  </button>
+
+                </div>
+              )}
+
+
+
 
               {/* Dropdown Arrow (Expands/Collapses Chat) */}
               <span
@@ -240,8 +259,8 @@ const Chatbot = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.2 }}
                       className={`p-2 text-[14px] rounded-lg shadow-md max-w-[75%] ${msg.sender === "bot"
-                          ? "bg-white text-gray-800"
-                          : "bg-[#D1884F] text-white"
+                        ? "bg-white text-gray-800"
+                        : "bg-[#D1884F] text-white"
                         }`}
                     >
                       {msg.text}
@@ -362,7 +381,7 @@ const Chatbot = () => {
                     className="bg-[#D1884F] text-white px-3 py-2 ml-2 rounded-full hover:bg-[#B16D3A] transition-all shadow-md"
                     onClick={() => handleSend()}
                   >
-                    <FaPaperPlane className="text-xl"/>
+                    <FaPaperPlane className="text-xl" />
                   </motion.button>
                 </div>
               )}
@@ -392,7 +411,7 @@ const Chatbot = () => {
             </div>
           </div>
           <audio ref={sentSoundRef} src="/sounds/send.mp3" preload="auto" />
-           <audio ref={receivedSoundRef} src="/sounds/received.mp3" preload="auto" />
+          <audio ref={receivedSoundRef} src="/sounds/received.mp3" preload="auto" />
         </motion.div>
 
       )}
