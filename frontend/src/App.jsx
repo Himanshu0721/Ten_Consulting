@@ -8,7 +8,7 @@ import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
-import Careers from "./pages/Careers";
+import CareerPage from "./pages/CareerPage";
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
