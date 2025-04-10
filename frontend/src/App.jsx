@@ -8,8 +8,7 @@ import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
-import Blogs from "./pages/All_Insights/Blogs"
-import CareerPage from "./pages/CareerPage"
+import Careers from "./pages/Careers";
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
@@ -19,7 +18,6 @@ import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
-import InsightSection from "./components/InsightSection";
 
 function App() {
   return (
@@ -43,6 +41,11 @@ function App() {
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
+        <Route path="/digital-experience" element={<DigiExp />} />
+        <Route path="/digital-experience/product-design" element={<ProductDesign />} />
+        <Route path="/digital-experience/product-consulting" element={<ProductCons />} />
+        <Route path="/blogs" element={<Blogs />} />
+
         <Route path="/next-gen/metaverse" element={<Metaverse />} />
       </Routes>
 

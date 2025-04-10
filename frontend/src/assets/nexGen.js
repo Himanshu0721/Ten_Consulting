@@ -1,5 +1,5 @@
 export const heroData = {
-    backgroundImage: "url('https://www.ablcircuits.co.uk/wp-content/uploads/2024/04/The-Role-of-Flexible-PCBs-in-the-Design-of-Next-Generation-Robotics.jpg')",
+    backgroundImage: "url('https://img.freepik.com/premium-photo/blue-wave-with-light-it_954894-112946.jpg')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
@@ -24,7 +24,7 @@ export const contentData = {
 
 
 export const justSectionDetails = {
-    backgroundImage: "url('https://www.shutterstock.com/shutterstock/videos/3732314287/thumb/1.jpg?ip=x480')",
+    backgroundImage: "url('https://sbgi.net/wp-content/uploads/2022/09/sbgi_website_headers_nextgen.jpg')",
     headerTitle: "Next-Gen Solutions for Tomorrow’s Challenges",
     mainTitle: "Innovate with Next-Gen Technologies",
     buttonText: "Explore Next-Gen",
