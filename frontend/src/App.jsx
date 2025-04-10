@@ -18,10 +18,11 @@ import Metaverse from "./pages/services/NextGen/Metaverse";
 import Services from "./pages/services/Services";
 import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
-
+import ProductDesign from "./pages/services/DigiExp/ProductDesign";
 import Blogs from "./pages/All_Insights/Blogs";
-import White_papers from "./pages/All_Insights/White_papers";
-import News_Announcements from "./pages/All_Insights/News_Announcements";
+import ProductCons from "./pages/services/DigiExp/ProductCons";
+import DigiExp from "./pages/services/DigiExp/DigiExp";
+
 
 function App() {
   return (
@@ -43,7 +44,9 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
-        
+        <Route path="/digital-experience" element={<DigiExp />} />
+        <Route path="/digital-experience/product-design" element={<ProductDesign />} />
+        <Route path="/digital-experience/product-consulting" element={<ProductCons />} />
         <Route path="/blogs" element={<Blogs />} />
 
         <Route path="/next-gen/metaverse" element={<Metaverse />} />
