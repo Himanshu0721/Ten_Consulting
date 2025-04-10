@@ -8,7 +8,8 @@ import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
-import Careers from "./pages/Careers";
+import Blogs from "./pages/All_Insights/Blogs"
+import CareerPage from "./pages/CareerPage"
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
@@ -32,13 +33,14 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/ai-ml" element={<AiMl />} />
         <Route path="/data-analytics" element={<DataAnalytics/>}/>
+        <Route path="/insights" element={<Blogs/>} />
         <Route path="/data-analytics/data-consulting" element={<DataConsulting/>} />
         <Route path="/data-analytics/analyticService" element={<AnalyticsService/>} />
         <Route path="/data-analytics/integration-api" element={<IntegrationApi/>} />
         <Route path="/data-analytics/agentic" element={<Agentic/>} />
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers" element={<CareerPage />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
         <Route path="/next-gen/metaverse" element={<Metaverse />} />

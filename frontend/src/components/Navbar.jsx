@@ -390,7 +390,7 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/insightSection"
+          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/insights"
           onClick={handleMobileLinkClick}>
             Insights
           </Link>
