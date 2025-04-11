@@ -1,5 +1,5 @@
 export const heroData = {
-    backgroundImage: "url('https://img.freepik.com/premium-photo/3d-render-technology-background-concept-with-laptop-tablet-cellphone-servers-that-are-connected-with-each-other-communication-networking_363039-2320.jpg?semt=ais_hybrid')",
+    backgroundImage: "url('https://www.identity.com/wp-content/uploads/2025/01/keycomponents.png')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
@@ -47,7 +47,7 @@ export const offerings = {
 };
 
 export const justSectionDetails = {
-    backgroundImage: "url('https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024,h_444/https://www.erlang-solutions.com/wp-content/uploads/2021/12/7-Key-Business-Principles-of-Blockchain1-1024x444.png')",
+    backgroundImage: "url('https://www.datarobot.com/wp-content/uploads/2023/03/Blog_blue_BKG-scaled.jpg')",
     headerTitle: "Transforming Industries with AI & Blockchain",
     mainTitle: "Future-Ready Technology Solutions",
     buttonText: "Explore More",

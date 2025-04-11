@@ -68,7 +68,7 @@ const Captcha = ({ onVerify }) => {
         value={userInput}
         onChange={(e) => handleCaptchaInput(e.target.value)}
         placeholder="Enter Captcha"
-        className="input mt-4"
+        className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800 mt-4"
       />
     </div>
   );

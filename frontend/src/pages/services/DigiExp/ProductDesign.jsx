@@ -7,7 +7,7 @@ import {
     funFactDetails,
     transformationData,
     insightsData,
-} from "../../../assets/agentic";
+} from "../../../assets/productDesignData";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
 import OfferingsSection from "../../../components/OfferingsSection";
@@ -16,9 +16,9 @@ import FunFactSection from "../../../components/FunFactSection";
 import TransformationSection from "../../../components/LeadingSection";
 import InsightSection from "../../../components/InsightSection";
 
-const AnalyticsService = () => {
+const ProductDesign = () => {
     return (
-    <div className="overflow-hidden">
+    <div>
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />
@@ -36,4 +36,4 @@ const AnalyticsService = () => {
     );
 };
 
-export default AnalyticsService;
+export default ProductDesign;

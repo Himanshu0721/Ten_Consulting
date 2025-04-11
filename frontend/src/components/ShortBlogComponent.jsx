@@ -12,9 +12,9 @@ function ShortBlogComponent({ imgLink, heading }) {
       </div>
       
       <div className="w-full pl-1 pr-2 md:px-2  ">
-        <h3 className="font-semibold text-sm text-gray-600">Blog</h3>
+        <h3 className="font-semibold text-sm ">Blog</h3>
         <h4 className="md:text-2xl text-lg font-semibold">{heading}</h4>
-        <p className="text-sm text-gray-500">March 29, 2005</p>
+        <p className="text-sm ">March 29, 2005</p>
       </div>
     </div>
   );

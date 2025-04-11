@@ -89,7 +89,7 @@ const [submitting, setSubmitting] = useState(false);
               <input
                 {...register("fullName")}
                 placeholder="Full Name*"
-                className="input"
+                className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800"
               />
               {errors.fullName && (
                 <p className="text-red-500 text-sm">
@@ -103,7 +103,7 @@ const [submitting, setSubmitting] = useState(false);
                 {...register("email")}
                 type="email"
                 placeholder="Email*"
-                className="input"
+                className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -113,7 +113,7 @@ const [submitting, setSubmitting] = useState(false);
             <div className="relative space-y-2">
               <select
                 {...register("country")}
-                className="input appearance-none bg-white pr-10"
+                className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800 appearance-none bg-white pr-10"
               >
                 <option value="" disabled selected>
                   --Select Country--
@@ -137,7 +137,7 @@ const [submitting, setSubmitting] = useState(false);
                 {...register("phone")}
                 type="number"
                 placeholder="Phone (Optional)"
-                className="input"
+                className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm">{errors.phone.message}</p>
@@ -149,7 +149,7 @@ const [submitting, setSubmitting] = useState(false);
                 {...register("message")}
                 placeholder="Write a Message"
                 rows={6}
-                className="input resize-none"
+                className="w-full px-4 py-3 border border-gray-600 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-800 resize-none"
               ></textarea>
               {errors.message && (
                 <p className="text-red-500 text-sm">{errors.message.message}</p>

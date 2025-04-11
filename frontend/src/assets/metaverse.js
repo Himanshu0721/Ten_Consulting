@@ -1,5 +1,5 @@
 export const heroData = {
-    backgroundImage: "url('https://t3.ftcdn.net/jpg/04/90/33/66/360_F_490336684_dbhMOJJ8oBvkF9hLurxLQIQRbTujddEe.jpg')",
+    backgroundImage: "url('https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/351317-Background-Hero-1600x616?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=770&qlt=100&fit=constrain')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
@@ -49,7 +49,7 @@ export const offerings = {
 };
 
 export const justSectionDetails = {
-    backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/005/502/394/non_2x/abstract-background-in-concpet-of-metaverse-loop-square-copy-space-purple-and-pink-tone-free-vector.jpg')",
+    backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnZeW2bQDo3q5L9iY0fKvglOu6geORNla7ZTxzT8V4OiPZ2zCDSVWmvXZ1j2La1xCaets&usqp=CAU')",
     headerTitle: "Unlock the Potential of the Metaverse",
     mainTitle: "Shape the Future of Digital Interaction",
     buttonText: "Get Started",
