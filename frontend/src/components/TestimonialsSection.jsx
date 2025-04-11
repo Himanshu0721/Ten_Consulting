@@ -95,33 +95,36 @@ const TestimonialsSection = () => {
         className="max-w-[806px] w-full mx-auto text-sm xs:text-base sm:text-lg md:text-xl font-light space-y-12"
       >
         {testimonials.map((t, i) => (
-          <div key={i} className="space-y-7">
-            <p className="font-medium text-sm tracking-normal leading-6">
+          <div
+            key={i}
+            className="space-y-7 text-center md:text-left md:space-y-4"
+          >
+            <p className="font-medium text-base sm:text-lg md:text-xl italic tracking-normal leading-relaxed relative px-8 md:px-0">
               "{t.testimonial}"
             </p>
-            <div className="flex items-center justify-end gap-2">
+            <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:justify-end">
               <img
                 src={t.authorImage}
                 alt={t.authorName}
-                className="size-12 rounded-full"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full"
               />
-              <div className="flex flex-col justify-center">
-                <span className="font-medium text-sm tracking-normal">
+              <div className="flex flex-col items-center justify-center text-center md:items-start md:text-left md:ml-3">
+                <span className="font-medium text-sm sm:text-base tracking-normal">
                   {t.authorName}
                 </span>
-                <span className="font-medium text-xs tracking-normal">
+                <span className="font-medium text-xs sm:text-sm tracking-normal">
                   {t.authorTitle}
                 </span>
               </div>
             </div>
-            <hr className="border-b-[0.5px] border-gray-300 my-4" />
+            <hr className="border-b-[0.5px] border-gray-300 my-4 max-w-[200px] mx-auto md:ml-0" />
           </div>
         ))}
 
         <div className="grid place-items-center">
           <button
             onClick={toggleTestimonials}
-            className="bg-white border border-gray-400 cursor-pointer px-4 py-2 text-sm text-gray-900 font-medium focus:outline-0"
+            className="bg-white border border-gray-400 cursor-pointer px-4 py-2 text-sm sm:text-base text-gray-900 font-medium focus:outline-0"
           >
             {testimonials.length === featuredTestimonials.length
               ? "See More Testimonials"
