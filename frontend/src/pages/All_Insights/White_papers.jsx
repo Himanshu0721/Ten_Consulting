@@ -84,9 +84,9 @@ function White_papers() {
            
         <div className=" ">
        
-            <div className="w-full h-fit flex justify-center items-center pt-16 md:pt-0 flex-col mb-10 md:mb-0 px-8 md:px-0">
+            <div className="lg:px-20 md:px-10 px-4 bg-gray-800 pb-14 text-white">
     
-                <div className="py-10 w-full h-fit md:px-12  gap-16 flex justify-center scale-110 md:flex-row flex-col lg:px-28 ">
+                <div className="py-10 w-full h-fit md:px-12 lg:px-28 gap-16 flex justify-center  scale-110 md:flex-row flex-col px-8 ">
     
                     <Short2_BlogComponent imgLink="https://media.istockphoto.com/id/1271364435/vector/unicorn-startup-concept-illustration.jpg?s=612x612&w=0&k=20&c=Afpj5aY5ieLke2hEO4ETyFRomZrpvOceBLvacFE0JmM=" heading="From College Campuses to Unicorn Dreams: The TEN Model"  />
         
@@ -96,7 +96,8 @@ function White_papers() {
        
             </div>
 
-            <div className="h-fit md:mt-20 pt-10 border-t-2 border-gray-300 md:px-8">
+            <div className="lg:mx-24 md:mx-10 mx-4">
+            <div className="h-fit  pt-10 border-t-2 border-gray-300 md:px-8">
                 <div className="mb-10 px-4 md:px-0 ">
                     <div className="mb-4">
                         <p className="text-2xl">Our latest prespective</p>
@@ -129,11 +130,12 @@ function White_papers() {
                 </div>
                 <div className="w-full flex justify-center">
                     { filteredBlogs.length>2 ?<>
-                        <button className="text-black border-2 border-black hover:bg-slate-200 rounded-md px-4 py-2 cursor-pointer mb-6" onClick={() => setShowMoreBlog(!showMoreBlogs)}>
-                        {showMoreBlogs ? "Show less blogs" : "See more blogs"}
-                        </button></>:""
+                      <button className="text-black border-2 border-black hover:bg-slate-200 duration-200 rounded-md px-4 py-2 cursor-pointer mb-6" onClick={() => setShowMoreBlog(!showMoreBlogs)}>
+                      {showMoreBlogs ? "Show less blogs" : "See more blogs"}
+                      </button></>:""
                     }
                 </div>
+            </div>
             </div>
 
             {showFilter && (
@@ -172,7 +174,7 @@ function White_papers() {
                                     setShowFilter(false);
                                 }}
                             className="bg-blue-600 active:scale-105 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all">
-                                
+
                             Apply Changes
                         </button>
                         </div>

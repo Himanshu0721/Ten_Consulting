@@ -2,7 +2,7 @@ import React from 'react'
 
 function LongBlogComponent({heading,imgLink, data}) {
   return (
-    <div className="flex mb-10 md:flex-row flex-col md:items-center  md:justify-center  border-gray-200 shadow-2xl p-6 rounded-lg">
+    <div className=" flex mb-10 md:flex-row flex-col md:items-center  md:justify-center  border-gray-200 shadow-2xl p-6 rounded-lg">
         <div className=" md:mr-2 ">
             <img src={imgLink} alt=""  className="w-full md:w-[360px] rounded-lg"/>
         </div>

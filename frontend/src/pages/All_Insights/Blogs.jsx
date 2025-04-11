@@ -100,27 +100,28 @@ function Blogs() {
 
     return (
       <div className="bg-slate-100 relative"> 
-        <div className=" h-full lg:px-20 md:px-10 px-4">
-          <div className="w-full h-fit flex justify-center items-center pt-16 flex-col">
-            <h1 className="text-3xl font-semibold md:text-5xl ">
+        <div className=" h-full ">
+          <div className="w-full h-fit flex justify-center items-center pt-16 flex-col bg-gray-800 text-white">
+            <h1 className="text-2xl font-semibold md:text-5xl center">
               {currentScreen === "Blogs" ? "Blogs" : currentScreen === "White_papers" ? "White Papers" : "News & Announcements"}
             </h1>
 
-            <div className="py-10 w-full h-fit flex justify-start md:justify-center gap-6 overflow-x-auto whitespace-nowrap">
-              <button onClick={() => setCurrentScreen("Blogs")} className={`pb-5 inline-flex ${currentScreen === "Blogs" ? "text-blue-800 border-b-2 border-blue-800" : ""}`}>Blogs</button>
-              <button onClick={() => setCurrentScreen("White_papers")} className={`pb-5 inline-flex ${currentScreen === "White_papers" ? "text-blue-800 border-b-2 border-blue-800" : ""}`}>White Papers</button>
-              <button onClick={() => setCurrentScreen("News_Announcements")} className={`pb-5 inline-flex ${currentScreen === "News_Announcements" ? "text-blue-800 border-b-2 border-blue-800" : ""}`}>News & Announcements</button>
+            <div className="py-10 w-full h-fit flex justify-start md:justify-center gap-6 overflow-x-auto whitespace-nowrap px-4">
+              <button onClick={() => setCurrentScreen("Blogs")} className={`pb-5 inline-flex ${currentScreen === "Blogs" ? "text-blue-800 border-b-2 border-blue-800 font-semibold" : ""}`}>Blogs</button>
+              <button onClick={() => setCurrentScreen("White_papers")} className={`pb-5 inline-flex ${currentScreen === "White_papers" ? "text-blue-800 border-b-2 border-blue-800 font-semibold" : ""}`}>White Papers</button>
+              <button onClick={() => setCurrentScreen("News_Announcements")} className={`pb-5 inline-flex ${currentScreen === "News_Announcements" ? "text-blue-800 border-b-2 border-blue-800 font-semibold" : ""}`}>News & Announcements</button>
             </div>
           </div>
 
           {currentScreen === "Blogs" ? (
             <>
-              <div className="py-10 w-full h-fit md:px-12 lg:px-28 gap-16 flex justify-center  scale-110 md:flex-row flex-col px-8 ">
+            <div className="lg:px-20 md:px-10 px-4 bg-gray-800">
+              <div className="py-10 w-full h-fit md:px-12 lg:px-28 gap-16 flex justify-center  scale-110 md:flex-row flex-col px-8 text-white ">
                 <Short2_BlogComponent imgLink="https://media.istockphoto.com/id/1332176245/photo/woman-making-a-business-presentation-at-a-creative-office.jpg?s=612x612&w=0&k=20&c=NFetBlipzGVZzp_EU0gvHromk8CH93BNpxel7QWyXio=" heading="Networking in Delhi: How TEN is Connecting the City's Entrepreneurs"/>
                 <Short2_BlogComponent imgLink="https://thumbs.dreamstime.com/b/abstract-rocket-launch-graph-growing-up-blue-background-start-up-business-development-to-success-growing-growth-concept-354902762.jpg" heading="From Idea to Launch: TEN's Step-by-Step Guide to Starting Your Business" className="lg:pt-20"/>
               </div>
 
-              <div className="flex md:px-5 lg:px-10 justify-between items-center md:mb-10 lg:flex-row flex-col mt-8 lg:gap-5">
+              <div className="flex md:px-5 lg:px-10 justify-between items-center md:mb-10 lg:flex-row flex-col mt-8 lg:gap-5 text-white">
                 <div className="md:pl-2 md:mb-8 pl-3 mb-6 lg:mb-0">
                   <ShortBlogComponent heading="Mastering the Pitch: Essential Skills for Securing Funding" imgLink={photo1} />
                 </div>
@@ -129,7 +130,7 @@ function Blogs() {
                 </div>
               </div>
 
-              <div className="flex md:px-5 lg:px-10 justify-between items-center md:mb-10 lg:flex-row flex-col mt-8">
+              <div className="flex md:px-5 lg:px-10 justify-between items-center md:pb-14  lg:flex-row flex-col mt-8 text-white">
                 <div className="md:pl-2 md:mb-8 pl-3 mb-6 lg:mb-0">
                   <ShortBlogComponent heading="Importance of Mentorship: How TEN Connects You with Industry Experts" imgLink={photo3}/>
                 </div>
@@ -137,8 +138,10 @@ function Blogs() {
                   <ShortBlogComponent heading="Navigating the Delhi Market: Trends and Opportunities for Startups" imgLink={photo4}/>
                 </div>
               </div>
+            </div>
 
-              <div className="h-fit md:mt-20 pt-10 border-t-2 border-gray-300 md:px-8">
+            <div className="lg:mx-20 md:mx-10 mx-4">
+              <div className="h-fit pt-10 border-t-2 border-gray-300 md:px-8">
                 <div className="mb-10 px-4 md:px-0">
                   <div className="mb-4">
                     <p className="text-2xl">Our latest perspective</p>
@@ -162,13 +165,13 @@ function Blogs() {
 
                 <div className="w-full flex justify-center">
                   { filteredBlogs.length>2 ?<>
-                    <button className="text-black border-2 border-black hover:bg-slate-200 rounded-md px-4 py-2 cursor-pointer mb-6" onClick={() => setShowMoreBlog(!showMoreBlogs)}>
+                    <button className="text-black border-2 border-black hover:bg-slate-200 duration-200 rounded-md px-4 py-2 cursor-pointer mb-6" onClick={() => setShowMoreBlog(!showMoreBlogs)}>
                     {showMoreBlogs ? "Show less blogs" : "See more blogs"}
                   </button></>:""
                   }
                 </div>
               </div>
-
+            </div>
               {showFilter && (
                 <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
                   <div className="w-11/12 md:w-1/2 h-fit bg-white rounded-lg shadow-lg my-5 md:my-0">
