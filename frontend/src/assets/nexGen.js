@@ -24,7 +24,7 @@ export const contentData = {
 
 
 export const justSectionDetails = {
-    backgroundImage: "url('https://www.shutterstock.com/shutterstock/videos/3732314287/thumb/1.jpg?ip=x480')",
+    backgroundImage: "url('https://media.istockphoto.com/id/1185556635/vector/up-arrows-on-dark-blue-abstract-background-illustration.jpg?s=612x612&w=0&k=20&c=VGkZZsNSeawSW9q5-5h-xH6ic5qkXkFw5eBSfKjRV_Y=')",
     headerTitle: "Next-Gen Solutions for Tomorrow’s Challenges",
     mainTitle: "Innovate with Next-Gen Technologies",
     buttonText: "Explore Next-Gen",

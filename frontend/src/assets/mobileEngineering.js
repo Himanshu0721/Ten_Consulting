@@ -25,20 +25,20 @@ export const offerings = {
     
     services: [
         {
-            title: "Native App Development",
-            content: "We use our extensive global experience to build intuitive, high-performing native Mobile Applications for iOS, Android, and Windows.",
+            title: "Custom Mobile App Development",
+            content: "We build tailored mobile apps for iOS and Android that align with your brand, meet business goals, and offer a seamless user experience.",
         },
         {
-            title: "Hybrid App Development",
-            content: "Our experts use a variety of advanced mobile tools and frameworks such as Sencha, PhoneGap, Ionic, and React Native to build Hybrid Mobile Apps.",
+            title: "Cross-Platform Development",
+            content: "Using frameworks like React Native and Flutter, we develop apps that run smoothly on both iOS and Android, reducing cost and time-to-market.",
         },
         {
-            title: "Cross Platform App Development",
-            content: "We build Cross-Platform solutions that offer scalability, speed, and efficiency whilst remaining highly customizable and intuitive.",
+            title: "UI/UX Design for Mobile",
+            content: "Our design team creates intuitive, engaging, and visually appealing mobile interfaces that enhance user satisfaction and retention.",
         },
         {
-            title: "Progressive Web App Development",
-            content: "We create reliable and engaging progressive web apps optimized for performance, lead conversion, and seamless user experiences.",
+            title: "Mobile App Testing and Optimization",
+            content: "We ensure your app performs flawlessly across devices with rigorous testing, performance tuning, and continuous optimization.",
         },
         
     ],

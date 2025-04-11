@@ -30,24 +30,24 @@ export const offerings = {
     paragraph: "Capitalize on AI-Innovation to create fresh content, whether it's text, images, or videos. This automation boosts productivity & fuels creativity.",
     services: [
         {
-            title: "Chatbots and Virtual Assistants",
-            content: "Our Chatbots/Virtual Assistants services encompass AI-powered chatbot development, virtual assistant integration, and natural language processing (NLP) capabilities.",
+            title: "AI Strategy and Consulting",
+            content: "We help businesses define a clear AI roadmap by assessing readiness, identifying high-impact use cases, and aligning AI initiatives with long-term goals.",
         },
         {
-            title: "Skill Assessment Services",
-            content: "Ten Consulting's skill assessment offering incorporates a powerful tool capable of generating dynamic questions and accurately assessing candidate responses. Our rating system ensures a transparent evaluation of the candidate's skill level, providing valuable insights for informed decision-making.",
+            title: " Custom AI Solution Development",
+            content: "Our teams design and build tailored AI models and applications that solve unique business challenges—ranging from predictive analytics to intelligent automation.",
         },
         {
-            title: "Credit Analysis",
-            content: "Our Credit Analysis services encompass advanced data analysis and Generative AI algorithms that can generate synthetic data to augment the limited labeled data for credit risk modeling.",
+            title: "Generative AI Integration",
+            content: "We implement Gen AI tools like chatbots, content generators, and recommendation engines to enhance creativity, personalization, and user engagement.",
         },
         {
-            title: "Knowledge Databases",
-            content: "Leveraging Generative AI, we enable businesses to automatically generate high-quality and relevant content, create concise summaries of large documents, and structure knowledge for efficient retrieval and analysis.",
+            title: "Machine Learning Model Development",
+            content: "From data preparation to model training and deployment, we deliver end-to-end machine learning solutions that improve decision-making and operational efficiency.",
         },
         {
-            title: "AI Generated Product/Marketing Campaign",
-            content: "Our AI-generated product/marketing campaign services encompass AI-powered content creation, product design, and marketing campaign optimization.",
+            title: "AI-Powered Process Automation",
+            content: "We leverage AI to automate repetitive, manual processes—reducing costs, minimizing errors, and boosting overall productivity across departments.",
         },
     ],
 };
@@ -92,25 +92,25 @@ export const funFactDetails = {
 
 export const transformationData = [
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-07/omnichannel-excellence-hospitality-leader%20%28Thumbnail%29.webp?itok=060k_l3C",
+        img: "https://duve.com/wp-content/uploads/2023/11/AI-2.jpg",
         alt: "AI in Hospitality",
         region: "APAC",
         title: "Elevating customer experiences with AI-powered hospitality solutions",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-08/Empowering%20the%20legal%20landscape%20Thumbnail.webp?itok=GantJ2pv",
+        img: "https://todaysgeneralcounsel.com/wp-content/uploads/2024/02/AI-and-law-legal-technology-and-artificial-intelligence-768x576.jpg",
         alt: "AI in Law",
         region: "USA",
         title: "Transforming legal operations with AI-driven automation",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-08/Incorporating%20AI-Powered%20ChatGPT%20and%20Master%20Data%20Management%20Thumbnail.webp?itok=5B0x6BOb",
+        img: "https://media.licdn.com/dms/image/v2/D5612AQEEb3oCZjj_wg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1716270630250?e=2147483647&v=beta&t=qPyAdUlDKPGMk5JLE5r265uJPXdI9H1hNZG9pjeRSvA",
         alt: "AI in Finance",
         region: "Europe",
         title: "Driving financial innovation with AI-powered analytics",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-08/Building%20the%20future%20of%20Business%20Advisory%20Thumbnail.webp?itok=QaTUVSMd",
+        img: "https://primathon.in/blog/wp-content/uploads/2024/03/AI-Driven-Supply-Chain-Optimization_-Strategies-and-Benefits.jpg",
         alt: "AI in Supply Chain",
         region: "Global",
         title: "Optimizing global supply chains with AI-powered forecasting",
@@ -120,17 +120,17 @@ export const transformationData = [
 
 export const insightsData = [
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/550x460-genai.webp?itok=48sLquZn",
+        img: "https://media.licdn.com/dms/image/v2/D4D12AQHy6b5LWusNmg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1703327427729?e=2147483647&v=beta&t=6V_Pf4hcC82pWINr0_IDm3NQvdJ7Y3CAp5hqv4ENtyM",
         title: "How AI is Transforming Digital Marketing in 2024",
         date: "August 15, 2024",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/Thumbnail-Traditionald.webp?itok=KMN7AyxS",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3zRh5rRJKiebMDBwawVNVrQqxI_M9y098vw&s",
         title: "Top Cybersecurity Trends Every Business Should Know",
         date: "August 5, 2024",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/AI%20for%20Data%20Analysis.webp?itok=thNRESzz",
+        img: "https://www.tdk.com/en/tech-mag/sites/default/files/2024-03/Blockchain-Cryptocurrency.jpg",
         title: "Blockchain Beyond Cryptocurrency: The Future of Secure Transactions",
         date: "July 20, 2024",
     },

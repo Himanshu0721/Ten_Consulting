@@ -82,13 +82,13 @@ export const funFactDetails = {
 
 export const transformationData = [
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-03/sam-moghadam-khamseh-fFYgW-zVD2E-unsplash%201.webp?itok=dCNnmx5v?itok=87XGhg6s",
+        img: "https://www.marlabs.com/wp-content/uploads/2024/05/data-analytics-healthcare.jpg",
         alt: "Data in Healthcare",
         region: "Global",
         title: "Revolutionizing healthcare analytics with data-driven insights.",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-08/AI-driven%20Disaster%20Management%20Thumbnail.webp?itok=4QIU87AC?itok=87XGhg6s",
+        img: "https://www.appier.com/hubfs/Imported_Blog_Media/Predictive-Modeling-1.jpg",
         alt: "Data in Finance",
         region: "USA",
         title: "Enhancing financial decision-making with predictive data modeling.",

@@ -27,12 +27,12 @@ export const solutions = {
     services: [
         {
             title: "Quality Engineer",
-            description: "Our Quality Engineering services enhance product performance, security, and ROI—delivering 99% uptime, superior quality, and faster time-to-market. ",
+            description: "Delivering excellence through Quality Engineering that enhances uptime, strengthens security, and speeds up time-to-market.",
             link : "/product-engineering/quality-engineer",
         },
         {
             title: "Mobile Engineer",
-            description: "Our mobile engineering teams craft innovative, user-friendly apps that not only delight users but also align seamlessly with your business objectives.",
+            description: "We build mobile apps that not only look great but also perform seamlessly—tailored to your business vision.",
             link: "/product-engineering/mobile-engineering",
         },
     ]

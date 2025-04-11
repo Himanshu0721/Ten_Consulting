@@ -30,7 +30,7 @@ const AiMlContent = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          Leveraging the power of AI and Gen AI in various business and technology functions to optimize operations, enhance Customer Experience, and drive innovations.
+          Empowering business and tech functions with AI and Generative AI to boost efficiency, delight customers, and spark breakthrough innovations.
         </motion.h3>
       </div>
     </motion.div>

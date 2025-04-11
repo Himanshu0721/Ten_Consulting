@@ -26,28 +26,28 @@ export const offerings = {
     
     services: [
         {
-            title: "Cloud Architecture Design",
-            content: "We design the architecture for your Cloud-based infrastructure, helping you find the right service model and Cloud provider for your needs.",
+            title: "Cloud Readiness Assessment",
+            content: "Evaluates your current IT setup to determine if it's ready for cloud migration. Identifies risks, dependencies, and the best migration approach.",
         },
         {
-            title: "Data Migration",
-            content: "Our experts can help migrate your data from on-premise to Cloud storage, ensuring data security, integrity, and accessibility.",
+            title: " Cloud Strategy and Planning",
+            content: "Creates a customized migration roadmap, selecting the right cloud model, provider, and timeline to align with your business goals.",
         },
         {
-            title: "Application Migration",
-            content: "We ensure your applications are migrated to the Cloud safely by migrating custom applications, upgrading existing applications, and managing application dependencies.",
+            title: "Cost-Benefit Analysis",
+            content: "Compares current infrastructure costs with potential cloud expenses and savings. Helps plan for cost-effective cloud adoption.",
         },
         {
-            title: "Cloud Security",
-            content: "We advise on how to make the best use of your Cloud service provider’s security tools, including firewalls, intrusion detection, and monitoring tools."
+            title: "Application and Data Migration",
+            content: "Handles the secure transfer of apps and data to the cloud with minimal downtime. Ensures compatibility and performance optimization."
         },
         {
-            title: "Database Migration",
-            content: "As esteemed Cloud migration service providers, we understand the critical role data plays in your business operations. We evaluate your existing database architecture, categorize data based on importance, and seamlessly migrate it to the Cloud database solution best suited for your needs. Whether it's migrating databases, files, or applications, our meticulous approach ensures minimal downtime and maximum data security."
+            title: "Security and Compliance Consulting",
+            content: "Implements strong cloud security measures and ensures compliance with standards like GDPR, HIPAA, and ISO during and after migration."
         },
         {
-            title: "Infrastructure Migration",
-            content: "As one of the most prominent Cloud migration services companies, our seasoned experts meticulously analyze your existing IT infrastructure to devise a tailor-made strategy that guarantees a seamless migration journey. Leveraging industry best practices, we ensure a smooth transfer of your infrastructure to the Cloud, minimizing disruptions and optimizing performance."
+            title: "Post-Migration Support and Optimization",
+            content: "Offers ongoing support, monitors performance, and fine-tunes the cloud setup to ensure it continues to meet business needs."
         },
     ],
 };

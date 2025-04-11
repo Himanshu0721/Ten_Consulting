@@ -26,28 +26,28 @@ export const offerings = {
     
     services: [
         {
-            title: "AI enabled Quality Assurance",
-            content: "Our AI-driven Quality Assurance provides enhanced data analysis for generating valuable insights, continuous learning for reliable defect detection, seamless integration for hassle-free implementation and customization, as well as enhanced efficiency through automation.",
-        },
-        {
-            title: "Automation Testing",
-            content: "We automate touch points across websites, mobile apps, and architectural layers using top-end QA frameworks like Selenium, Appium, and JMeter.",
-        },
-        {
-            title: "API Testing",
-            content: "We test and optimize your APIs for functionality, security, performance, and reliability, improving software quality and test coverage whilst reducing costs.",
+            title: "Test Automation",
+            content: "We implement robust automation frameworks to accelerate testing, reduce manual effort, and ensure consistent, high-quality releases.",
         },
         {
             title: "Performance Testing",
-            content: "We use manual and automated testing techniques to fix performance issues before they impact users and ensure your system can handle peak usage workloads.",
+            content: "Our performance testing services help identify system bottlenecks and optimize speed, scalability, and stability under load.",
         },
         {
-            title: "Sustenance & Support",
-            content: "We offer 24/7 support for all development and deployment services to reduce vulnerabilities and outages, integrating frequent updates for consistent outcomes.",
+            title: "Security Testing",
+            content: "We perform comprehensive vulnerability assessments to safeguard your applications against threats and ensure compliance with industry standards.",
         },
         {
-            title: "Accessibility Testing",
-            content: "Our accessibility testing services evaluate your product’s user interface, content, and functionality to ensure compliance with accessibility standards and best practices. ",
+            title: "Continuous Testing",
+            content: "Integrated into CI/CD pipelines, our continuous testing approach ensures fast, reliable feedback throughout the development lifecycle.",
+        },
+        {
+            title: "Functional Testing",
+            content: "We validate that your applications work as intended, covering all key functionalities to deliver a seamless user experience.",
+        },
+        {
+            title: "Mobile App Testing",
+            content: "From usability to performance, we test mobile apps across devices and platforms to ensure flawless functionality and user satisfaction.",
         },
     ],
 };

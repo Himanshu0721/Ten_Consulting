@@ -87,13 +87,13 @@ export const funFactDetails = {
 
 export const transformationData = [
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-03/sam-moghadam-khamseh-fFYgW-zVD2E-unsplash%201.webp?itok=dCNnmx5v?itok=87XGhg6s",
+        img: "https://media.licdn.com/dms/image/v2/D5612AQHIc1bF_v7q5A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1729704409673?e=2147483647&v=beta&t=d7hJlkbBV409VodiLIxudqBpd6YYkW0nEnjNpPdgQVs",
         alt: "AI in Hospitality",
         region: "APAC",
         title: "Redefining hospitality with AI-powered guest experiences.",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/2023-08/AI-driven%20Disaster%20Management%20Thumbnail.webp?itok=4QIU87AC?itok=87XGhg6s",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ANyML3oQTCXTI2GAHJUj8MrGz0xPJCCv_A&s",
         alt: "AI in Legal Tech",
         region: "USA",
         title: "Automating legal research and case management with AI.",
@@ -103,17 +103,17 @@ export const transformationData = [
 
 export const insightsData = [
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/Thumbnail-Futurep.webp?itok=dAtmIVq5",
+        img: "https://media.stockimg.ai/image/v2/jzbnqwNoHuEU.png",
         title: "The Future of AI in Business: Trends to Watch in 2025",
         date: "September 10, 2024",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/Thumbnail-Traditionald.webp?itok=KMN7AyxS",
+        img: "https://managemysystem.com/wp-content/uploads/2023/04/main-image-scaled.webp",
         title: "AI & Cybersecurity: How Businesses Can Stay Secure",
         date: "August 25, 2024",
     },
     {
-        img: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/styles/case_studies_550px_460px/public/AI%20for%20Data%20Analysis.webp?itok=thNRESzz",
+        img: "https://media.licdn.com/dms/image/v2/D4D12AQEL1xtRWSOgFQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1729078937753?e=2147483647&v=beta&t=bW_nB3ykGY-Yqc1sVCVnd0KR3lonEVhIxIHRN6Fq-7c",
         title: "The Role of AI in Personalizing Customer Experiences",
         date: "July 30, 2024",
   },
