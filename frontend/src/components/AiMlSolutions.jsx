@@ -35,7 +35,7 @@ const AiMlSolutions = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-xl text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-bold mb-6">Explore Our AI & ML Solutions</h2>
+      <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-bold mb-6">Explore Our AI & ML Solutions</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {solutions.map((solution, index) => (
           <motion.div

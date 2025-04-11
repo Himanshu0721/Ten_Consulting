@@ -32,26 +32,22 @@ body {
 
 .card-back {
   transform: rotateY(180deg);
-  body {
-    overflow-x: hidden;
-  }
 }
-.scrollbar-hide::-webkit-scrollbar {
+/* .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge ke liye */
-}
 
-.scrollbar-hide {
+
+/* .scrollbar-hide {
   -ms-overflow-style: none; /* IE aur Edge ke liye */
-  scrollbar-width: none; /* Firefox ke liye */
-}
+ /* Firefox ke liye */
 
-.custom-scrollbar::-webkit-scrollbar {
+/* .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 4px;
-}
+} */
 
 @layer components {
   .input {
