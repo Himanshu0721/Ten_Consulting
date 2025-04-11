@@ -72,7 +72,7 @@ const ServiceContent = ({ section }) => (
 
     <Link
       to={section.links[0]?.path || "/"}
-      className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 px-4 py-2 rounded-md text-sm font-medium text-gray-800 transition"
+      className="inline-flex items-center gap-2 border border-blue-600 px-4 py-2 rounded-md text-sm font-medium text-gray-800 transition"
     >
       Learn More
       <ArrowRight className="h-4 w-4" />

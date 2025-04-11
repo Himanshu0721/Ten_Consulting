@@ -4,15 +4,27 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolling, setScrolling] = useState(true);
+
+  const handleMobileLinkClick = () => {
+    if (menuOpen) setMenuOpen(false);
+  };
 
   // Toggle dropdown function
   const handleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => (document.body.style.overflow = "auto");
+  }, [menuOpen]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -36,10 +48,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex justify-between items-center text-white transition-all duration-200 p-4 z-50 ${scrolling ? "bg-gray-800 shadow-md" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 lg:rounded-2xl flex justify-between items-center text-white transition-all duration-400 p-4 z-50 ${
+        scrolling ? "bg-cyan-900 shadow-md lg:top-3 lg:left-20 lg:right-20" : "bg-transparent"
+      }`}
     >
-      <div className="flex items-center">
+      <div className="flex items-center lg:ml-5">
         <svg
           className="h-9 w-16"
           preserveAspectRatio="xMidYMid meet"
@@ -106,10 +119,7 @@ const Navbar = () => {
             </g>
           </g>
         </svg>
-        <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">
-          <a href="/">
-            Ten Consulting
-          </a>
+        <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">Ten Consulting
         </h1>
       </div>
 
@@ -119,7 +129,7 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-gray-800 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-cyan-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
           }`}
       >
         <li className="py-2 lg:py-0 relative">
@@ -143,15 +153,13 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/ai-ml"
-                  className="font-semibold"
-                >
+                <Link to="/ai-ml" onClick={handleMobileLinkClick} className="font-semibold">
                   AI and ML
                 </Link>
                 <Link
                   to="/ai-ml/generative-ai"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Generative AI{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -159,6 +167,7 @@ const Navbar = () => {
                 <Link
                   to="/ai-ml/data-science"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Data Science{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -166,15 +175,13 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/data-analytics"
-                  className="font-semibold"
-                >
+                <Link to="/data-analytics" onClick={handleMobileLinkClick} className="font-semibold">
                   Data Analytics
                 </Link>
                 <Link
                   to="/data-analytics/data-consulting"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Data Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -182,6 +189,7 @@ const Navbar = () => {
                 <Link
                   to="/data-analytics/analyticService"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Analytics Services{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -189,6 +197,7 @@ const Navbar = () => {
                 <Link
                   to="/data-analytics/integration-api"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Integration & API{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -196,6 +205,7 @@ const Navbar = () => {
                 <Link
                   to="/data-analytics/agentic"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Agentic{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -203,15 +213,13 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/next-gen"
-                  className="font-semibold"
-                >
+                <Link to="/next-gen" onClick={handleMobileLinkClick} className="font-semibold">
                   Next Generation
                 </Link>
                 <Link
                   to="/next-gen/blockchain"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Blockchain{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -219,6 +227,7 @@ const Navbar = () => {
                 <Link
                   to="/next-gen/metaverse"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Metaverse{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -226,15 +235,13 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/digital-experience"
-                  className="font-semibold"
-                >
+                <Link to="/digital-experience" onClick={handleMobileLinkClick} className="font-semibold">
                   Digital Experience
                 </Link>
                 <Link
                   to="/digital-experience/product-design"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Product Design{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -242,6 +249,7 @@ const Navbar = () => {
                 <Link
                   to="/digital-experience/product-consulting"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Product Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -249,15 +257,13 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/cloud-engineering"
-                  className="font-semibold"
-                >
+                <Link to="/cloud-engineering" onClick={handleMobileLinkClick} className="font-semibold">
                   Cloud Engineering
                 </Link>
                 <Link
                   to="/cloud-engineering/cloud-consulting"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Cloud Consulting{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -265,6 +271,7 @@ const Navbar = () => {
                 <Link
                   to="/cloud-engineering/cloud-migration"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Cloud Migration{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -272,15 +279,13 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link
-                  to="/product-engineering"
-                  className="font-semibold"
-                >
+                <Link to="/product-engineering" onClick={handleMobileLinkClick} className="font-semibold">
                   Product Engineering
                 </Link>
                 <Link
                   to="/product-engineering/quality-engineer"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Quality Engineer{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -288,6 +293,7 @@ const Navbar = () => {
                 <Link
                   to="/product-engineering/mobile-engineering"
                   className="ml-5 cursor-pointer text-sm hover:text-gray-200 lg:hover:text-gray-700 group"
+                  onClick={handleMobileLinkClick}
                 >
                   Mobile Engineering{" "}
                   <span className="hidden group-hover:inline-block">→</span>
@@ -316,39 +322,67 @@ const Navbar = () => {
             } bg-gray-700 lg:bg-white w-full lg:w-[16vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
           >
             <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group" href="https://education.entrepreneurshipnetwork.net/" target="_blank">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-700 items-center gap-1 group"
+                href="https://education.entrepreneurshipnetwork.net/"
+                target="_blank"
+              >
                 TEN Education
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-human-resources.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-human-resources.vercel.app/"
+              >
                 TEN Human Resource
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-media-rosy.vercel.app/">
+              <a
+                className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-media-rosy.vercel.app/"
+              >
                 TEN Media
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://art-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://art-industry.vercel.app/"
+              >
                 TEN Art
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://space-industry-five.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://space-industry-five.vercel.app/"
+              >
                 TEN Space Search
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-healthcare-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-healthcare-industry.vercel.app/"
+              >
                 TEN Health
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-ai-industry.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-ai-industry.vercel.app/"
+              >
                 TEN AI
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://ten-internal-tools.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://ten-internal-tools.vercel.app/"
+              >
                 TEN Internal Tools
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
-              <a className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group" href="https://incubation-vc.vercel.app/">
+              <a
+                className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group"
+                href="https://incubation-vc.vercel.app/"
+              >
                 TEN Incubation and VC
                 <span className="hidden group-hover:inline-block">→</span>
               </a>
@@ -356,42 +390,16 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleDropdown("insight");
-            }}
-            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
-          >
+          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/insights"
+          onClick={handleMobileLinkClick}>
             Insights
-          </button>
-          <div
-            className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              activeDropdown === "insight"
-                ? "max-h-[500px] opacity-100"
-                : "max-h-0 opacity-0"
-            } ${
-              menuOpen ? "relative" : "absolute"
-            } bg-gray-700 lg:bg-white w-full lg:w-[10vw] shadow-md mt-2 lg:mt-4 text-white lg:text-black`}
-          >
-            <ul className="p-4 space-y-2">
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                Blog
-                <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                News
-                <span className="hidden group-hover:inline-block">→</span>
-              </li>
-              <li className="=py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                White Paper
-                <span className="hidden group-hover:inline-block">→</span>
-              </li>
-            </ul>
-          </div>
+          </Link>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <button className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline">Careers</button>
+          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/careers"
+          onClick={handleMobileLinkClick}>
+            Careers
+          </Link>
         </li>
         <li className="py-2 lg:py-0 relative">
           <button
@@ -414,19 +422,19 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2">
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                About Us
+                <Link to="" onClick={handleMobileLinkClick}>About Us</Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                Testimonials
+                <Link to="/testimonials" onClick={handleMobileLinkClick}>Testimonials</Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                Privacy Policy
+                <Link to="" onClick={handleMobileLinkClick}>Privacy Policy</Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                Contact Us
+                <Link to="/contact-us" onClick={handleMobileLinkClick}>Contact Us</Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
             </ul>

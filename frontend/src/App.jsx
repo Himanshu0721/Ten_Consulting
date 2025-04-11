@@ -8,7 +8,7 @@ import AiMl from "./pages/services/AI-ML/AiMl";
 import GenerativeAI from "./pages/services/AI-ML/GenerativeAI";
 import NextGen from "./pages/services/NextGen/NextGen";
 import BlockChain from "./pages/services/NextGen/BlockChain";
-import Careers from "./pages/Careers";
+import CareerPage from "./pages/CareerPage";
 import DataAnalytics from "./pages/services/Data-Analytics/DataAnalytics";
 import Agentic from "./pages/services/Data-Analytics/Agentic";
 import DataConsulting from "./pages/services/Data-Analytics/DataConsulting";
@@ -20,7 +20,10 @@ import ContactUs from "./pages/ContactUs";
 import Testimonials from "./pages/Testimonials";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
-
+import Blogs from "./pages/All_Insights/Blogs";
+import DigiExp from "./pages/services/DigiExp/DigiExp";
+import ProductDesign from "./pages/services/DigiExp/ProductDesign";
+import ProductCons from "./pages/services/DigiExp/ProductCons";
 function App() {
   return (
     <BrowserRouter>
@@ -33,16 +36,36 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/ai-ml" element={<AiMl />} />
-        <Route path="/data-analytics" element={<DataAnalytics/>}/>
-        <Route path="/data-analytics/data-consulting" element={<DataConsulting/>} />
-        <Route path="/data-analytics/analyticService" element={<AnalyticsService/>} />
-        <Route path="/data-analytics/integration-api" element={<IntegrationApi/>} />
-        <Route path="/data-analytics/agentic" element={<Agentic/>} />
+        <Route path="/data-analytics" element={<DataAnalytics />} />
+        <Route path="/insights" element={<Blogs />} />
+        <Route
+          path="/data-analytics/data-consulting"
+          element={<DataConsulting />}
+        />
+        <Route
+          path="/data-analytics/analyticService"
+          element={<AnalyticsService />}
+        />
+        <Route
+          path="/data-analytics/integration-api"
+          element={<IntegrationApi />}
+        />
+        <Route path="/data-analytics/agentic" element={<Agentic />} />
         <Route path="/ai-ml/generative-ai" element={<GenerativeAI />} />
         <Route path="/ai-ml/data-science" element={<DataSci />} />
-        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers" element={<CareerPage />} />
         <Route path="/next-gen" element={<NextGen />} />
         <Route path="/next-gen/blockchain" element={<BlockChain />} />
+        <Route path="/digital-experience" element={<DigiExp />} />
+        <Route
+          path="/digital-experience/product-design"
+          element={<ProductDesign />}
+        />
+        <Route
+          path="/digital-experience/product-consulting"
+          element={<ProductCons />}
+        />
+
         <Route path="/next-gen/metaverse" element={<Metaverse />} />
       </Routes>
 

@@ -30,7 +30,7 @@ export default function TestimonialSlider() {
   const prevSlide = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="bg-blue-900 text-white py-12 px-6 md:px-20 rounded-2xl shadow-xl overflow-hidden">
+    <section className="bg-blue-900 text-white py-12 px-6 md:px-20 shadow-xl overflow-hidden">
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

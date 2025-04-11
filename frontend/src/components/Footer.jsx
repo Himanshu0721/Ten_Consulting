@@ -1,12 +1,13 @@
 import React from "react";
 import Chatbot from "./chatbot";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white tracking-wide py-6 px-4 md:px-8">
-      {/* Logo & Company Name */}
-      <div className="container flex flex-col md:flex-row md:items-center justify-between text-center md:text-left gap-4">
-        <div className="flex items-center justify-center md:justify-start">
+    <footer className="bg-cyan-900 text-white px-4 py-8">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Header Section */}
+        <div className="mb-6 flex items-center">
           <svg
             className="h-9 w-16"
             preserveAspectRatio="xMidYMid meet"
@@ -73,62 +74,79 @@ const Footer = () => {
               </g>
             </g>
           </svg>
-          <h1 className="text-xl md:text-2xl font-bold">Ten Consulting</h1>
+          <h2 className="text-xl font-semibold mb-2">TEN Consulting</h2>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid grid-cols-2 gap-15 lg:gap-50 mt-10 ml-5 md:ml-15 xl:ml-20 sm:grid-cols-3 md:grid-cols-4">
+          {/* Design */}
+          <div>
+            <ul className="space-y-5 text-gray-300">
+              <li>
+                <Link to="/our-services" className="hover:underline cursor-pointer">Services</Link>
+              </li>
+              <li>
+                <Link className="hover:underline cursor-pointer">Industries</Link>
+              </li>
+              <li>
+                <Link to="/insights" className="hover:underline cursor-pointer">Insights</Link>
+              </li>
+              <li>
+                <Link className="hover:underline cursor-pointer">About</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul className="space-y-5 text-gray-300">
+              <li>
+                <Link className="hover:underline cursor-pointer" to="/">News</Link>
+              </li>
+              <li>
+                <Link to="/testimonials" className="hover:underline cursor-pointer">Testimonials</Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:underline cursor-pointer">Careers</Link>
+              </li>
+              <li className="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-red-600"
+                >
+                  <path d="M23.5 6.3c-.3-1.1-1.2-2-2.3-2.3-2-.5-10.2-.5-10.2-.5s-8.2 0-10.2.5c-1.1.3-2 1.2-2.3 2.3-.5 2-.5 6.2-.5 6.2s0 4.2.5 6.2c.3 1.1 1.2 2 2.3 2.3 2 .5 10.2.5 10.2.5s8.2 0 10.2-.5c1.1-.3 2-1.2 2.3-2.3.5-2 .5-6.2.5-6.2s0-4.2-.5-6.2zm-14.5 9.2v-6.9l6.5 3.4-6.5 3.5z" />
+                </svg>
+                <h1 className="cursor-pointer">Youtube</h1>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul className="space-y-5 text-gray-300">
+              <li>
+                <Link to="/insights" className="hover:underline cursor-pointer">Blog</Link>
+              </li>
+              <li>
+                <Link to="/contact-us" className="hover:underline cursor-pointer">Contact Us</Link>
+              </li>
+              <li>
+                <Link className="hover:underline cursor-pointer">Privacy Policy</Link>
+              </li>
+              <li className="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-blue-600"
+                >
+                  <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5c0-1.11-.89-2-2-2s-2 .89-2 2v5h-3v-10h3v1.25c.86-.83 2-1.25 3.2-1.25 2.35 0 4.3 1.95 4.3 4.35v5.65z" />
+                </svg>
+                <h1 className="cursor-pointer">Linkedin</h1>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      {/* Navigation Links */}
-      <div className="container ml-0 md:ml-18 lg:ml-35 mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-        <ul className="space-y-8 font-semibold">
-          <li className="cursor-pointer">Services</li>
-          <li className="cursor-pointer">Platforms & Products</li>
-          <li className="cursor-pointer">Industries</li>
-          <li className="cursor-pointer">Insights</li>
-        </ul>
-        <ul className="space-y-8 font-semibold">
-          <li className="cursor-pointer">About</li>
-          <li className="cursor-pointer">News</li>
-          <li className="cursor-pointer">Careers</li>
-          <li className="cursor-pointer">Contact</li>
-        </ul>
-        <div className="flex flex-col md:flex-col items-center md:items-start gap-8 mt-5">
-          <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6 text-blue-600"
-            >
-              <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5c0-1.11-.89-2-2-2s-2 .89-2 2v5h-3v-10h3v1.25c.86-.83 2-1.25 3.2-1.25 2.35 0 4.3 1.95 4.3 4.35v5.65z" />
-            </svg>
-            <h1>Linkedin</h1>
-          </div>
-          <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6 text-blue-500"
-            >
-              <path d="M23.5 4.5c-.9.4-1.8.7-2.8.8.9-.6 1.7-1.5 2-2.6-.9.5-1.9.9-2.9 1.1-.9-.9-2.1-1.4-3.4-1.4-2.6 0-4.6 2.1-4.6 4.6 0 .4 0 .8.1 1.2-3.8-.2-7.2-2-9.5-4.7-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2.1 3.8-.8 0-1.5-.2-2.2-.6v.1c0 2.2 1.6 4 3.7 4.5-.4.1-.8.2-1.2.2-.3 0-.6 0-.9-.1.6 1.8 2.3 3.2 4.4 3.2-1.6 1.3-3.6 2-5.8 2-.4 0-.7 0-1.1-.1 2 1.3 4.4 2 7 2 8.4 0 13-7 13-13v-.6c.9-.6 1.7-1.4 2.3-2.2z" />
-            </svg>
-            <h1>Twitter</h1>
-          </div>
-          <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6 text-red-600"
-            >
-              <path d="M23.5 6.3c-.3-1.1-1.2-2-2.3-2.3-2-.5-10.2-.5-10.2-.5s-8.2 0-10.2.5c-1.1.3-2 1.2-2.3 2.3-.5 2-.5 6.2-.5 6.2s0 4.2.5 6.2c.3 1.1 1.2 2 2.3 2.3 2 .5 10.2.5 10.2.5s8.2 0 10.2-.5c1.1-.3 2-1.2 2.3-2.3.5-2 .5-6.2.5-6.2s0-4.2-.5-6.2zm-14.5 9.2v-6.9l6.5 3.4-6.5 3.5z" />
-            </svg>
-            <h1>Youtube</h1>
-          </div>
-        </div>
-      </div>
-
-      {/* Divider */}
       <hr className="border-white my-10" />
 
       {/* Contact Info */}
