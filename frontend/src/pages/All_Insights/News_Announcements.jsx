@@ -6,7 +6,7 @@ function News_Announcements() {
     const [showMoreBlogs, setShowMoreBlog] = useState(false);  
   return (
     <>
-    <div className="bg-gray-800 ">
+    <div className="bg-gray-800 py-20">
       <div className="lg:px-20 md:px-10 px-4">
         {/* <div className="w-full h-fit flex justify-center items-center pt-16 flex-col">
           <h1 className="md:text-5xl text-3xl font-semibold">News &</h1>

@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-900 text-white px-4 py-8">
+    <footer
+      className="bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900
+
+ text-white px-4 py-8"
+    >
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="mb-6 flex items-center">
@@ -83,54 +87,47 @@ const Footer = () => {
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link to="/our-services" className="hover:underline cursor-pointer">Services</Link>
-              </li>
-              <li>
-                <Link className="hover:underline cursor-pointer">Industries</Link>
-              </li>
-              <li>
-                <Link to="/insights" className="hover:underline cursor-pointer">Insights</Link>
-              </li>
-              <li>
-                <Link className="hover:underline cursor-pointer">About</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <ul className="space-y-5 text-gray-300">
-              <li>
-                <Link className="hover:underline cursor-pointer" to="/">News</Link>
-              </li>
-              <li>
-                <Link to="/testimonials" className="hover:underline cursor-pointer">Testimonials</Link>
-              </li>
-              <li>
-                <Link to="/careers" className="hover:underline cursor-pointer">Careers</Link>
-              </li>
-              <li className="flex gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6 text-red-600"
+                <Link
+                  to="/our-services"
+                  className="hover:underline cursor-pointer"
                 >
-                  <path d="M23.5 6.3c-.3-1.1-1.2-2-2.3-2.3-2-.5-10.2-.5-10.2-.5s-8.2 0-10.2.5c-1.1.3-2 1.2-2.3 2.3-.5 2-.5 6.2-.5 6.2s0 4.2.5 6.2c.3 1.1 1.2 2 2.3 2.3 2 .5 10.2.5 10.2.5s8.2 0 10.2-.5c1.1-.3 2-1.2 2.3-2.3.5-2 .5-6.2.5-6.2s0-4.2-.5-6.2zm-14.5 9.2v-6.9l6.5 3.4-6.5 3.5z" />
-                </svg>
-                <h1 className="cursor-pointer">Youtube</h1>
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:underline cursor-pointer">
+                  Industries
+                </Link>
+              </li>
+              <li>
+                <Link to="/insights" className="hover:underline cursor-pointer">
+                  Insights
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:underline cursor-pointer" to="/about-us">About</Link>
               </li>
             </ul>
           </div>
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link to="/insights" className="hover:underline cursor-pointer">Blog</Link>
+                <Link to="/insights" className="hover:underline cursor-pointer">
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/contact-us" className="hover:underline cursor-pointer">Contact Us</Link>
+                <Link
+                  to="/contact-us"
+                  className="hover:underline cursor-pointer"
+                >
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <Link className="hover:underline cursor-pointer">Privacy Policy</Link>
+                <Link className="hover:underline cursor-pointer" to="/privacy-policy">
+                  Privacy Policy
+                </Link>
               </li>
               <li className="flex gap-2">
                 <svg
@@ -145,6 +142,40 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div>
+            <ul className="space-y-5 text-gray-300">
+              <li>
+                <Link className="hover:underline cursor-pointer" to="/news">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/testimonials"
+                  className="hover:underline cursor-pointer"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:underline cursor-pointer">
+                  Careers
+                </Link>
+              </li>
+              <li className="flex gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-red-600"
+                >
+                  <path d="M23.5 6.3c-.3-1.1-1.2-2-2.3-2.3-2-.5-10.2-.5-10.2-.5s-8.2 0-10.2.5c-1.1.3-2 1.2-2.3 2.3-.5 2-.5 6.2-.5 6.2s0 4.2.5 6.2c.3 1.1 1.2 2 2.3 2.3 2 .5 10.2.5 10.2.5s8.2 0 10.2-.5c1.1-.3 2-1.2 2.3-2.3.5-2 .5-6.2.5-6.2s0-4.2-.5-6.2zm-14.5 9.2v-6.9l6.5 3.4-6.5 3.5z" />
+                </svg>
+                <h1 className="cursor-pointer">Youtube</h1>
+              </li>
+            </ul>
+          </div>
+          
         </div>
       </div>
       <hr className="border-white my-10" />
@@ -158,8 +189,7 @@ const Footer = () => {
         >
           tech@entrepreneurshipnetwork.net
         </a>
-        <Chatbot/>
-
+        <Chatbot />
       </div>
     </footer>
   );

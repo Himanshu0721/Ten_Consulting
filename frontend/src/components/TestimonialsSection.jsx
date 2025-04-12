@@ -97,7 +97,7 @@ const TestimonialsSection = () => {
         {testimonials.map((t, i) => (
           <div
             key={i}
-            className="space-y-7 text-center md:text-left md:space-y-4"
+            className="space-y-7 text-center md:text-left md:space-y-4 shadow-lg p-6 sm:p-8 md:p-10 lg:p-12 bg-white rounded-lg border border-gray-300"
           >
             <p className="font-medium text-base sm:text-lg md:text-xl italic tracking-normal leading-relaxed relative px-8 md:px-0">
               "{t.testimonial}"
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
                 </span>
               </div>
             </div>
-            <hr className="border-b-[0.5px] border-gray-300 my-4 max-w-[200px] mx-auto md:ml-0" />
+            {/* <hr className="border-b-[0.5px] border-gray-300 my-4 max-w-[200px] mx-auto md:ml-0" /> */}
           </div>
         ))}
 

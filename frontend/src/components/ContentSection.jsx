@@ -1,17 +1,17 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
 const ContentSection = ({ contentData }) => {
   const contentRef = useRef(null);
   const isContentInView = useInView(contentRef, { once: true });
 
+  // Scroll progress of the entire section (relative to viewport)
   const { scrollYProgress } = useScroll({
     target: contentRef,
-    offset: ["start end", "end start"],
+    offset: ["start center ", "end center"], // adjust as needed
   });
 
-  // Only apply scroll movement on large screens
-  const yHeading = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
+  const yHeading = useTransform(scrollYProgress, [0, 1], ["0px", "900px"]);
 
   return (
     <motion.div
@@ -22,25 +22,16 @@ const ContentSection = ({ contentData }) => {
       className="max-w-[1260px] w-full px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto border-b border-gray-500 py-10 sm:py-14 md:py-16 lg:py-18"
     >
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
-        {/* Heading */}
+        {/* Left side: Heading */}
         <motion.h3
           style={{ y: yHeading }}
           initial={{ opacity: 0, y: 30 }}
           animate={isContentInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
-          className="
-            text-5xl pb-9 xs:text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px]
-            font-normal text-blue-900 max-w-[500px] w-full leading-snug
-            lg:sticky lg:top-24 lg:block hidden
-          "
+          className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-normal text-gray-900 max-w-[500px] w-full leading-snug sticky top-24"
         >
           {contentData.heading}
         </motion.h3>
-
-        {/* Static heading for mobile (no motion, always visible) */}
-        <h3 className="block lg:hidden text-2xl sm:text-3xl font-semibold text-gray-900">
-          {contentData.heading}
-        </h3>
 
         {/* Right side: Paragraphs */}
         <motion.div
@@ -66,4 +57,5 @@ const ContentSection = ({ contentData }) => {
   );
 };
 
-export default ContentSection;
+// Use React.memo to prevent unnecessary re-renders if props are not changing
+export default memo(ContentSection);

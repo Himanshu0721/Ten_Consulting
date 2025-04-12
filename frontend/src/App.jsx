@@ -24,14 +24,14 @@ import CloudMigration from "./pages/services/Cloud/CloudMigration";
 import ProductEngineering from "./pages/services/Product/ProductEngineering";
 import QualityEngineering from "./pages/services/Product/QualityEngineering";
 import MobileEngineering from "./pages/services/Product/MobileEngineering";
-
-
+import News from "./pages/All_Insights/News_Announcements";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
 import Blogs from "./pages/All_Insights/Blogs";
 import DigiExp from "./pages/services/DigiExp/DigiExp";
 import ProductDesign from "./pages/services/DigiExp/ProductDesign";
 import ProductCons from "./pages/services/DigiExp/ProductCons";
+import News_Announcements from "./pages/All_Insights/News_Announcements";
 function App() {
   return (
     <BrowserRouter>
@@ -81,6 +81,7 @@ function App() {
         <Route path="/product-engineering" element={<ProductEngineering />} />
         <Route path="/product-engineering/quality-engineer" element={<QualityEngineering />} />
         <Route path="/product-engineering/mobile-engineering" element={<MobileEngineering />} />
+        <Route path="/news" element={<News/>} />
       </Routes>
 
       <Footer />
