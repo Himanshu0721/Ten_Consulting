@@ -18,7 +18,7 @@ import NextSolutions from "../../../components/NextSolutions";
 
 const NextGen = () => {
     return (
-    <div className="overflow-hidden">
+    <div>
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />

@@ -18,7 +18,7 @@ import InsightSection from "../../../components/InsightSection";
 
 const GenerativeAi = () => {
     return (
-    <div className="overflow-hidden">
+    <div>
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />

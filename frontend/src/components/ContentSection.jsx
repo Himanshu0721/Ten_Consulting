@@ -24,7 +24,6 @@ const ContentSection = ({ contentData }) => {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
         {/* Left side: Heading */}
         <motion.h3
-          style={{ y: yHeading }}
           initial={{ opacity: 0, y: 30 }}
           animate={isContentInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}

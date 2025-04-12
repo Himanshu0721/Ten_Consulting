@@ -20,7 +20,7 @@ import AiMlSolutions from "../../../components/AiMlSolutions";
 
 const DataAnalytics = () => {
     return (
-    <div className="overflow-hidden">
+    <div>
         <HeroSection heroData={heroData} />
 
         <ContentSection contentData={contentData} />

@@ -132,7 +132,7 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-cyan-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-blue-950 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
           menuOpen ? "block" : "hidden"
         }`}
       >

@@ -2,7 +2,6 @@ import React from "react";
 import {
     heroData,
     contentData,
-    // offerings,
     justSectionDetails,
     funFactDetails,
     transformationData,
@@ -10,7 +9,6 @@ import {
 } from "../../../assets/aiMl";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
-// import OfferingsSection from "../../../components/OfferingsSection";
 import JustSection from "../../../components/JustFewSection";
 import FunFactSection from "../../../components/FunFactSection";
 import TransformationSection from "../../../components/LeadingSection";
@@ -20,23 +18,14 @@ import AiMlSolutions from "../../../components/AiMlSolutions";
 
 const AiMl = () => {
     return (
-    <div className="overflow-hidden">
+    <div>
         <HeroSection heroData={heroData} />
-
         <ContentSection contentData={contentData} />
-
-        {/* <OfferingsSection offerings={offerings} /> */}
-
         <AiMlContent />
-
         <AiMlSolutions />
-
         <JustSection justSectionDetails={justSectionDetails} />
-
         <FunFactSection funFactDetails={funFactDetails} />
-
         <TransformationSection transformationData={transformationData} />
-
         <InsightSection insightsData={insightsData} />
     </div>
     );
