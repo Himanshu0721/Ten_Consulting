@@ -2,6 +2,7 @@ import React from "react";
 import {
     heroData,
     contentData,
+    // offerings,
     justSectionDetails,
     funFactDetails,
     transformationData,
@@ -9,6 +10,7 @@ import {
 } from "../../../assets/aiMl";
 import HeroSection from "../../../components/HeroSection";
 import ContentSection from "../../../components/ContentSection";
+// import OfferingsSection from "../../../components/OfferingsSection";
 import JustSection from "../../../components/JustFewSection";
 import FunFactSection from "../../../components/FunFactSection";
 import TransformationSection from "../../../components/LeadingSection";
@@ -20,12 +22,21 @@ const AiMl = () => {
     return (
     <div>
         <HeroSection heroData={heroData} />
+
         <ContentSection contentData={contentData} />
+
+        {/* <OfferingsSection offerings={offerings} /> */}
+
         <AiMlContent />
+
         <AiMlSolutions />
+
         <JustSection justSectionDetails={justSectionDetails} />
+
         <FunFactSection funFactDetails={funFactDetails} />
+
         <TransformationSection transformationData={transformationData} />
+
         <InsightSection insightsData={insightsData} />
     </div>
     );
