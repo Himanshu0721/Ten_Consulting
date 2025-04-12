@@ -1,8 +1,4 @@
-import {
-  heroData,
-  contentData,
-  funFactDetails,
-} from "../assets/contactData";
+import { heroData, contentData, funFactDetails } from "../assets/contactData";
 
 import HeroSection from "../components/HeroSection";
 import ContentSection from "../components/ContentSection";
@@ -19,7 +15,7 @@ const ContactUs = () => {
       <FunFactSection funFactDetails={funFactDetails} />
 
       <ContactForm />
-      <ContactInfo />
+      {/* <ContactInfo /> */}
     </div>
   );
 };

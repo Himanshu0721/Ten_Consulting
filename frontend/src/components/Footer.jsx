@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-900 text-white px-4 py-8">
+    <footer
+      className="bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900
+
+ text-white px-4 py-8"
+    >
       <div className="max-w-screen-xl mx-auto">
         {/* Header Section */}
         <div className="mb-6 flex items-center">
@@ -83,13 +87,22 @@ const Footer = () => {
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link to="/our-services" className="hover:underline cursor-pointer">Services</Link>
+                <Link
+                  to="/our-services"
+                  className="hover:underline cursor-pointer"
+                >
+                  Services
+                </Link>
               </li>
               <li>
-                <Link className="hover:underline cursor-pointer">Industries</Link>
+                <Link className="hover:underline cursor-pointer">
+                  Industries
+                </Link>
               </li>
               <li>
-                <Link to="/insights" className="hover:underline cursor-pointer">Insights</Link>
+                <Link to="/insights" className="hover:underline cursor-pointer">
+                  Insights
+                </Link>
               </li>
               <li>
                 <Link className="hover:underline cursor-pointer">About</Link>
@@ -100,13 +113,22 @@ const Footer = () => {
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link className="hover:underline cursor-pointer" to="/">News</Link>
+                <Link className="hover:underline cursor-pointer" to="/">
+                  News
+                </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="hover:underline cursor-pointer">Testimonials</Link>
+                <Link
+                  to="/testimonials"
+                  className="hover:underline cursor-pointer"
+                >
+                  Testimonials
+                </Link>
               </li>
               <li>
-                <Link to="/careers" className="hover:underline cursor-pointer">Careers</Link>
+                <Link to="/careers" className="hover:underline cursor-pointer">
+                  Careers
+                </Link>
               </li>
               <li className="flex gap-2">
                 <svg
@@ -124,13 +146,22 @@ const Footer = () => {
           <div>
             <ul className="space-y-5 text-gray-300">
               <li>
-                <Link to="/insights" className="hover:underline cursor-pointer">Blog</Link>
+                <Link to="/insights" className="hover:underline cursor-pointer">
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/contact-us" className="hover:underline cursor-pointer">Contact Us</Link>
+                <Link
+                  to="/contact-us"
+                  className="hover:underline cursor-pointer"
+                >
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <Link className="hover:underline cursor-pointer">Privacy Policy</Link>
+                <Link className="hover:underline cursor-pointer">
+                  Privacy Policy
+                </Link>
               </li>
               <li className="flex gap-2">
                 <svg
@@ -158,8 +189,7 @@ const Footer = () => {
         >
           tech@entrepreneurshipnetwork.net
         </a>
-        <Chatbot/>
-
+        <Chatbot />
       </div>
     </footer>
   );

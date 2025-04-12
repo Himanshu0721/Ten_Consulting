@@ -99,109 +99,109 @@ const internships = [
 const Careers = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [search, setSearch] = useState("");
+  const [showMoreInternships, setShowMoreInternships] = useState(false);
 
   const filteredInternships = internships.filter((job) =>
     job.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  return (
-    <div className="min-h-screen  p-10">
-      {/* Search Bar */}
-      <div className="flex  gap-2 mb-6">
-        <input
-          type="text"
-          placeholder="Search internships..."
-          className="w-full max-w-lg p-3 border border-gray-400 bg-white text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          aria-label="Search internships"
-        />
-        {search && (
-          <button
-            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-            onClick={() => setSearch("")}
-          >
-            Clear
-          </button>
-        )}
-      </div>
+  // Show only first 6 if not toggled
+  const internshipsToShow = showMoreInternships
+    ? filteredInternships
+    : filteredInternships.slice(0, 3);
 
+  return (
+    <div className=" p-10">
       {/* No results message */}
       {filteredInternships.length === 0 ? (
         <p className="text-center text-gray-600">No internships found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredInternships.map((job, index) => (
-            <motion.div
-              key={index}
-              className="relative w-full h-80 perspective-1000"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-                delay: index * 0.15,
-              }}
-            >
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {internshipsToShow.map((job, index) => (
               <motion.div
-                className="relative w-full h-full rounded-2xl shadow-lg transform-style-3d"
-                animate={{ rotateY: hoveredIndex === index ? 180 : 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                style={{ transformStyle: "preserve-3d" }}
+                key={index}
+                className="relative w-full h-80 perspective-1000"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.1,
+                }}
               >
-                {/* Front Side */}
-                <div
-                  className="absolute w-full h-full rounded-2xl flex flex-col justify-center items-center p-6 text-gray-900 shadow-lg transition-all duration-300"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    background: "linear-gradient(135deg, #F8F9FA, #E3E8EF)", // Soft blue-gray
-                    border: "2px solid #4A90E2",
-                  }}
+                <motion.div
+                  className="relative w-full h-full rounded-2xl shadow-lg transform-style-3d"
+                  animate={{ rotateY: hoveredIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  <img
-                    src={job.image}
-                    alt={job.title}
-                    className="w-16 h-16 mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-center">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-700 text-center mt-2">
-                    <strong>Skills:</strong> {job.skills}
-                  </p>
-                </div>
-
-                {/* Back Side */}
-                <div
-                  className="absolute w-full h-full rounded-2xl flex flex-col justify-center items-center p-6 text-gray-100 shadow-lg transition-all duration-300"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                    background: "linear-gradient(135deg, #0D47A1, #1976D2)", // Deep blue
-                    border: "2px solid #FFC107", // Yellow contrast
-                  }}
-                >
-                  <h3 className="text-xl font-semibold text-center">
-                    {job.title}
-                  </h3>
-                  <p className="text-center mt-2">{job.details}</p>
-                  <a
-                    href={
-                      "https://docs.google.com/forms/d/e/1FAIpQLScMY6Dos28JVDpYmgXB9FK4QpepWxsn_rEH-mQ1AYiql4d_qA/viewform"
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 bg-yellow-400 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 ease-in-out transform hover:scale-105"
+                  {/* Front Side */}
+                  <div
+                    className="absolute w-full h-full rounded-2xl flex flex-col justify-center items-center p-6 text-gray-900 shadow-lg transition-all duration-300"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      background: "linear-gradient(135deg, #F8F9FA, #E3E8EF)",
+                      border: "2px solid #4A90E2",
+                    }}
                   >
-                    Apply Now
-                  </a>
-                </div>
+                    <img
+                      src={job.image}
+                      alt={job.title}
+                      className="w-16 h-16 mb-4"
+                    />
+                    <h3 className="text-xl font-semibold text-center">
+                      {job.title}
+                    </h3>
+                    <p className="text-gray-700 text-center mt-2">
+                      <strong>Skills:</strong> {job.skills}
+                    </p>
+                  </div>
+
+                  {/* Back Side */}
+                  <div
+                    className="absolute w-full h-full rounded-2xl flex flex-col justify-center items-center p-6 text-gray-100 shadow-lg transition-all duration-300"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)",
+                      background: "linear-gradient(135deg, #0D47A1, #1976D2)",
+                      border: "2px solid #FFC107",
+                    }}
+                  >
+                    <h3 className="text-xl font-semibold text-center">
+                      {job.title}
+                    </h3>
+                    <p className="text-center mt-2">{job.details}</p>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLScMY6Dos28JVDpYmgXB9FK4QpepWxsn_rEH-mQ1AYiql4d_qA/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 bg-yellow-400 text-gray-900 px-5 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 ease-in-out transform hover:scale-105"
+                    >
+                      Apply Now
+                    </a>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+
+          {/* Show more / Show less button */}
+          {filteredInternships.length > 6 && (
+            <div className="w-full flex justify-center mt-8">
+              <button
+                className="text-black border-2 border-black hover:bg-slate-200 duration-200 rounded-md px-4 py-2 cursor-pointer"
+                onClick={() => setShowMoreInternships(!showMoreInternships)}
+              >
+                {showMoreInternships
+                  ? "Show less internships"
+                  : "See more internships"}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

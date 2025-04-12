@@ -22,7 +22,7 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "auto";
     }
-  
+
     return () => (document.body.style.overflow = "auto");
   }, [menuOpen]);
 
@@ -49,7 +49,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 lg:rounded-2xl flex justify-between items-center text-white transition-all duration-400 p-4 z-50 ${
-        scrolling ? "bg-cyan-900 shadow-md lg:top-3 lg:left-20 lg:right-20" : "bg-transparent"
+        scrolling
+          ? "bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 shadow-md lg:top-3 lg:left-20 lg:right-20"
+          : "bg-transparent"
       }`}
     >
       <div className="flex items-center lg:ml-5">
@@ -119,7 +121,8 @@ const Navbar = () => {
             </g>
           </g>
         </svg>
-        <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">Ten Consulting
+        <h1 className="lg:text-3xl md:text-3xl sm:text-3xl font-bold">
+          Ten Consulting
         </h1>
       </div>
 
@@ -129,8 +132,9 @@ const Navbar = () => {
       </div>
 
       <ul
-        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-cyan-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${menuOpen ? "block" : "hidden"
-          }`}
+        className={`absolute lg:static top-16 left-0 w-full lg:w-auto mr-10 lg:flex bg-cyan-900 lg:bg-transparent lg:space-x-10 p-4 lg:p-0 transition-transform duration-300 ${
+          menuOpen ? "block" : "hidden"
+        }`}
       >
         <li className="py-2 lg:py-0 relative">
           <button
@@ -153,7 +157,11 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2 max-h-[400px] overflow-y-auto lg:overflow-x-hidden scrollbar-hide">
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/ai-ml" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/ai-ml"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   AI and ML
                 </Link>
                 <Link
@@ -175,7 +183,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/data-analytics" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/data-analytics"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   Data Analytics
                 </Link>
                 <Link
@@ -213,7 +225,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/next-gen" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/next-gen"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   Next Generation
                 </Link>
                 <Link
@@ -235,7 +251,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/digital-experience" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/digital-experience"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   Digital Experience
                 </Link>
                 <Link
@@ -257,7 +277,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/cloud-engineering" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/cloud-engineering"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   Cloud Engineering
                 </Link>
                 <Link
@@ -279,7 +303,11 @@ const Navbar = () => {
               </li>
 
               <li className="flex flex-col py-1 w-50 gap-1 mt-2 ml-2">
-                <Link to="/product-engineering" onClick={handleMobileLinkClick} className="font-semibold">
+                <Link
+                  to="/product-engineering"
+                  onClick={handleMobileLinkClick}
+                  className="font-semibold"
+                >
                   Product Engineering
                 </Link>
                 <Link
@@ -390,14 +418,20 @@ const Navbar = () => {
           </div>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/insights"
-          onClick={handleMobileLinkClick}>
+          <Link
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
+            to="/insights"
+            onClick={handleMobileLinkClick}
+          >
             Insights
           </Link>
         </li>
         <li className="py-2 lg:py-0 relative">
-          <Link className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline" to="/careers"
-          onClick={handleMobileLinkClick}>
+          <Link
+            className="focus:outline-none cursor-pointer hover:text-gray-300 hover:underline"
+            to="/careers"
+            onClick={handleMobileLinkClick}
+          >
             Careers
           </Link>
         </li>
@@ -422,19 +456,27 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2">
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                <Link to="" onClick={handleMobileLinkClick}>About Us</Link>
+                <Link to="/about-us" onClick={handleMobileLinkClick}>
+                  About Us
+                </Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                <Link to="/testimonials" onClick={handleMobileLinkClick}>Testimonials</Link>
+                <Link to="/testimonials" onClick={handleMobileLinkClick}>
+                  Testimonials
+                </Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                <Link to="" onClick={handleMobileLinkClick}>Privacy Policy</Link>
+                <Link to="/privacy-policy" onClick={handleMobileLinkClick}>
+                  Privacy Policy
+                </Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
               <li className="py-2 w-50 cursor-pointer flex hover:text-gray-200 lg:hover:text-gray-700 items-center gap-1 group">
-                <Link to="/contact-us" onClick={handleMobileLinkClick}>Contact Us</Link>
+                <Link to="/contact-us" onClick={handleMobileLinkClick}>
+                  Contact Us
+                </Link>
                 <span className="hidden group-hover:inline-block">→</span>
               </li>
             </ul>

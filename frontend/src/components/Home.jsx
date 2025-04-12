@@ -13,13 +13,13 @@ function Home() {
     <>
       <Carousel />
       <Dropdown />
-      <HeroSection/>
-      <SuccessFootprints/>
-      <CaseStudies/>
-      <TestimonialSlider/>
-      <RecentHappenings/>
-      <MissionSection/>
-      <InsightsCarousel/>
+      <HeroSection />
+      <SuccessFootprints />
+      <CaseStudies />
+      <TestimonialSlider />
+      <RecentHappenings />
+      <MissionSection />
+      {/* <InsightsCarousel/> */}
     </>
   );
 }
