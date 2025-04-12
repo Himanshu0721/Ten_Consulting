@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [scrolling, setScrolling] = useState(true);
+  const [scrolling, setScrolling] = useState(false);
 
   const handleMobileLinkClick = () => {
     if (menuOpen) setMenuOpen(false);

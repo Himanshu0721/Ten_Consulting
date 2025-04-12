@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   {
-    url: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/globee-banner-home.webp",
+    url: "https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_2001,h_1620/https://answerrocket.com/wp-content/uploads/ai-consulting-guide-background-image-1024x829.webp",
     title: "Empowering Startups Across the Globe with TEN's Global Network",
   },
   {
-    url: "https://d1ugv6dopk5bx0.cloudfront.net/s3fs-public/banner-home-2.webp",
+    url: "https://t3.ftcdn.net/jpg/05/67/80/08/240_F_567800850_jtQfLe4KavwpmY8Xvb8A9XIgFhYeIdGa.jpg",
     title: "TEN recognized as a Leader in Zinnov Zones Digital Engineering and ER&D Report, 2023",
   },
   {
-    url: "https://kellton-uat.s3.amazonaws.com/s3fs-public/homepage_0.webp",
+    url: "https://t3.ftcdn.net/jpg/01/41/84/54/240_F_141845435_s4eetaMlR3ZfkkKa6ndBNsTOiVTPsuGa.jpg",
     title: "TEN features in Avasant's SAP S/4HANA Services 2023-2024 Radarview",
   },
 ];

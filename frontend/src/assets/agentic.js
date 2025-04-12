@@ -1,5 +1,5 @@
 export const heroData = {
-    backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3rXkYQxvhhyDZN-odR26vzCKByAx13xZZKw&s')",
+    backgroundImage: "url('https://cdn.pixabay.com/photo/2024/01/29/22/47/ai-generated-8540915_1280.jpg')",
     breadcrumb: [
         { label: "Home", link: "/" },
         { label: "Services", link: "/our-services" },
